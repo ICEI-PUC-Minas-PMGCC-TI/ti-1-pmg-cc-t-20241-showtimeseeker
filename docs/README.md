@@ -58,6 +58,11 @@ Descreva quem serão as pessoas que usarão a sua aplicação indicando os difer
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
 
+Os públicos alvos da ShowtimeSeeker são divididos em dois, sendo a pessoa que procura eventos para se divertir e o empreendedor/dono de evento que procura uma maneira de divulgar o seu projeto.
+O primeiro dos públicos alvos é composto por homens e mulheres jovens de grandes cidades que procuram eventos em áreas mais centrais/movimentadas, procurando experiências que Atendam suas expectativas na qualidade e financeiro.
+Já o segundo grupo é composto por homens e mulheres empresários que procuram uma melhor forma para divulgar seu evento, de forma que essa divulgação acerte o máximo de pessoas ideias para o tipo de festa proposta.    
+
+
 **Links Úteis**:
 
 - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
