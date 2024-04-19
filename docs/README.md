@@ -48,6 +48,8 @@ Descreva a importância ou a motivação para trabalhar com esta aplicação que
 
 O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
 
+A escolha desse modelo de aplicação foi feito, pois trabalha com contextos diferentes podendo ajudar em diferentes tipos de eventos sejam eles beneficentes ou com fins lucrativos conectando a sociedade de forma eficiente aos meios de diminuir o estresse, julgado atualmente como o mal do século pelo Conselho Federal de Medicina (CFM). Buscamos, portanto contribuir para mitigar esse mal fornecendo eventos ideais de lazer para cada tipo de pessoa a depender do seu gosto. 
+
 **Links Úteis**:
 
 - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
