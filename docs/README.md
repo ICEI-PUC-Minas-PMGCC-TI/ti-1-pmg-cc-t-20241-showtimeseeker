@@ -36,6 +36,8 @@ A aplicação é voltada para principalmente para dois tipos de pessoas: as que 
 
 Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
 
+O objetivo do ShowtimeSeeker é desenvolver um software que auxilie as pessoas na hora de encontrar novos eventos e divulgarem seus próprios eventos, fazendo uma filtragem de Gostos e região para maximizar a experiência do usuário nos eventos, e disponibilizando uma ferramenta fácil, rápida e simples de se divulgar o próprio evento de forma online.  
+
 **Links Úteis**:
 
 - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
