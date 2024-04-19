@@ -24,6 +24,8 @@ Nesse momento você deve apresentar o problema que a sua aplicação deve resolv
 
 Nesse momento, o grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
 
+A aplicação é voltada para principalmente para dois tipos de pessoas: as que buscam lugares para se entreterem e as responsáveis por criar eventos com esse fim, sendo a principal dificuldade conectar ambos os grupos e também agrada-los, visto que o primeiro encontra dificuldade na busca de lugares atendam seus interesses (localização, custos, temática, ambiente...), sem surpresas desagradáveis e o segundo busca a melhor forma de atingir, de forma numerosa, o público ideal para seu evento.
+
 **Links Úteis**:
 
 - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
