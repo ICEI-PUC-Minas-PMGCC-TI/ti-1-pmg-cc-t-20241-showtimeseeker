@@ -76,6 +76,8 @@ Já o segundo grupo é composto por homens e mulheres empresários que procuram 
 
 Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
 
+**Persona 1**
+
 **Nome:**
 Maria.
 
@@ -136,6 +138,64 @@ Ambiente para esclarecer o gasto médio que cada participante tem.
 **Produtos e Serviços**
 
 Compreender o que deve ser melhorado a partir de um sistema de avaliação.
+
+**Persona 2**
+
+**Nome**: 
+Pedro
+
+**idade**: 
+Jovem
+
+**Hobby**: 
+Escutar Música
+
+**Trabalho**: 
+Universitário
+
+**Personalidade**: 
+Animado,Sociável
+
+**Objetos e lugares**:
+Essa pessoa usa muito o seu celular em todo lugar que vai, tendo em vista que, é uma pessoa muito antenada. Ela o utiliza para os seus afazeres diários e pessoais
+
+**Objetivos chave**: 
+As pessoas precisam deste serviço para garantir saúde mental gerada pelo entretenimento / Usar para se divertir e conseguir entretenimento em critério do que foi selecionado na aplicação
+
+**Sonhos**: 
+Se divertir a preço baixo
+
+
+**Proposta de valor**
+
+**criadores de ganho**
+Recomendaçoes personalizadas
+Compartilhamento das experiencias
+Aplicativo simplificado
+
+**produtos e serviços**
+Agenda de eventos
+Ingressos online
+
+**analgésicos**
+Sistema de verificaçao de informaçoes
+Feedbacks e Avaliações dos eventos
+Filtros de busca
+
+**ganhos** 
+Explorar novos ambientes e experiencias
+Participar de eventos sociais
+Acesso a varias opcoes de entretenimento
+
+**dores**
+Indicação de lugar errado
+Preocupação com sua saúde mental
+Informações erradas sobre o ambiente
+
+**tarefas do cliente**
+Pesquisar locais
+Checar veracidade do evento
+Comprar ingressos
 
 **Links Úteis**:
 
