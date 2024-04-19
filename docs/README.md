@@ -76,51 +76,65 @@ Já o segundo grupo é composto por homens e mulheres empresários que procuram 
 
 Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
 
-**Nome**
+**Nome:**
 Maria.
 
-**Idade**
+**Idade:**
 Adulta.
 
-**Hobby**
+**Hobby:**
 Ler livros.
 
-**Trabalho**
+**Trabalho:**
 Promovedora de Eventos.
 
-**Personalidade**
+**Personalidade:**
 Descontraída, apressada.
 
 **Sonhos**
+
 Criar um evento com nome e valor no mercado através das plataformas digitais.
 
 **Objetos e lugares**
+
 O uso de panfletos ao redor da cidade para promover seu evento quando falta menos de 1 mês.
+
 Uso de Celular e redes sociais como o Instagram, Tik Tok... Para promover seu evento desde a criação para que haja maior procura de clientes.
 
 **Objetivos chave**
+
 O objetivo dessa pessoa é conseguir uma maior visibilidade em seu evento.
+
 O mercado digital é o recurso mais utilizado dos jovens e adultos ultimamente, se tornando necessário a utilização dessa ferramenta.
 
 **Ganhos**
+
 Encontrar público que gere maior ganho financeiro.
 
 **Dores**
+
 Dificuldade para divulgação.
+
 Dificuldade em atingir o público esperado.
 
 **Tarefas do Cliente**
+
 Compartilhar seu evento de forma clara.
+
 Encontrar formas de agradar seu público alvo.
 
 **Criadores de Ganhos**
+
 Possibilidade de atingir mais pessoas interessadas naquele tipo de evento.
 
 **Analgésicos**
+
 Ambiente para esclarecer as atrações, bebidas presentes no evento.
+
 Ambiente para esclarecer o gasto médio que cada participante tem.
 
 **Produtos e Serviços**
+
 Compreender o que deve ser melhorado a partir de um sistema de avaliação.
 
 **Links Úteis**:
