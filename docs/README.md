@@ -97,6 +97,9 @@ Descontraída, apressada.
 
 Criar um evento com nome e valor no mercado através das plataformas digitais.
 
+**Proposta de Valor**
+
+
 **Objetos e lugares**
 
 O uso de panfletos ao redor da cidade para promover seu evento quando falta menos de 1 mês.
