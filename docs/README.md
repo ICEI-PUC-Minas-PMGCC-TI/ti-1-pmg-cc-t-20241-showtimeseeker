@@ -228,24 +228,43 @@ Os requisitos de um projeto são classificados em dois grupos:
 Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 **Requisitos funcionais** 
+
+
 Criar/deletar uma conta;
+
 Sistema de avaliação dos eventos e mini fóruns;
+
 Possibilidade de criar/deletar um evento com todas as suas informações;
+
 Possibilidade de filtrar as especificidades dos eventos;
+
 Botões para o cliente contatar o evento;
+
 Um sistema de GPS que mostre a localidade do evento;
+
 Barra de pesquisas;
+
 Botões de contato com o staff da plataforma;
+
 Sistema de notificação;
+
 Sistema de favoritar eventos;
+
 Tabelas e gráficos que auxiliariam os donos de eventos a controlar os dados referentes as suas postagens. 
 
 
+
 **Requisitos não funcionais** 
+
+
 Uma aplicação rápida e intuitiva;
+
 Confiabilidade da plataforma na entrega de seus eventos;
+
 Uma aplicação otimizada e sem bugs;
+
 Um algoritmo que favoreça certos padrões;
+
 Utilizar a linguagem CSS, HTML e JavaScript (aplicação web). 
 
 
