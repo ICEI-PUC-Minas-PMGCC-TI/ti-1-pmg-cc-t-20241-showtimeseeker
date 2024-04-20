@@ -277,6 +277,8 @@ Utilizar a linguagem CSS, HTML e JavaScript (aplicação web).
 
 Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
 
+![user flow TI-cc - Quadro 2](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/assets/166862006/3b851d97-9e0e-437e-bbf2-c4b388ca0b0e)
+
 **Links Úteis**:
 
 - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
