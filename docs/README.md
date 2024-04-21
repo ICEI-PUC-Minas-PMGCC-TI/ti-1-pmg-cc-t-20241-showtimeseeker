@@ -254,3 +254,6 @@ Coloque detalhes sobre o processo de Design Thinking e a implementação do Fram
 - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
 - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
 - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+
+## Referências Bibliograficas
+- [Conselho fedral de Medicina](https://portal.cfm.org.br/).
