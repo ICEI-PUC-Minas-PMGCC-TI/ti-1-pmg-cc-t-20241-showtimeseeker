@@ -167,7 +167,7 @@ Comprar ingressos
 
 ## Histórias de Usuários
 
-    MARIA
+   MARIA
 1. Como um organizadorde eventos,
 2. Eu quero poder divulgar meu evento para o maximo de pessoas dentro do meu publico alvo,
 3. Para que mais pessoas possam saber sobre meu evento.
