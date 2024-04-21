@@ -167,22 +167,22 @@ Comprar ingressos
 
 ## Histórias de Usuários
 
-   MARIA
+MARIA
 1. Como um organizadorde eventos,
 2. Eu quero poder divulgar meu evento para o maximo de pessoas dentro do meu publico alvo,
 3. Para que mais pessoas possam saber sobre meu evento.
  
-   PEDRO
+PEDRO
 1. Como um organizador de eventos,
 2. Eu quero poder contatar com mais facilidade donos de estabelecimentos grandes como bares e boates,
 3. Para que eu possa produzir meus eventos em lugares conhecidos e de facil acesso .
 
-   ANGELICA
+ANGELICA
 1. Como estudante universitario,
 2. Eu quero ter facilidade em encontrar eventos que me agradem,
 3. Para que eu possa sair com meus amigos e curtir.
 
-   WANDERLEY
+WANDERLEY
 1. Como um participante de eventos,
 2. Eu quero poder ter uma boa interação com novas culturas e com pessoas que gostam destas culturas,
 3. Para que eu possa descontrair depois de uma semana dificil e conhecer pessoas novas.
