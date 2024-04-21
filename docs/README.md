@@ -209,12 +209,25 @@ Comprar ingressos
 
 ## Histórias de Usuários
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+    MARIA
+1. Como um organizadorde eventos,
+2. Eu quero poder divulgar meu evento para o maximo de pessoas dentro do meu publico alvo,
+3. Para que mais pessoas possam saber sobre meu evento.
+ 
+   PEDRO
+1. Como um organizador de eventos,
+2. Eu quero poder contatar com mais facilidade donos de estabelecimentos grandes como bares e boates,
+3. Para que eu possa produzir meus eventos em lugares conhecidos e de facil acesso .
 
-**Links Úteis**:
+   ANGELICA
+1. Como estudante universitario,
+2. Eu quero ter facilidade em encontrar eventos que me agradem,
+3. Para que eu possa sair com meus amigos e curtir.
 
-- [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-- [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
+   WANDERLEY
+1. Como um participante de eventos,
+2. Eu quero poder ter uma boa interação com novas culturas e com pessoas que gostam destas culturas,
+3. Para que eu possa descontrair depois de uma semana dificil e conhecer pessoas novas.
 
 ## Requisitos
 
