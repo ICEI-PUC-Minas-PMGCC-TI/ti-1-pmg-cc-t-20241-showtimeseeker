@@ -202,8 +202,6 @@ Possibilidade de filtrar as especificidades dos eventos;
 
 Botões para o cliente contatar o evento;
 
-Um sistema de GPS que mostre a localidade do evento;
-
 Barra de pesquisas;
 
 Botões de contato com o staff da plataforma;
