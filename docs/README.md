@@ -225,7 +225,7 @@ Uma aplicação otimizada e sem bugs;
 
 Um algoritmo que favoreça certos padrões;
 
-Utilizar a linguagem CSS, HTML e JavaScript (aplicação web). 
+Utilizar a linguagem CSS, HTML, JavaScript e JSON (aplicação web). 
 
 ## User Flow
 
