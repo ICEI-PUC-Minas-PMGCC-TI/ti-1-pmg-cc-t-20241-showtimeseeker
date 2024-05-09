@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Teste de formulario</title>
+    <link rel="stylesheet" href="multiestilo.css">
+</head>
+<body>
+    <h1 id="titulo">Teste de formulario</h1>
+    <form id="criarevento">
+        <label for="nomedoevento">Nome do Evento:</label>
+        <input type="text" name="nome_do_evento" id="nomedoevento">
+        <label for="localdoevento">Local do Evento:</label>
+        <input type="text" name="local" id="localdoevento">
+        <label for="data">Data:</label>
+        <input type="date" name="data" id="data">
+        <label for="estilodoevento">Estilo do evento</label>
+        <select name="estilodoevento" id="estilodoevento" multiple >
+            <option value="valor1">Valor 1</option>
+            <option value="valor2">Valor 2</option>
+            <option value="valor3">Valor 3</option>
+            <option value="valor4">Valor 4</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="script.js"></script>
+    <script src="multijs.js"></script>
+    <script>
+        var GVEEV = [];
+        new MultiSelectTag('estilodoevento', {
+    rounded: true,    // default true
+    shadow: true,      // default false
+    placeholder: 'Search',  // default Search...
+    tagColor: {
+        textColor: '#327b2c',
+        borderColor: '#92e681',
+        bgColor: '#eaffe6',
+    },
+    onChange: function(values) {
+        //console.log(values)
+        //GVEEV = [ ];
+        values.map((estilo) => {
+        //    return(estilo.value);
+        GVEEV.push(estilo.value) ;
+        })
+    }
+})
+    window.onload= codigo(GVEEV)
+    </script>
+</body>
+
+</html>
