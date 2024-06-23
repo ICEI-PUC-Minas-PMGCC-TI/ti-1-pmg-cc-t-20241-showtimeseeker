@@ -5,12 +5,27 @@ const GV_areadoseventosparaedicao = document.getElementById('GV_visualizarmodifi
 var GV_verificacaodemodificacao = 0;
 var GV_objetoeventoindex;
 
+function GV_idindexevento(GV_id)
+{
+    let GV_dadosdoeventobuscarid = lerdadosevento().evento;
+    let GV_indexpararetornar = -1;
+    let GV_contador = 1;
+    do
+    {
+        if(GV_dadosdoeventobuscarid[GV_contador].id == GV_id)
+        {
+            GV_indexpararetornar = GV_contador;
+        }
+        GV_contador = GV_contador + 1;
+    }
+    while(GV_contador < GV_dadosdoeventobuscarid.length && GV_indexpararetornar == -1);
+    return(GV_indexpararetornar);
+}
 
 function GV_modificardeterminadoevento(dadosdonovoevento, GV_idxdoevento){
     let objdados = lerdadosevento();
     let GV_existe = true;
     let GV_i = 0;
-    console.log(objdados.evento[0]);
     do
     {
             if(objdados.evento && objdados.evento != [] && GV_i != GV_idxdoevento)
@@ -55,6 +70,8 @@ function lerdadosevento()
                                         data: "",
                                         descricao: "",
                                         fotos: [],
+                                        id: 0,
+                                        linkcontato: "",
                                         estilodoevento: [],
                                         visualizacoes: 0,
                                         favoritos: 0,
@@ -68,9 +85,11 @@ function lerdadosevento()
                                         valor: 50,
                                         moeda: "R$"
                                     },
-                                    data: "2024-06-06",
+                                    data: "2024-08-06",
                                     descricao: "Em Maio temos mais um encontro marcado no Rancho Bill para comemorarmos o Bday do Felipe Arruda.\nUm super line, numa junção de muita vibe que o Rancho já tem, com a vibe que BH inteira já conhece das nossas festas. \nVai ser mais um DOMINGO de muita vibe, alegria e uma comemoração inesquecível.",
-                                    fotos: ["https://source.unsplash.com/random/1000x600?sig=0", "https://source.unsplash.com/random/1000x600?sig=1"],
+                                    fotos: ["https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F451776649%2F1408553967403%2F1%2Foriginal.20230222-065803?w=600&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C238%2C1080%2C540&s=d44826119d6bec5f86d3faf2729717d7", "https://hips.hearstapps.com/hmg-prod/images/701/pool-party1-1499900484.jpg"],
+                                    id: 1718186424176,
+                                    linkcontato: "https://www.instagram.com/",
                                     estilodoevento: ["2", "3"],
                                     visualizacoes: 0,
                                     favoritos: 0,
@@ -84,9 +103,11 @@ function lerdadosevento()
                                         valor: 0,
                                         moeda: "R$"
                                     },
-                                    data: "2024-05-19",
+                                    data: "2024-08-19",
                                     descricao: "Venha se juntar a nós para celebrar a tradição e a alegria da Festa Junina do Rotary Club de Belo Horizonte - Barro Preto! No dia 8 de junho de 2024, a partir das 14h, o Colégio São Paulo, localizado na Rua Olímpio de Assis 190, Cidade Jardim, Belo Horizonte/MG, será o palco para essa festa cheia de diversão e cultura.",
-                                    fotos: ["https://source.unsplash.com/random/1000x600?sig=2", "https://source.unsplash.com/random/1000x600?sig=3"],
+                                    fotos: ["https://fashionistando.uai.com.br/wp-content/uploads/sites/11/2018/06/festa-junina-camarim.jpg", "https://soubh.uai.com.br/uploads/post/image/14267/festas_juninas_em_bh_ingressos_onde_ir.jpg"],
+                                    id: 1718186421301,
+                                    linkcontato: "https://www.instagram.com/",
                                     estilodoevento: ["1", "3"],
                                     visualizacoes: 0,
                                     favoritos: 0,
@@ -100,9 +121,11 @@ function lerdadosevento()
                                         valor: 800,
                                         moeda: "R$"
                                     },
-                                    data: "2024-07-08",
+                                    data: "2024-08-08",
                                     descricao: "Apresento a vocês nosso projeto K-pop Brasil Fest que vem com tudo no bairro de Niterói, em um novo local com um auditório belíssimo para confortar vocês que amam K-pop e cultura Coreana",
-                                    fotos: ["https://source.unsplash.com/random/1000x600?sig=3", "https://source.unsplash.com/random/1000x600?sig=4"],
+                                    fotos: ["https://f.i.uol.com.br/fotografia/2019/11/05/15729835355dc1d2efabe3b_1572983535_3x2_md.jpg", "https://f.i.uol.com.br/fotografia/2019/09/30/15698728845d925bf4d6793_1569872884_3x2_md.jpg"],
+                                    id: 1718186419035,
+                                    linkcontato: "https://www.instagram.com/",
                                     estilodoevento: ["1", "4"],
                                     visualizacoes: 0,
                                     favoritos: 0,
@@ -125,7 +148,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
             {
                 let GV_objevento = GV_arrayeventos[GV_imeventoedit];
                 GV_stringeventosparaedicao = GV_stringeventosparaedicao + `
-                        <div class="GV_exibicaodadosdoseventos" data-index = "${GV_imeventoedit}">
+                        <div class="GV_exibicaodadosdoseventos" data-index = "${GV_objevento.id}">
                                 <div class="GV_titulodecadaevento">
                                         <h3>${GV_objevento.nome_do_evento}</h3>
                                 </div>
@@ -189,6 +212,9 @@ function codigo(estilosdoseventovalores){
     const campodescricaoevento = document.querySelector('textarea#descricao');
     const labeldescricaoevento = document.querySelector('label.descricao');
 
+    const GV_campolinkcontato = document.querySelector('input.GV_linkcontato')
+    const GV_labellinkcontato = document.querySelector('label.GV_linkcontato')
+
     const campoimagemevento = document.querySelector('input#fotos');
     const labelimagemevento = document.querySelector('label.fotos');
     const amostraimagemevento = document.querySelector('div.mostrarfotos');
@@ -206,8 +232,6 @@ function codigo(estilosdoseventovalores){
     const terceiraparte = document.getElementById('terceiraparte');
 
 
-    jsonSer
-
     
     
     var listaimagensevento = [];
@@ -215,11 +239,11 @@ function codigo(estilosdoseventovalores){
     
     
     
-    var vnomedoevento = false, vlocaldoevento = false, vgastomedio = true, vestiloevento = false, vdescricaoevento = false, vimagensevento = false, vdataevento = false;
+    var vnomedoevento = false, vlocaldoevento = false, vgastomedio = true, vestiloevento = false, vdescricaoevento = false, vimagensevento = false, vdataevento = false, GV_vlinkcontato = false;
 
 
-    
     GV_mostrareventosparaedicao(lerdadosevento().evento)
+    salvardadosevento(lerdadosevento());
 
     const GV_botaoexcluirevento = document.querySelector('.GV_botaoparaexcluiroevento');
 
@@ -232,6 +256,7 @@ function codigo(estilosdoseventovalores){
             campodataevento.value = '';
             campogastomedio.value = '0.00';
             campodescricaoevento.value = '';
+            GV_campolinkcontato.value = '';
             campoimagemevento.value = '';
             listaimagensevento = [];
             amostraimagemevento.innerHTML = '<span id="gv_espaco">&ensp;</span>'
@@ -252,6 +277,15 @@ function codigo(estilosdoseventovalores){
         avancar1.style.display = 'inline';
         avancar2.style.display = 'none';
         botaocriarevento.style.display = 'none';
+        avisoavancar.innerHTML = '';
+        GV_vlinkcontato = false;
+        vnomedoevento = false;
+        vlocaldoevento = false;
+        vgastomedio = true;
+        vestiloevento = false;
+        vdescricaoevento = false;
+        vimagensevento = false;
+        vdataevento = false;
     })
 
 //Formatar data
@@ -269,10 +303,10 @@ function codigo(estilosdoseventovalores){
                 let GV_indexdoevento;
                 let GV_oquefoiclicado = GV_informacao.target;
                 if(GV_oquefoiclicado.getAttribute('class') == 'GV_botaoparaexcluiroevento'){
-                        GV_indexdoevento = GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index')
+                        GV_indexdoevento = GV_idindexevento(GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index'));
                         GV_deletareventos(GV_indexdoevento);
                 } else if (GV_oquefoiclicado.getAttribute('class') == 'GV_botaoparamodificaroevento'){
-                        GV_indexdoevento = GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index')
+                        GV_indexdoevento = GV_idindexevento(GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index'));
                         limparformulario();
                         GV_containerformulario.style.display = 'block';
                         GV_fundoescuro.style.display = 'block';
@@ -292,6 +326,7 @@ function codigo(estilosdoseventovalores){
                         campogastomedio.value = GV_objetoeventoindex.preco.valor
                         campodataevento.value = GV_objetoeventoindex.data
                         campodescricaoevento.value = GV_objetoeventoindex.descricao
+                        GV_campolinkcontato.value = GV_objetoeventoindex.linkcontato
                         listaimagensevento = GV_objetoeventoindex.fotos
                         for(let GV_imagem of listaimagensevento){
                             if(document.getElementById('gv_espaco')){
@@ -299,12 +334,13 @@ function codigo(estilosdoseventovalores){
                             }
                             amostraimagemevento.innerHTML = amostraimagemevento.innerHTML + `<img src="${GV_imagem}" alt="" class="imagensdoseventos">` 
                         }
-                        vnomedoevento = true
-                        vlocaldoevento = true
-                        vgastomedio = true 
-                        vestiloevento = true 
-                        vdescricaoevento = true
-                        vimagensevento = true
+                        GV_vlinkcontato = true;
+                        vnomedoevento = true;
+                        vlocaldoevento = true;
+                        vgastomedio = true;
+                        vestiloevento = true;
+                        vdescricaoevento = true;
+                        vimagensevento = true;
                         vdataevento = true;
                         botaocriarevento.innerText = 'Modificar';
                 }
@@ -313,12 +349,21 @@ function codigo(estilosdoseventovalores){
 //Adicionar imagem ao evento
     adicionarimagemevento.addEventListener('click', () => {
         listaimagensevento.push(campoimagemevento.value);
-        if(document.getElementById('gv_espaco')){
-        document.getElementById('gv_espaco').remove();
+        let urlPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+        if(urlPattern.test(campoimagemevento.value))
+        {
+            if(document.getElementById('gv_espaco')){
+                document.getElementById('gv_espaco').remove();
+                }
+                amostraimagemevento.innerHTML = amostraimagemevento.innerHTML + `<img src="${campoimagemevento.value}" alt="" class="imagensdoseventos">` 
+                campoimagemevento.value = '';
+                labelimagemevento.innerHTML = '';
         }
-        amostraimagemevento.innerHTML = amostraimagemevento.innerHTML + `<img src="${campoimagemevento.value}" alt="" class="imagensdoseventos">` 
-        console.log(listaimagensevento);
-        campoimagemevento.value = '';
+        else
+        {
+            GV_vlinkcontato = false;
+            labelimagemevento.innerHTML = '*Insira um link válido';
+        }
     })
 
 //Excluir a ultima imagem adicionada ao evento
@@ -391,7 +436,6 @@ function codigo(estilosdoseventovalores){
         if(campodataevento.value == ''){
                 vdataevento = false;
         } else {
-                console.log('preencheu');
                 vdataevento = true;
         }
     })
@@ -399,7 +443,6 @@ function codigo(estilosdoseventovalores){
         if(campodataevento.value == ''){
                 vdataevento = false;
         } else {
-                console.log('preencheu');
                 vdataevento = true;
         }
     })
@@ -410,7 +453,19 @@ function codigo(estilosdoseventovalores){
                 labeldescricaoevento.innerHTML = '*Insira no mínimo 100 caracteres';
                 vdescricaoevento = false;
         } else if(campodescricaoevento.value.length > 350){
-                labeldescricaoevento.innerHTML = '*Insira no máximo 250 caracteres';
+                labeldescricaoevento.innerHTML = '*Insira no máximo 350 caracteres';
+                vdescricaoevento = false;
+        } else{
+                labeldescricaoevento.innerHTML = '';
+                vdescricaoevento = true;
+        }
+    });
+    campodescricaoevento.addEventListener('change', () => {
+        if(campodescricaoevento.value.length < 100){
+                labeldescricaoevento.innerHTML = '*Insira no mínimo 100 caracteres';
+                vdescricaoevento = false;
+        } else if(campodescricaoevento.value.length > 350){
+                labeldescricaoevento.innerHTML = '*Insira no máximo 350 caracteres';
                 vdescricaoevento = false;
         } else{
                 labeldescricaoevento.innerHTML = '';
@@ -418,6 +473,33 @@ function codigo(estilosdoseventovalores){
         }
     });
 
+//Validacao do link de contato
+    GV_campolinkcontato.addEventListener('blur', () =>{
+        let urlPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+        if(urlPattern.test(GV_campolinkcontato.value))
+        {
+            GV_vlinkcontato = true;
+            GV_labellinkcontato.innerHTML = '';
+        }
+        else
+        {
+            GV_vlinkcontato = false;
+            GV_labellinkcontato.innerHTML = '*Insira um link válido';
+        }
+    })
+    GV_campolinkcontato.addEventListener('change', () =>{
+        let urlPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+        if(urlPattern.test(GV_campolinkcontato.value))
+        {
+            GV_vlinkcontato = true;
+            GV_labellinkcontato.innerHTML = '';
+        }
+        else
+        {
+            GV_vlinkcontato = false;
+            GV_labellinkcontato.innerHTML = '*Insira um link válido';
+        }
+    })
 
 //Limpar dados e retornar ao precionar cancelar
     GV_cancelar.addEventListener('click', GV_cancelar => {
@@ -425,6 +507,7 @@ function codigo(estilosdoseventovalores){
         GV_containerformulario.style.display = 'none';
         GV_fundoescuro.style.display = 'none';
         GV_html.style.overflowY = 'auto'
+        avisoavancar.innerHTML = '';
     });
 
 //Validar os dados e ir para pagina 2
@@ -462,7 +545,7 @@ function codigo(estilosdoseventovalores){
 
 //Validar os dados e ir para pagina 3
     avancar2.addEventListener('click', proximapagina2 => {
-        if(vdescricaoevento){
+        if(vdescricaoevento && GV_vlinkcontato){
                 avisoavancar.innerHTML = '';
                 segundaparte.style.display = 'none';
                 terceiraparte.style.display = 'inherit';
@@ -512,9 +595,9 @@ function codigo(estilosdoseventovalores){
         criar1.preventDefault();
 
 //Validacao geral na hora de criar um evento
-        console.log(estilosdoseventovalores);
-        if(vnomedoevento && vlocaldoevento && vestiloevento && vgastomedio && vdescricaoevento && vimagensevento && vdataevento){
+        if(vnomedoevento && vlocaldoevento && vestiloevento && vgastomedio && vdescricaoevento && GV_vlinkcontato && vimagensevento && vdataevento){
 
+            avisoavancar.innerHTML = '';
 //Pegar o objeto JavaScript gerado pelo formulario
         const formdata = new FormData(formulario);
         var dadosdosformularios = Object.fromEntries(formdata);
@@ -536,8 +619,10 @@ function codigo(estilosdoseventovalores){
             dadosdosformularios.favoritos = GV_objetoeventoindex.favoritos;
             dadosdosformularios.comentarios = GV_objetoeventoindex.comentarios;
             dadosdosformularios.donodoevento = GV_objetoeventoindex.donodoevento;
+            dadosdosformularios.id = GV_objetoeventoindex.id;
             GV_modificardeterminadoevento(dadosdosformularios, GV_verificacaodemodificacao);
         }else{
+            dadosdosformularios.id = Date.now();
             dadosdosformularios.visualizacoes = 0;
             dadosdosformularios.favoritos = 0;
             dadosdosformularios.comentarios = [];
@@ -554,7 +639,6 @@ function codigo(estilosdoseventovalores){
                 botaocriarevento.style.display = 'inline';
                 avisoavancar.innerHTML = '<span>*Preencha todos os campos</span>';
         }
-        
     });    
 
     preco.addEventListener('change', function(){
@@ -563,13 +647,15 @@ function codigo(estilosdoseventovalores){
         }
         preco.value = parseFloat(preco.value).toFixed(2);
     })
+
+    
 }
 
 function adicionarevento(dadosdonovoevento){
         let objdados = lerdadosevento();
         let GV_existe = true;
         let GV_i = 0;
-        console.log(objdados.evento[0]);
+        //console.log(objdados.evento[0]);
         do
         {
                 if(objdados.evento && objdados.evento != [])
@@ -974,7 +1060,7 @@ const GV_teste = document.getElementById('GV_limparchecbox');
         let GV_indexdoevento;
         let GV_oquefoiclicado = GV_informacao.target;
         if (GV_oquefoiclicado.getAttribute('class') == 'GV_botaoparamodificaroevento'){
-            GV_indexdoevento = GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index');
+            GV_indexdoevento = GV_idindexevento(GV_oquefoiclicado.parentNode.parentNode.getAttribute('data-index'));
             GV_modificarosgostos(lerdadosevento().evento[GV_indexdoevento].estilodoevento);
         }
     })

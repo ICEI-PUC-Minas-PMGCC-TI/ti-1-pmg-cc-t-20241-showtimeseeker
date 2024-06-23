@@ -292,13 +292,16 @@ div.GV_containerdoform{
     left: 50%;
     transform: translate(-50%, -50%); 
     background-color: white;
-    display: none; /*block*/
+    display: none; /*none*/
 }
 div.GV_containerdoform > form.criarevento{
     font-family: Arial, Helvetica, sans-serif;
 }
+div.GV_containerdoform div.primeiraparte{
+    display: block; /*block*/
+}
 div.GV_containerdoform div.segundaparte{
-    display: none;
+    display: none; /*none*/
 }
 div.GV_containerdoform div.terceiraparte{
     display: none;
@@ -433,6 +436,24 @@ div.GV_containerdoform textarea.descricao{
     max-height: 150px;
 }
 
+div.GV_containerdoform .GV_linkcontato
+{
+    width: 95%;
+    display: block;
+}
+
+div.GV_containerdoform label.GV_linkcontato
+{
+    margin: auto;
+}
+
+div.GV_containerdoform input.GV_linkcontato
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px auto 5px auto;
+}
+
 div.GV_containerdoform #GV_retroceder2, #GV_retroceder1{
     display: none;
     margin-bottom: 10px;
@@ -465,7 +486,9 @@ div.GV_containerdoform div.mostrarfotos{
 }
 
 div.GV_containerdoform label.fotos{
-    display: none;
+    display: block;
+    margin: auto;
+    width: 95%;
 }
 
 div.GV_containerdoform div.mostrarfotos> img{

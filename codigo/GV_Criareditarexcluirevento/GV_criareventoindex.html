@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="container-logo">
-            <a href="index.html"><img id="GV_logo" src="../img/Logo-preta-sem-fundo.png" alt="logo"></a>
+            <a href="index.html"><img id="GV_logo" src="./img/Logo-preta-sem-fundo.png" alt="logo"></a>
         </div>
     </header>
     <main>
@@ -119,10 +119,13 @@
             <div class="segundaparte" id="segundaparte">
                 <label for="descricao" class="descricao"></label>
                 <textarea name="descricao" id="descricao" minlength="100" maxlength="350" rows="10" cols="25" class="descricao" placeholder="Descrição"></textarea>
+
+                <label for="linkcontato" class="GV_linkcontato"></label>
+                <input type="url" name="linkcontato" id="GV_linkcontato" class="GV_linkcontato" placeholder="Link de contato">
             </div>
             <div class="terceiraparte" id="terceiraparte">
                 <label for="fotos" class="fotos"></label>
-                <input type="url" name="fotos" id="fotos" class="fotos">
+                <input type="url" name="fotos" id="fotos" class="fotos" placeholder="Link da imagem">
                 <div class="mostrarfotos" id="mostrarfotos">
                     <!--<img src="https://source.unsplash.com/random/1000x600?sig=0" alt="">;-->
                     <span id="gv_espaco">&ensp;</span>
@@ -170,7 +173,6 @@
         GVEEV.push(estilo.value) ;
         
         })
-        console.log(GVEEV)
     }
 })
     window.onload= codigo(GVEEV)
