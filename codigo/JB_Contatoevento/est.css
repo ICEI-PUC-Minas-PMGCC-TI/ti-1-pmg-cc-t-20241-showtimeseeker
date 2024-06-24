@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(7, 7, 90);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.evento {
+    margin-bottom: 30px;
+}
+
+.evento h2 {
+    color: #333;
+}
+
+.evento p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: rgb(7, 7, 90);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
