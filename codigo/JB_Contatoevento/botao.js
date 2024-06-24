@@ -2,7 +2,7 @@
 function exibirModal() {
     var modal = document.getElementById("modal");
     modal.style.display = "block";
-    exibirOpcoes(); // Exibe as opções padrão ao abrir o modal
+    exibirOpcoes(); 
 }
 
 // Função para fechar a modal e limpar seu conteúdo
@@ -10,7 +10,7 @@ function fecharModal() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
     var modalContent = document.getElementById("modal-content");
-    modalContent.innerHTML = ""; // Limpa o conteúdo do modal
+    modalContent.innerHTML = "";
 }
 
 // Função para exibir as opções padrão no modal (enviar email e redes sociais)
