@@ -1,0 +1,280 @@
+@charset "UTF-8";
+:root{
+    --cor1: #0554F2;
+    --cor2: #076DF2;
+    --cor3: #3889F2;
+    --cor4: #F2F2F2;
+    --cor5: #0D0D0D;
+    --cor6: #fff;
+    --cor7: #000;
+    --cor8: #05025F;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: var(--cor5);
+    height: 500vh;
+}
+img#logo{
+    width: 100px;
+}
+header{
+    background-color: var(--cor8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 50;
+}
+
+/*
+Botões entrar e criar - Inicio
+*/
+
+div.entrarcriar button {
+    appearance: button;
+    background-color: var(--cor6);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: var(--cor7);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    transition: background-color 0.3s;
+    transition: box-shadow 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-right: 10px;
+   }
+   
+   /*
+   div.entrarcriar button:after {
+    background-clip: padding-box;
+    background-color: var(--cor6);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+   }*/
+   
+   div.entrarcriar button:main, button:focus {
+    user-select: auto;
+   }
+   
+   div.entrarcriar button:hover:not(:disabled) {
+    filter: brightness(1.1);
+   }
+   
+   div.entrarcriar button:disabled {
+    cursor: auto;
+   }
+   
+   div.entrarcriar button:active:after {
+    border-width: 0 0 0px;
+   }
+   
+   div.entrarcriar button:active {
+    padding-bottom: 10px;
+   }
+   div.entrarcriar button:hover:after{
+    
+    transition: all 0.3;
+   }
+   div.entrarcriar button:hover{
+    background-color: var(--cor7);
+    color: var(--cor6);
+    box-shadow: 0px 10px 10px var(--cor3);
+    transition: all 0.3;
+   }
+   
+/*
+Botões entrar e criar - Fim
+*/
+
+
+
+/*Botão de filtro*/
+.filter {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cor4);
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.021);
+    transition: all 0.3s;
+  }
+  
+  .filter svg {
+    height: 16px;
+    fill: var(--cor5);
+  }
+  .filter:hover {
+    box-shadow: 0px 10px 10px var(--cor3);
+    background-color: var(--cor5);
+    border: 1px solid var(--cor5);
+  }
+  .filter:hover svg {
+    fill: var(--cor4);
+  }
+
+
+
+/*Menu Lateral - Inicio*/
+  
+  aside{
+    position: fixed;
+    right: 0px;
+    top: 100px;
+    z-index: 100;
+  }
+  #menuativado{
+    display: none;
+  }
+  aside div.opcoesmenu{
+    background-color: var(--cor8);
+    height: 100vh;
+    display: none;
+    float: right;
+  }
+  label.iconesmenu span{
+    font-size: 3em;
+    background-color: var(--cor6);
+    position: relative;
+    top: 10vh;
+
+  }
+  #menuativado:not(:checked) ~ label.iconesmenu span:nth-child(1){
+    display: none;
+  }
+  #menuativado:not(:checked) ~ label.iconesmenu span:nth-child(2){
+    display: inline;
+  }
+  #menuativado:checked ~ label.iconesmenu span:nth-child(2){
+    display: none;
+  }
+  #menuativado:checked ~ label.iconesmenu span:nth-child(1){
+    display: inline;
+  }
+  #menuativado:not(:checked) ~ div.opcoesmenu{
+    display: block;
+  }
+
+  div.opcoesmenu ul{
+    list-style: none;
+    padding: 0px;
+  }
+  div.opcoesmenu ul li{
+    border-bottom: 2px solid white;
+    padding-right: 100px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+  }
+  div.opcoesmenu ul li:nth-child(1){
+    background-color: #08038d;
+  }
+  div.opcoesmenu ul li a{
+    color: white;
+  }
+
+/*Menu Lateral - Fim*/
+
+  main{
+    background-color: var(--cor5);
+    padding-top: 100px;
+  }
+
+
+
+  /*landing-page*/
+  div.logo-2 {
+    display: flex;
+    justify-content: center;
+  }
+  div.logo-2 img{
+    width: 250px;
+  }
+  div.texto{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor4);
+  }
+  div.texto2{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align:justify;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #7B7777;
+    width: 600px;
+    font-size: 30px;
+  }
+  div.textos{
+    display: flex;
+    justify-content: center;
+  }
+  div.landing-page{
+    height: 100vh;
+    background: url(/img/fundo-landing-page.png);
+    width: 100%;
+  }
+
+
+  /*Card principal*/
+  img#card-imagem{
+    height: 400px;
+  }
+  div#card-container{
+    border: solid 5px var(--cor7);
+    margin-bottom: 40px;
+    z-index:0;
+  }
+  div#card-container{
+    width: 1331px;
+  }
+  div#card-pos{
+    display: flex;
+    justify-content: center;
+  }
+
+  /*Card menor*/
+  div#card-menor{
+    width: 450px;
+  }
+  div#cards-menores-container{
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+  }

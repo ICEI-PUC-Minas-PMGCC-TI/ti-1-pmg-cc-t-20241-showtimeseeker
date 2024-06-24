@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loguin</title>
+    <link rel="stylesheet" href="/pcrs/style_login.css">
+    <script src="/pcrs/ED_Cadastro.js"></script>
+</head>
+    <body>
+    
+        <form id="formulario">
+            <h3>Criar conta</h3>
+            <input type="text" placeholder="username" id="username">
+            <input type="password" placeholder="senha" id="senha_criar">
+            <input type="text" placeholder="email" id="email">
+                <div class="preco-medio">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>R$</option>
+                        <option value="1">$</option>
+                        <option value="2">€</option>
+                      </select>
+                    <input type="number" placeholder="0,00" id="preco-médio-usuario">
+                </div>
+                <select name="gostos" id="gostos">
+                    <option value="valor 1">valor 1</option>
+                    <option value="valor 2">valor 2</option>
+                    <option value="valor 3">valor 3</option>
+                    <option value="valor 4">valor 4</option>
+                </select>
+            <input type="submit" onclick="cadastro()">
+        </form>
+
+
+    <script>var ED_gostos = [];
+    new MultiSelectTag('gostos', {
+        rounded: true,    // default true
+        shadow: true,      // default false
+        placeholder: 'Search',  // default Search...
+        tagColor: {
+            textColor: '#327b2c',
+            borderColor: '#92e681',
+            bgColor: '#eaffe6',
+        },
+        onChange: function(values) {
+            values.map((estilo) => { 
+                ED_gostos.push(estilo.value);
+            } )
+                console.log(ED_gostos);
+            }
+    })
+    //window.onload = codigo(ED_gostos)
+    </script>
+    </body>
+</html>
