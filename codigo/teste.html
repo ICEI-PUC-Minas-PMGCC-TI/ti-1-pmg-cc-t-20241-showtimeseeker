@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .counter {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="counter">
+        <h1>Contador de Visitas</h1>
+        <p>Esta página foi carregada <span id="visit-count">0</span> vezes.</p>
+    </div>
+
+    <script>document.addEventListener('DOMContentLoaded', (event) => {
+            let visitCount = localStorage.getItem('visitCount');
+            if (visitCount === null) {
+                visitCount = 0;
+            } else {
+
+                visitCount = parseInt(visitCount, 10);
+            }
+
+
+            visitCount++;
+
+
+            localStorage.setItem('visitCount', visitCount);
+
+
+            document.getElementById('visit-count').textContent = visitCount;
+        });
+    </script>
+</body>
+
+</html>
