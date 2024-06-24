@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Pesquisa</title>
+    <link rel="stylesheet" href="barra.css">
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" class="barra" placeholder="Buscar locais de entretenimento...">
+        <button class="search-button">Buscar</button>
+    </div>
+    
+    <div class="erro" style="display: none;">"Erro"</div>
+
+    <div class="caixa-sugestao" id="caixasugestao">
+        <div class="titulosugestao">Sugestões de Busca</div>
+        <div id="sugestoes" class="sugestoes"></div>
+    </div>
+
+    <div class="caixa-historico" id="caixahistorico" style="display: none;">
+        <div class="titulo-historico">Histórico</div>
+        <div id="historico" class="historico"></div>
+        <button id="limpar">Limpar</button>
+    </div>   
+
+    <script src="barra.js"></script>
+</body>
+</html>
