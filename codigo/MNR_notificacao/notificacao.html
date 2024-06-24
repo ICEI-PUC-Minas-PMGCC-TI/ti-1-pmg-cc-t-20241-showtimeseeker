@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notificação de Eventos</title>
+    <link rel="stylesheet" href="notificacao.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Notificação de Eventos</h1>
+    </header>
+    <main>
+        <section id="events">
+            <h2>Próximos Eventos</h2>
+            <div class="event" data-event-date="2024-06-12T15:00:00">
+                <h3>Evento 1</h3>
+                <button class="favorite-btn">Favoritar</button>
+            </div>
+            <div class="event" data-event-date="2024-06-14T18:00:00">
+                <h3>Evento 2</h3>
+                <button class="favorite-btn">Favoritar</button>
+            </div>
+            <!-- Adicione mais eventos conforme necessário -->
+        </section>
+    </main>
+    <div id="notification" class="hidden"></div>
+    <script src="notificacao.js"></script>
+</body>
+</html>
