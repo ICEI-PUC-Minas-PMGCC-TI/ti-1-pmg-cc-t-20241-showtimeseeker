@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba de Comentários</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="comments-section">
+        <h2>Comentários</h2>
+        <div id="loginSection">
+            <form id="loginForm">
+                <input type="text" id="usernameInput" placeholder="Digite seu nome de usuário" required>
+                <input type="password" id="passwordInput" placeholder="Digite sua senha" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+            <p>Não tem conta? <a href="registro.html">Registre-se aqui</a></p>
+        </div>
+        <div id="commentSection" style="display: none;">
+            <p>Logado como: <span id="usernameDisplay"></span></p>
+            <form id="commentForm">
+                <textarea id="commentInput" placeholder="Digite seu comentário..." required></textarea>
+                <button type="submit">Adicionar Comentário</button>
+            </form>
+            <ul id="commentsList"></ul>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
