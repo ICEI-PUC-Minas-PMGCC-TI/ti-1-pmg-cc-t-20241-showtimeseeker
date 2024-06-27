@@ -221,7 +221,17 @@ div.GV_exibicaodadosdoseventos{
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-div.GV_verfavoritos{
+div.GV_dadosfavvisu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+div.GV_dadosfavvisu > div {
+    text-align: center;
+}
+
+/*div.GV_verfavoritos{
     grid-column: 2;
     display: flex;
     justify-content: center;
@@ -233,7 +243,7 @@ div.GV_vervisualizacoes{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 div.GV_botoesdealteracao{
     grid-column: 2;
@@ -241,6 +251,7 @@ div.GV_botoesdealteracao{
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    margin: 10px 0px 10px 0px;
 }
 
 div.GV_botoesdealteracao > button{
@@ -264,7 +275,8 @@ div.GV_botoesdealteracao > button:hover{
 }
 
 div.GV_grafico{
-
+    display: flex;
+    justify-content: space-evenly;
 }
 
 div.chart{
@@ -272,7 +284,7 @@ div.chart{
     justify-content: space-between;
     align-items: flex-end;
     width: 50%;
-    height: 600px;
+    height: 200px;
     margin: 50px;
     padding-left: 20px;
     padding-right: 20px;

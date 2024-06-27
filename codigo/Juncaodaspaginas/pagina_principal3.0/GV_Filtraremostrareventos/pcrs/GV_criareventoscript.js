@@ -22,6 +22,12 @@ function GV_idindexevento(GV_id)
     return(GV_indexpararetornar);
 }
 
+function GV_salvardadosdousuarioatual(GV_usuarioatual){
+    let GV_objdadosusuario = lerdadosevento();
+    GV_objdadosusuario.usuario = GV_usuarioatual;
+    salvardadosevento(GV_objdadosusuario);
+}
+
 function GV_modificardeterminadoevento(dadosdonovoevento, GV_idxdoevento){
     let objdados = lerdadosevento();
     let GV_existe = true;
@@ -109,7 +115,7 @@ function lerdadosevento()
                                         total: 0,
                                         gosto1: 7,
                                         gosto2: 90,
-                                        gosto3: 3,
+                                        gosto3: 50000,
                                         gosto4: 50,
                                         gosto5: 0,
                                         gosto6: 0,
@@ -198,7 +204,7 @@ function lerdadosevento()
 
 function GV_mostrareventosparaedicao(GV_arrayeventos){
         const GV_areadoseventosparaedicao = document.getElementById('GV_visualizarmodificareventos');
-        
+        var fatorEscala = 0.002;
         let GV_stringeventosparaedicao = '';
         for(let GV_imeventoedit = 1; GV_imeventoedit < GV_arrayeventos.length; GV_imeventoedit = GV_imeventoedit + 1)
             {
@@ -216,28 +222,25 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                                         <div class="bar" id="gosto-4" ></div>
                                     </div>
                                 </div>
-                                <div class="GV_verfavoritos">
+                                <div class="GV_dadosfavvisu">
+                                    <div class="GV_verfavoritos">
+                                        Quantidade de favoritos: 
                                         <span class="material-symbols-outlined">
-                                                star
-                                        </span>Número de pessoas que favoritaram
-                                </div>
-                                <div class="GV_vervisualizacoes">
+                                            star
+                                        </span>${GV_objevento.favoritos}
+                                    </div>
+                                    <div class="GV_vervisualizacoes">
+                                        Quantidade de visualizacoes:
                                         <span class="material-symbols-outlined">
-                                                visibility
-                                        </span>Número de pessoas que visualizaram
+                                            visibility
+                                        </span>${GV_objevento.visualizacoes.total}
+                                    </div>
                                 </div>
                                 <div class="GV_botoesdealteracao">
                                         <button type="button" class="GV_botaoparamodificaroevento">Modificar</button>
                                         <button type="button" class="GV_botaoparaexcluiroevento">Excluir</button>
                                 </div>
                         </div>`;
-                        var ED_strid = '';
-                        //document.querySelector(`[data-index="${GV_objevento.id}"]`).style.backgroundColor = "blue"
-                        //ED_strid = `[data-index="${GV_objevento.id}"] gosto-`;
-                        //console.log(ED_strid + "1");
-                        //var ED_barra_1 = document.querySelector(ED_strid + '1');
-                        //ED_barra_1.style.height = "50px";
-                        //ajustarAlturaDasBarras(GV_objevento.id, GV_imeventoedit, GV_arrayeventos);
             }
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
@@ -282,7 +285,7 @@ function salvardadosevento(dados){
 }
 const avisoavancar = document.querySelector('div#aviso');
 
-var fatorEscala = 0.2;
+
 /*
 function ajustarAlturaDasBarras(ED_idevento, ED_indexevento, ED_arrayevento) {
 
@@ -1201,3 +1204,114 @@ function deslogar(){
  function ir_para_alteracao(){
     location.href = "editar_perfil.html";
  }
+
+
+
+function cadastro(ED_estilos){
+ 
+    // Coletar valores dos inputs
+    var  ED_username = document.getElementById('username').value;
+    var  ED_senha = document.getElementById('senha_criar').value;
+    var  ED_email = document.getElementById('email').value;
+    var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
+    var gostosSelect = document.getElementById('gostos');
+    var ED_gostos = ED_estilos;
+    //var ED_gostos = Array.from(gostosSelect.selectedOptions).map(option => option.value);
+    var ED_moeda = document.querySelector('.form-select').value;
+    
+    //variavel para saber se esta logado
+    var ED_logado = false;
+    console.log("--------");
+    console.log(ED_gostos);
+
+
+    //variavel para validação
+    var ED_username_conf = false, ED_senha_conf = false, ED_preco_conf = false;
+
+    //validação do username
+    if(ED_username.length < 5){
+        alert('ERRO: username deve ter mais que 5 caracteres');
+    }
+    else{
+        ED_username_conf= true;
+    }
+    
+    //validação da senha
+    if(ED_senha.length < 5){
+        alert('ERRO: senha deve ter mais que 5 caracteres');
+    }
+    else{
+        ED_senha_conf = true;
+    }
+
+    //validação preco
+    if(ED_precoMedio < 10){
+        alert('ERRO: valor muito baixo');
+    }
+    else{
+        ED_preco_conf = true;
+    }
+
+ 
+
+
+
+    if(ED_username_conf && ED_senha_conf && ED_preco_conf){
+         // Criar objeto usuário
+     const usuario = {
+        username: ED_username,
+        senha: ED_senha,
+        email: ED_email,
+        precoMedio: ED_precoMedio,
+        gostos: ED_gostos,
+        moeda: ED_moeda
+    };
+
+        
+    // Armazenar objeto usuário no localStorage
+    GV_salvardadosdousuarioatual(usuario);
+    //localStorage.setItem('usuario', JSON.stringify(usuario));
+        
+    ED_logado = true;
+    sessionStorage.setItem("logado", ED_logado);
+
+    location.href = "index.html";
+
+    // Exibir mensagem de sucesso 
+    alert('Usuário cadastrado com sucesso!');
+    }
+    else{
+        location.href = "cadastrar.html";
+    }
+
+ 
+}
+
+function logar (){
+    var login = document.getElementById('login').value;
+    var senha = document.getElementById('senha').value;
+    var ED_logado = false;
+    // Recupera o objeto do localStorage
+    var objetoArmazenado = localStorage.getItem('bd_ShowTimeSeeker');
+
+    // Converte o objeto de volta para um objeto 
+    var objetoJS = JSON.parse(objetoArmazenado).usuario;
+
+    //armazenar os valores das classes em uma variavel
+    var ED_senha_correta = objetoJS.senha;
+    var ED_usuario_correto = objetoJS.username; 
+    
+
+    if(login == ED_usuario_correto && senha == ED_senha_correta){
+        alert('bem vindo!');
+        location.href = "index.html";
+        ED_logado = true;
+        sessionStorage.setItem("logado", ED_logado);
+    }
+    else{
+        alert('Usuario ou senha incorretos');
+        ED_logado = false;
+        sessionStorage.setItem("logado", ED_logado);
+        location.href = "entrar.html";
+    }
+}
