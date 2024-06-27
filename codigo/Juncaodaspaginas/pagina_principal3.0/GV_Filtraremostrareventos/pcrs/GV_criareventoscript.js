@@ -1213,6 +1213,7 @@ function cadastro(ED_estilos){
     var  ED_username = document.getElementById('username').value;
     var  ED_senha = document.getElementById('senha_criar').value;
     var  ED_email = document.getElementById('email').value;
+    var ED_iD_usuario = 1;
     var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
     var gostosSelect = document.getElementById('gostos');
     var ED_gostos = ED_estilos;
@@ -1262,6 +1263,7 @@ function cadastro(ED_estilos){
         username: ED_username,
         senha: ED_senha,
         email: ED_email,
+        ID: ED_iD_usuario,
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
         moeda: ED_moeda
