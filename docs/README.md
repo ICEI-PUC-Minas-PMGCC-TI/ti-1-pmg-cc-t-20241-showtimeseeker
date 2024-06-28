@@ -285,13 +285,13 @@ Para desenvolver e implementar o "Show Time Seeker", é fundamental identificar 
 
 Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequadas que garantam a eficiência, segurança e escalabilidade da plataforma. A seguir, apresentamos as tecnologias recomendadas para cada componente do sistema:
 
-1. **Frontend**
+1. **Front end**
 
    - **Linguagens e Frameworks**: Utilizaremos js, conhecido como JavaScript  para construção de interfaces de usuário interativas e responsivas. JavaScript permite a criação de componentes reutilizáveis e facilita a manutenção e escalabilidade do código.
    - **Design**: O design da interface será criado utilizando CSS, uma biblioteca de componentes de interface do usuário que segue os princípios do Material Design do HTML. Isso garantirá uma experiência de usuário moderna e intuitiva.
    - **Responsividade**: Bootstrap será integrado para garantir que a aplicação seja responsiva e funcione bem em diferentes tamanhos de tela, incluindo dispositivos móveis.
 
-2. **Backend**
+2. **Back end**
 
    - **Banco de Dados**: Utilizaremos o local storage, em primeiro momento para conseguir apresentar o aplicativo, devido à sua flexibilidade e escalabilidade. O local storage irá armazenar dados de eventos, usuários e avaliações.
    - **Serviços de Notificações**: Utilizaremos a própria tela para enviar notificações push aos usuários sobre novos eventos e atualizações relevantes.
@@ -336,7 +336,7 @@ Testes de Integração: Verificação da interação entre diferentes módulos d
 
 Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes condições de carga.
 
-  ##Funcionalidades de Software
+  ## Funcionalidades de Software
 **Cadastro e Autenticação de Usuários**
 
 Cadastro de Produtores de Eventos: Os produtores podem se registrar na plataforma, criando contas personalizadas que lhes permitem gerenciar seus eventos.
@@ -385,7 +385,7 @@ Alertas sobre Eventos Próximos: Consumidores recebem alertas sobre eventos pró
 
 Notificações para Produtores: Produtores são notificados sobre novas avaliações e comentários, permitindo que acompanhem o feedback dos consumidores e façam ajustes quando necessário.
 
-##Requisitos Não Funcionais Implementados
+## Requisitos Não Funcionais Implementados
 1. **Desempenho**
 
 A plataforma carrega a página inicial em menos de 2 segundos, proporcionando uma experiência de usuário rápida e eficiente.
