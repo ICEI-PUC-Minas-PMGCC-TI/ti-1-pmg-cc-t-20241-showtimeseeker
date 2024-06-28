@@ -304,6 +304,15 @@ Botões entrar e criar - Fim
     text-shadow: 2px 2px 2px black;
   }
   
+  .GV_card_menor{
+    display: block;
+  }
+
+  a.nenhumadecoracao{
+    text-decoration: none;
+    color: white;
+  }
+
   /*Card menor*/
   div#card-menor{
     width: 450px;

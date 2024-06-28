@@ -173,20 +173,24 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
         {
             let GV_objevento = GV_arrayeventos[GV_imevento];
             //if(GV_gastosmediofiltro == "NaN"){console.log('cv')}
-            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "")){
+            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.includes(GV_dadosdabarradepesquisa))){
                 if(!GV_primeiroevento){
-                    GV_stringcardgrande = `<img src="${GV_objevento.fotos[0]}" id="card-imagem" class="card-img" alt="foto">
+                    GV_stringcardgrande = `
+                    <a href="evento.html?id=${GV_objevento.id}" class="nenhumadecoracao">
+                    <img src="${GV_objevento.fotos[0]}" id="card-imagem" class="card-img" alt="foto">
                     <div class="card-img-overlay">
                     <h5 class="card-title GV_titulocardgrande">${GV_objevento.nome_do_evento}</h5>
                     <p class="card-text GV_card-text">${GV_objevento.descricao.replaceAll('\n', '<br>')}</p>
-                    </div>`;
+                    </div>
+                    </a>`;
                     GV_primeiroevento = 1;
                     GV_iddoprimeiro = GV_objevento.id;
                 } 
                 else
                 {
                     GV_stringcards = GV_stringcards + `
-                    <div class="col" id="card-menor" data-index = "${GV_objevento.id}>
+                    <div class="col" id="card-menor">
+                        <a href="evento.html?id=${GV_objevento.id}" class="col GV_card_menor nenhumadecoracao">
                         <div class="card h-100">
                             <img src="${GV_objevento.fotos[0]}" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -194,6 +198,7 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                                 <p class="card-text">${GV_objevento.descricao.replaceAll('\n', '<br>')}</p>
                             </div>
                         </div>
+                        </a>
                     </div>`;
                     
                 }
