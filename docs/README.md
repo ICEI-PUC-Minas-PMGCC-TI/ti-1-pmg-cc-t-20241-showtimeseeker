@@ -19,41 +19,46 @@ O template para o site é estruturado e permite que a equipe evolua a documenta�
 Esta seção traz explicações breves sobre o conjunto de artefatos que precisam ser incluídos na documentação do projeto com uma conjunto de links importantes para que se entenda como criar cada coisa. 
 
 ## Problema
-
-A aplicação é voltada para principalmente para dois tipos de pessoas: as que buscam lugares para se entreterem e as responsáveis por criar eventos com esse fim, sendo a principal dificuldade conectar ambos os grupos e também agrada-los, visto que o primeiro encontra dificuldade na busca de lugares atendam seus interesses (localização, custos, temática, ambiente...), sem surpresas desagradáveis e o segundo busca a melhor forma de atingir, de forma numerosa, o público ideal para seu evento.
+A organização e a participação em eventos enfrentam diversos desafios. Para os produtores, a dificuldade reside na promoção eficaz dos seus eventos e na captação de um público amplo e engajado. Muitos eventos, mesmo com grande potencial, acabam não recebendo a visibilidade necessária. Por outro lado, os consumidores enfrentam problemas como falta de informações precisas, dificuldades na compra de ingressos e, em alguns casos, experiências negativas devido à má organização ou expectativas não atendidas. Esse desalinhamento pode transformar um momento de diversão em uma experiência frustrante.
 
 ## Objetivos
-
-O objetivo do ShowtimeSeeker é desenvolver um software que auxilie as pessoas na hora de encontrar novos eventos e divulgarem seus próprios eventos, fazendo uma filtragem de Gostos e região para maximizar a experiência do usuário nos eventos, e disponibilizando uma ferramenta fácil, rápida e simples de se divulgar o próprio evento de forma online.  
+O principal objetivo do "Show Time Seeker" é criar uma plataforma integrada e amigável que beneficie tanto produtores quanto consumidores de eventos. Para os organizadores, o aplicativo oferece ferramentas robustas para a divulgação e gestão dos seus eventos, garantindo maior alcance e engajamento. Para os consumidores, a plataforma proporciona um meio confiável e eficiente de descobrir, avaliar e participar de eventos, minimizando o risco de experiências negativas.
 
 ## Justificativa
+A justificativa para o desenvolvimento do "Show Time Seeker" está ancorada na necessidade crescente de uma solução que equilibre as demandas de visibilidade dos produtores e a busca por qualidade dos consumidores. Com a digitalização e o uso cada vez mais frequente de dispositivos móveis, um aplicativo especializado que reúna informações detalhadas, avaliações, e facilite a compra de ingressos é não apenas desejável, mas essencial. O "Show Time Seeker" vem preencher essa lacuna, oferecendo uma solução tecnológica moderna e eficaz que atende às necessidades de um mercado em expansão.
 
-A escolha desse modelo de aplicação foi feito, pois trabalha com contextos diferentes podendo ajudar em diferentes tipos de eventos sejam eles beneficentes ou com fins lucrativos conectando a sociedade de forma eficiente aos meios de diminuir o estresse, julgado atualmente como o mal do século pelo Conselho Federal de Medicina (CFM). Buscamos, portanto contribuir para mitigar esse mal fornecendo eventos ideais de lazer para cada tipo de pessoa a depender do seu gosto. 
+## Público-alvo
+O público-alvo do "Show Time Seeker" é diversificado, abrangendo:
 
-## Público-Alvo
+**Produtores de Eventos**
 
-Os públicos alvos da ShowtimeSeeker são divididos em dois, sendo a pessoa que procura eventos para se divertir e o empreendedor/dono de evento que procura uma maneira de divulgar o seu projeto.
+Organizadores de shows, festivais, conferências, feiras, eventos esportivos e culturais que buscam uma plataforma para promover seus eventos de maneira eficaz e alcançar um público maior.
 
-O primeiro dos públicos alvos é composto por homens e mulheres jovens de grandes cidades que procuram eventos em áreas mais centrais/movimentadas, procurando experiências que Atendam suas expectativas na qualidade e financeiro.
+**Consumidores de Eventos**
 
-Já o segundo grupo é composto por homens e mulheres empresários que procuram uma melhor forma para divulgar seu evento, de forma que essa divulgação acerte o máximo de pessoas ideias para o tipo de festa proposta.    
+Pessoas que frequentemente participam de eventos e buscam uma forma prática e confiável de descobrir novas opções, comprar ingressos e garantir uma boa experiência. Isso inclui desde adolescentes e jovens adultos interessados em shows e festivais até profissionais em busca de conferências e eventos corporativos.
+
+**Empresas e Patrocinadores** 
+
+Empresas que desejam associar suas marcas a eventos específicos ou alcançar um público-alvo através do patrocínio e parcerias.
 
 ## Artefatos do Design Thinking
+
 O desenvolvimento do "Show Time Seeker" envolveu a aplicação de diversas ferramentas e artefatos de Design Thinking para garantir uma solução centrada no usuário:
 
-**Empatia**: 
+**Empatia** 
 
 Entrevistas e pesquisas com produtores de eventos e consumidores para compreender suas necessidades, dores e expectativas.
 
-**Definição**:
+**Definição**
 
 Identificação clara dos problemas enfrentados por ambos os públicos-alvo e definição dos objetivos do aplicativo.
 
-**Ideação**:
+**Ideação**
 
 Sessões de brainstorming para gerar ideias inovadoras que atendam às necessidades identificadas.
 
-**Prototipagem**:
+**Prototipagem**
 
  Criação de protótipos de baixa e alta fidelidade do aplicativo para visualizar a solução e testar funcionalidades.
 
