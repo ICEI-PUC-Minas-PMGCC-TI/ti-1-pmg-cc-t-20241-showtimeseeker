@@ -214,15 +214,15 @@ Requisitos Funcionais
      Perfil do Usuário
 
 4. Permitir aos produtores criar e editar perfis de eventos.
-5: Permitir aos consumidores criar e editar perfis pessoais.
-6: Exibir histórico de eventos criados
+5. Permitir aos consumidores criar e editar perfis pessoais.
+6. Exibir histórico de eventos criados
 
          Gestão de Eventos
 
-7: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
-8: Permitir aos produtores editar e excluir eventos.
-9: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
-10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
+7. Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
+8. Permitir aos produtores editar e excluir eventos.
+9. Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
+10. Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
 
                    Descoberta de Eventos
 
@@ -232,8 +232,8 @@ Requisitos Funcionais
 
             Detalhes e Avaliação de Eventos
 
-14: Permitir aos consumidores visualizar detalhes completos do evento.
-15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
+14. Permitir aos consumidores visualizar detalhes completos do evento.
+15. Permitir aos consumidores avaliar e comentar sobre eventos participados.
 16. Exibir avaliações e comentários de outros consumidores.
 
                Notificações e Alertas
@@ -246,25 +246,25 @@ Requisitos Não Funcionais
 
                          Desempenho
 
-RNF01: A plataforma deve carregar a página inicial em menos de 2 segundos.
-RNF02: As operações de busca devem retornar resultados em até 1 segundo.
+1. A plataforma deve carregar a página inicial em menos de 2 segundos.
+2. As operações de busca devem retornar resultados em até 1 segundo.
 
                         Usabilidade
 
-RNF03: O design da interface deve ser intuitivo e fácil de usar.
+3. O design da interface deve ser intuitivo e fácil de usar.
                         Escalabilidade
 
                       Compatibilidade
 
-RNF04: A plataforma deve ser compatível com os principais navegadores (Chrome, Firefox, Safari).
-RNF05: O aplicativo deve ser compatível com dispositivos móveis Android e iOS.
+4. A plataforma deve ser compatível com os principais navegadores (Chrome, Firefox, Safari).
+5. O aplicativo deve ser compatível com dispositivos móveis Android e iOS.
                       Manutenibilidade
 
-RNF06: O código deve ser bem documentado e estruturado para facilitar a manutenção e futuras atualizações.
-RNF07: Implementar testes automatizados para garantir a integridade do sistema após atualizações.
+6. O código deve ser bem documentado e estruturado para facilitar a manutenção e futuras atualizações.
+7. Implementar testes automatizados para garantir a integridade do sistema após atualizações.
                         Disponibilidade
 
-RNF08: Garantir uma disponibilidade de 99.9% para a plataforma.
+8. Garantir uma disponibilidade de 99.9% para a plataforma.
 
 ## User Flow
 
