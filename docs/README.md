@@ -283,8 +283,8 @@ Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequ
 
 3. **Infraestrutura**
 
-   - **Servidores e Hospedagem**: A aplicação será hospedada na AWS (Amazon Web Services), utilizando serviços como EC2 para servidores virtuais, S3 para armazenamento de arquivos e RDS para banco de dados relacional (caso necessário).
-
+   - **Servidores e Hospedagem**: A aplicação será hospedada local storage devido ainda o aplicativo estar em situação de apresentação.
+     
 4. **Ferramentas de Desenvolvimento e DevOps**
 
    - **Controle de Versão**: Git será utilizado para controle de versão, com repositórios hospedados no GitHub para facilitar a colaboração entre os desenvolvedores.
