@@ -311,7 +311,7 @@ Weekly Stand-ups: Reuniões semanais para acompanhamento do progresso e resoluç
 
 Revisões de Sprint: Revisões ao final de cada sprint para apresentar ao grupo e coletar feedback.
 
-Retrospectivas:  Acreditamos que mesmo em meio a perda de um integrante mas com adição de outros dois, o grupo não perdeu qualidade mas soube bem administrar como atribuir e organizar cada tarefa aos que chegaram. Observando dessa forma, acreditamos que o grupo teve bastante resiliência para poder, acima de tudo, se concentrar e atingir o objetivo principal: criar um aplicativo/site promissor e estável.
+Retrospectivas:  Acreditamos que mesmo em meio a perda de um integrante mas com adição de outros dois, o grupo não só não perdeu qualidade,mas soube bem administrar como atribuir e organizar cada tarefa aos que chegaram. Observando dessa forma, acreditamos que o grupo teve bastante resiliência para poder, acima de tudo, se concentrar e atingir o objetivo principal: criar um aplicativo/site promissor e estável.
 
 **Testes e Garantia de Qualidade**
 
