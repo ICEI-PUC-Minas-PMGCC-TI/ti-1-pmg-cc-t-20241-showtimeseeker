@@ -38,6 +38,19 @@ O primeiro dos públicos alvos é composto por homens e mulheres jovens de grand
 
 Já o segundo grupo é composto por homens e mulheres empresários que procuram uma melhor forma para divulgar seu evento, de forma que essa divulgação acerte o máximo de pessoas ideias para o tipo de festa proposta.    
 
+## Artefatos do Design Thinking
+O desenvolvimento do "Show Time Seeker" envolveu a aplicação de diversas ferramentas e artefatos de Design Thinking para garantir uma solução centrada no usuário:
+
+Empatia: Entrevistas e pesquisas com produtores de eventos e consumidores para compreender suas necessidades, dores e expectativas.
+
+Definição: Identificação clara dos problemas enfrentados por ambos os públicos-alvo e definição dos objetivos do aplicativo.
+
+Ideação: Sessões de brainstorming para gerar ideias inovadoras que atendam às necessidades identificadas.
+
+Prototipagem: Criação de protótipos de baixa e alta fidelidade do aplicativo para visualizar a solução e testar funcionalidades.
+
+Testes: Realização de testes com usuários reais para validar a eficácia das soluções propostas e fazer ajustes conforme necessário.
+
 ## Personas
 
 
