@@ -201,44 +201,70 @@ WANDERLEY
 3. Para que eu possa descontrair depois de uma semana dificil e conhecer pessoas novas.
 
 ## Requisitos
+Para desenvolver e implementar o "Show Time Seeker", é fundamental identificar e detalhar os requisitos funcionais e não funcionais que garantirão o sucesso da plataforma.
 
-**Requisitos funcionais** 
+Requisitos Funcionais
+ 
+    Cadastro e Autenticação de Usuários
+               
+1. Permitir o cadastro de produtores de eventos.
+2.  Permitir o cadastro de consumidores de eventos.
+3.  Implementar autenticação via e-mail e senha.
 
+     Perfil do Usuário
 
-Criar/deletar uma conta;
+4. Permitir aos produtores criar e editar perfis de eventos.
+5: Permitir aos consumidores criar e editar perfis pessoais.
+6: Exibir histórico de eventos criados
 
-Sistema de avaliação dos eventos e mini fóruns;
+         Gestão de Eventos
 
-Possibilidade de criar/deletar um evento com todas as suas informações;
+7: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
+8: Permitir aos produtores editar e excluir eventos.
+9: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
+10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
 
-Possibilidade de filtrar as especificidades dos eventos;
+                   Descoberta de Eventos
 
-Botões para o cliente contatar o evento;
+11. Permitir aos consumidores buscar eventos por categorias, datas e localizações.
+12. Exibir uma lista de eventos populares e recomendados.
+13. Implementar um sistema de filtros para refinar a busca de eventos.
 
-Barra de pesquisas;
+            Detalhes e Avaliação de Eventos
 
-Botões de contato com o staff da plataforma;
+14: Permitir aos consumidores visualizar detalhes completos do evento.
+15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
+16. Exibir avaliações e comentários de outros consumidores.
 
-Sistema de notificação;
+               Notificações e Alertas
 
-Sistema de favoritar eventos;
+17. Enviar notificações sobre novos eventos relacionados aos interesses dos consumidores.
+18. Enviar alertas sobre eventos próximos à data de realização.
+19. Notificar os produtores sobre novas avaliações e comentários em seus eventos.
 
-Tabelas e gráficos que auxiliariam os donos de eventos a controlar os dados referentes as suas postagens. 
+Requisitos Não Funcionais 
 
+                         Desempenho
 
+RNF01: A plataforma deve carregar a página inicial em menos de 2 segundos.
+RNF02: As operações de busca devem retornar resultados em até 1 segundo.
 
-**Requisitos não funcionais** 
+                        Usabilidade
 
+RNF03: O design da interface deve ser intuitivo e fácil de usar.
+                        Escalabilidade
 
-Uma aplicação rápida e intuitiva;
+                      Compatibilidade
 
-Confiabilidade da plataforma na entrega de seus eventos;
+RNF04: A plataforma deve ser compatível com os principais navegadores (Chrome, Firefox, Safari).
+RNF05: O aplicativo deve ser compatível com dispositivos móveis Android e iOS.
+                      Manutenibilidade
 
-Uma aplicação otimizada e sem bugs;
+RNF06: O código deve ser bem documentado e estruturado para facilitar a manutenção e futuras atualizações.
+RNF07: Implementar testes automatizados para garantir a integridade do sistema após atualizações.
+                        Disponibilidade
 
-Um algoritmo que favoreça certos padrões;
-
-Utilizar a linguagem CSS, HTML, JavaScript e JSON (aplicação web). 
+RNF08: Garantir uma disponibilidade de 99.9% para a plataforma.
 
 ## User Flow
 

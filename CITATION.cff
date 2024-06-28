@@ -24,12 +24,12 @@ authors:
     family-names: Marques
     given-names: Carlos 
 keywords:
-  - 
-  - 
-repository-code: 
+  - Eventos
+  - Entretenimento 
+repository-code: https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker 
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2024-06-28
 =======
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
@@ -56,10 +56,10 @@ authors:
     family-names: Marques
     given-names: Carlos
 keywords:
-  - 
-  - 
-repository-code: 
+  - Eventos
+  - Entretenimento
+repository-code: https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2024-06-28
 >>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
