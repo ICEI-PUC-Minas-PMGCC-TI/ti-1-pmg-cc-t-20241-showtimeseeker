@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento - Show Time Seeker</title>
+    <link rel="stylesheet" href="/GV_Filtraremostrareventos/pcrs/style.css">
+    <script src="/GV_Filtraremostrareventos/pcrs/GV_criareventoscript.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos adicionais podem ser adicionados aqui */
+        .evento-info {
+            margin-bottom: 20px;
+        }
+
+        .evento-descricao {
+            margin-bottom: 20px;
+        }
+
+        .comentarios {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <a href="index.html"><img id="logo" src="./img/Logo-preta-sem-fundo.png" alt="logo"></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+                <div id="carouselInner" class="carousel-inner">
+                    <!-- Aqui as imagens serão inseridas dinamicamente pelo JavaScript -->
+                </div>
+                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+
+            <div class="evento-info">
+                <h2 id="nomeEvento">Nome do Evento</h2>
+                <p><strong>Local:</strong> <span id="localEvento">Local do Evento</span></p>
+                <p><strong>Favoritados:</strong> <span id="favoritados">0</span></p>
+                <button id="botaoFavoritar" class="btn btn-primary">Favoritar</button>
+            </div>
+
+            <div class="evento-descricao">
+                <h3>Descrição</h3>
+                <p id="descricaoEvento">Descrição do evento...</p>
+            </div>
+
+            <div class="evento-visualizacoes">
+                <p><strong>Visualizações Totais:</strong> <span id="visualizacoesTotais">0</span></p>
+            </div>
+
+            <div class="comentarios">
+                <h3>Comentários</h3>
+                <textarea id="areaComentarios" class="form-control" rows="3" placeholder="Deixe seu comentário"></textarea>
+                <button id="botaoComentar" class="btn btn-primary mt-2">Comentar</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.12.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS para funcionalidades de carrossel -->
+    <script src="/GV_Filtraremostrareventos/pcrs/GV_criareventoscript.js"></script>
+    <!-- Seu script personalizado -->
+
+</body>
+</html>
+
