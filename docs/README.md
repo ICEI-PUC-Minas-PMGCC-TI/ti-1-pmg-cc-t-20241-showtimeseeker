@@ -354,14 +354,17 @@ Responsável pela documentação do GitHub
 - Sistema de Visualização dos eventos 
 
 Julio Biluca
+
 - Barra de Pesquisar eventos
 - Botão de contato do cliente com o evento
    
 Mateus Neiva 
+
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação das Notificações dos eventos
   
 Luis Ferreira
+
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação da central de comentários e resenhas sobre o evento
 
