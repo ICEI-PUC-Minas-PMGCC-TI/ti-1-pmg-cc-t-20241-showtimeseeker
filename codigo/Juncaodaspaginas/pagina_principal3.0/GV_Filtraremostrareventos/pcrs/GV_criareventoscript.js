@@ -113,18 +113,18 @@ function lerdadosevento()
                                     estilodoevento: ["2", "3"],
                                     visualizacoes: {
                                         total: 0,
-                                        gosto1: 7,
+                                        gosto1: 5,
                                         gosto2: 90,
                                         gosto3: 50000,
                                         gosto4: 50,
-                                        gosto5: 0,
-                                        gosto6: 0,
-                                        gosto7: 0,
-                                        gosto8: 0,
-                                        gosto9: 0,
-                                        gosto10: 0,
-                                        gosto11: 0,
-                                        gosto12: 0,
+                                        gosto5: 1,
+                                        gosto6: 60,
+                                        gosto7: 600,
+                                        gosto8: 44,
+                                        gosto9: 9,
+                                        gosto10: 4,
+                                        gosto11: 89,
+                                        gosto12: 15,
                                     },
                                     favoritos: 0,
                                     comentarios: [],
@@ -148,8 +148,8 @@ function lerdadosevento()
                                         gosto1: 3,
                                         gosto2: 10,
                                         gosto3: 50,
-                                        gosto4: 0,
-                                        gosto5: 0,
+                                        gosto4: 1,
+                                        gosto5: 100,
                                         gosto6: 0,
                                         gosto7: 0,
                                         gosto8: 0,
@@ -183,10 +183,10 @@ function lerdadosevento()
                                         gosto4: 0,
                                         gosto5: 0,
                                         gosto6: 0,
-                                        gosto7: 0,
+                                        gosto7: 100,
                                         gosto8: 0,
-                                        gosto9: 0,
-                                        gosto10: 0,
+                                        gosto9: 1,
+                                        gosto10: 200,
                                         gosto11: 0,
                                         gosto12: 0,
                                     },
@@ -204,7 +204,7 @@ function lerdadosevento()
 
 function GV_mostrareventosparaedicao(GV_arrayeventos){
         const GV_areadoseventosparaedicao = document.getElementById('GV_visualizarmodificareventos');
-        var fatorEscala = 0.002;
+        var fatorEscala = 0.2;
         let GV_stringeventosparaedicao = '';
         for(let GV_imeventoedit = 1; GV_imeventoedit < GV_arrayeventos.length; GV_imeventoedit = GV_imeventoedit + 1)
             {
@@ -250,14 +250,74 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 var ED_barra_2 = area.querySelector('#gosto-2');
                 var ED_barra_3 = area.querySelector('#gosto-3');
                 var ED_barra_4 = area.querySelector('#gosto-4');
+
+                //pegar os valores par calculo de saber os 4 gostos com mais visualizações
+                let ED_Array_visu_gostos = new Array();
+                ED_Array_visu_gostos[0]= GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1;
+                ED_Array_visu_gostos[1] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto2;
+                ED_Array_visu_gostos[2] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto3;
+                ED_Array_visu_gostos[3] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto4;
+                ED_Array_visu_gostos[4] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto5;
+                ED_Array_visu_gostos[5] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto6;
+                ED_Array_visu_gostos[6] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto7;
+                ED_Array_visu_gostos[7] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto8;
+                ED_Array_visu_gostos[8] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto9;
+                ED_Array_visu_gostos[9] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto10;
+                ED_Array_visu_gostos[10] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto11;
+                ED_Array_visu_gostos[11] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto12;
+                
+                
+                //calculo de saber os 4 gostos com mais visualizações
+                let ED_array_maiores_visu_gostos = new Array(0,0,0,0);
+                var ED_comparacao = 0;
+                
+                
+                for (let i = 0; i < 12; i++) {
+                    if(ED_Array_visu_gostos[i] > ED_comparacao){
+                        ED_comparacao = ED_Array_visu_gostos[i];
+                        ED_array_maiores_visu_gostos[0] = ED_comparacao;
+                    }
+                }
+
+                ED_comparacao = 0;
+
+                for (let i = 0; i < 12; i++) {
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[0]){
+                        ED_comparacao = ED_Array_visu_gostos[i];
+                        ED_array_maiores_visu_gostos[1] = ED_comparacao;
+                    }
+                }
+
+                ED_comparacao = 0;
+
+                for (let i = 0; i < 12; i++) {
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[1]){
+                        ED_comparacao = ED_Array_visu_gostos[i];
+                        ED_array_maiores_visu_gostos[2] = ED_comparacao;
+                    }
+                }
+
+                ED_comparacao = 0;
+
+                for (let i = 0; i < 12; i++) {
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[2]){
+                        ED_comparacao = ED_Array_visu_gostos[i];
+                        ED_array_maiores_visu_gostos[3] = ED_comparacao;
+                    }
+                }
+                
+
+                for (let i = 0; i < 4; i++) {
+                    console.log(ED_array_maiores_visu_gostos[i]);
+                }
+
             
                 // Calcula as novas alturas proporcionalmente ao valor recebido
-                var novaAltura1 = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1 * fatorEscala;
-                var novaAltura2 = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto2 * fatorEscala;
-                var novaAltura3 = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto3 * fatorEscala;
-                var novaAltura4 = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto4 * fatorEscala;
+                var novaAltura1 = ED_array_maiores_visu_gostos[0] * fatorEscala;
+                var novaAltura2 = ED_array_maiores_visu_gostos[1] * fatorEscala;
+                var novaAltura3 = ED_array_maiores_visu_gostos[2] * fatorEscala;
+                var novaAltura4 = ED_array_maiores_visu_gostos[3] * fatorEscala;
                 
-                console.log(novaAltura1);
             
                 // Define as novas alturas das barras
                 ED_barra_1.style.height = novaAltura1 + 'px';
