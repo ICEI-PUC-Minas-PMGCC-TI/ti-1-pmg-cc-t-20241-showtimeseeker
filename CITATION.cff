@@ -1,28 +1,28 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Show Time Seeker - STS
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Dayrell
+    given-names: Enzo
+  - family-names: Valedo
+    given-names: Gabriel
+  - family-names: Bastos
+    given-names: Heitor
+  - family-names: Ferreira
+    given-names: Luis 
+  - family-names: Neiva
+    given-names: Mateus 
+  - family-names: Biluca
+    given-names:Julio
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Nepomuceno
+    given-names: Hayala
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Marques
+    given-names: Carlos 
 keywords:
   - 
   - 
@@ -33,28 +33,28 @@ date-released: 2022-07-14
 =======
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Show Time Seeker
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Dayrell
+    given-names: Enzo
+  - family-names: Valedo
+    given-names: Gabriel
+  - family-names: Bastos
+    given-names: Heitor
+  - family-names: Ferreira
+    given-names: Luis
+  - family-names: Neiva
+    given-names: Mateus
+  - family-names: Biluca
+    given-names:Julio
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Nepomuceno
+    given-names: Hayala
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Marques
+    given-names: Carlos
 keywords:
   - 
   - 
