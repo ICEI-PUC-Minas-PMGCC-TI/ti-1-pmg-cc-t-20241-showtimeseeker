@@ -334,6 +334,33 @@ Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes co
 
 [Perfil.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049616/Perfil.pdf)
 
+## Ferramentas
+**Gerenciamento de Projetos**
+
+Canvas: Para gerenciamento de tarefas e sprints.
+
+**Design e Prototipagem**
+
+Figma: Para criação de wireframes e protótipos interativos.
+
+**Desenvolvimento**
+
+Visual Studio Code: Editor de código para desenvolvimento frontend e backend.
+
+Git: Controle de versão para colaboração e rastreamento de mudanças no código.
+
+GitHub: Repositório para hospedagem e gerenciamento do código-fonte.
+
+**Comunicação e Colaboração**
+
+Whatsapp: Para comunicação instantânea e colaboração entre a equipe.
+
+Discord: Para reuniões online e videoconferências.
+
+**Testes**
+
+Visual Studio Code: Para testes unitários em JavaScript, todos em local storage.
+
 ## Atribuições
 **Enzo Dayrell**
 
