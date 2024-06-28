@@ -336,11 +336,13 @@ Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes co
 
 ## Atribuições
 Enzo Dayrell 
+
 Responsável geral do Código e programação do Site
 - Criação do gráfico e dados apresentados dos eventos
 - Criação, edição e exclusão de usuário
   
-Gabriel Valedo
+Gabriel Valedo 
+
  Responsável geral do Código e programação do Site
 -  Criar, editar e excluir os eventos
 - Filtragem de gostos
@@ -358,6 +360,7 @@ Julio Biluca
 Mateus Neiva 
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação das Notificações dos eventos
+  
 Luis Ferreira
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação da central de comentários e resenhas sobre o evento
