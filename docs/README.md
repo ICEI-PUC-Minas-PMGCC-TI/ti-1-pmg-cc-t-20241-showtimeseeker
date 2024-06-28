@@ -334,17 +334,29 @@ Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes co
 
 [Perfil.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049616/Perfil.pdf)
 
-## Gestão de Projetos
+## Atribuições
+Enzo Dayrell: 
+Responsável geral do Código e programação do Site
+- Criação do gráfico e dados apresentados dos eventos
+- Criação, edição e exclusão de usuário
+Gabriel Valedo:
+ Responsável geral do Código e programação do Site
+-  Criar, editar e excluir os eventos
+- Filtragem de gostos
+Heitor Viana: 
+Responsável pela documentação do GitHub
+- Sistema de Favoritar/ Desfavoritar Eventos
+- Sistema de Visualização dos eventos 
 
-Neste projeto, foram utilizadas duas plataformas: o Miro e o GitHub. Dentro da plataforma Miro, realizamos videochamadas para organizar as ideias, compilar entrevistas realizadas e planejar como o projeto iria se desenvolver. Já no GitHub, dividimos tarefas entre os participantes.
-
-Enzo Dayrel e Gabriel Valedo trabalharam juntos na documentação, orientações gerais, criação de personas e definição de requisitos.
-
-João Marcelo ficou responsável pelas histórias de usuários e pela gestão de projetos.
-
-Heitor Bastos cuidou da apresentação.
-
-Julio Biluca participou do miro.
+Julio Biluca:
+- Barra de Pesquisar eventos
+- Botão de contato do cliente com o evento
+Mateus Neiva: 
+Entrou depois e ficou encarregado de realizar um sprint
+- Criação das Notificações dos eventos
+Luis Ferreira:
+Entrou depois e ficou encarregado de realizar um sprint
+- Criação da central de comentários e resenhas sobre o evento
 
 ## Referências Bibliograficas
 - [Conselho fedral de Medicina](https://portal.cfm.org.br/).
