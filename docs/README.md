@@ -370,6 +370,29 @@ Alertas sobre Eventos Próximos: Consumidores recebem alertas sobre eventos pró
 
 Notificações para Produtores: Produtores são notificados sobre novas avaliações e comentários, permitindo que acompanhem o feedback dos consumidores e façam ajustes quando necessário.
 
+##Requisitos Não Funcionais Implementados
+1. **Desempenho**
+
+A plataforma carrega a página inicial em menos de 2 segundos, proporcionando uma experiência de usuário rápida e eficiente.
+
+As operações de busca retornam resultados em até 1 segundo, facilitando a navegação e descoberta de eventos.
+
+2. **Usabilidade**
+
+O design da interface é intuitivo e fácil de usar, garantindo que os usuários possam navegar e utilizar todas as funcionalidades da plataforma sem dificuldades.
+
+3. **Compatibilidade**
+
+A plataforma é compatível com os principais navegadores (Chrome, Firefox, Safari), garantindo acessibilidade para a maioria dos usuários.
+
+O aplicativo é compatível com dispositivos móveis Android e iOS, permitindo que os usuários acessem a plataforma em qualquer lugar.
+
+4. **Manutenibilidade**
+
+O código é bem documentado e estruturado, facilitando a manutenção e futuras atualizações.
+
+Implementamos testes automatizados para garantir a integridade do sistema após atualizações, reduzindo o risco de falhas
+
 ## User Flow
 
 ![user flow TI-cc - Quadro 2](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/assets/166862006/3b851d97-9e0e-437e-bbf2-c4b388ca0b0e)
