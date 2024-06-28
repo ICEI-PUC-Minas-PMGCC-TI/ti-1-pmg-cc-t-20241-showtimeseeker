@@ -1335,7 +1335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let GV_lognotif = sessionStorage.getItem('logado');
     if(GV_lognotif == true){
         let GV_objeventonot = lerdadosevento();
-        
+        const favoritedEvents = GV_objeventonot.usuario.favoritos;
         /*const favoriteButtons = document.querySelectorAll('.favorite-btn');
         const notificationElement = document.getElementById('notification');
         const favoritedEvents = JSON.parse(localStorage.getItem('favoritedEvents')) || [];
@@ -1429,13 +1429,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check for notifications on page load
         favoritedEvents.forEach(event => {
-            if (faltamDoisDias()) {
-                console.log("Vai")
-                showNotification(`Lembrete: ${event.title} ocorrerá em 48 horas!`);
-            } else if (isHoje()) {
-                console.log("Nao vai")
-                showNotification(`Lembrete: ${event.title} é hoje!`);
-            }
+            for(let GV_event of GV_objeventonot.evento){    
+                if(GV_event.id = favoritedEvents)
+                {
+                    if (faltamDoisDias()) {
+                        console.log("Vai")
+                        showNotification(`Lembrete: ${event.title} ocorrerá em 48 horas!`);
+                    } else if (isHoje()) {
+                        console.log("Nao vai")
+                        showNotification(`Lembrete: ${event.title} é hoje!`);
+                    }
+                } 
+            }    
         });
     }
 });
