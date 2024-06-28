@@ -211,7 +211,7 @@ Requisitos Funcionais
 2.  Permitir o cadastro de consumidores de eventos.
 3.  Implementar autenticação via e-mail e senha.
 
-     Perfil do Usuário
+          Perfil do Usuário
 
 4. Permitir aos produtores criar e editar perfis de eventos.
 5. Permitir aos consumidores criar e editar perfis pessoais.
@@ -252,16 +252,17 @@ Requisitos Não Funcionais
                         Usabilidade
 
 3. O design da interface deve ser intuitivo e fácil de usar.
-                        Escalabilidade
 
                       Compatibilidade
 
 4. A plataforma deve ser compatível com os principais navegadores (Chrome, Firefox, Safari).
 5. O aplicativo deve ser compatível com dispositivos móveis Android e iOS.
-                      Manutenibilidade
+    
+                        Manutenibilidade
 
 6. O código deve ser bem documentado e estruturado para facilitar a manutenção e futuras atualizações.
 7. Implementar testes automatizados para garantir a integridade do sistema após atualizações.
+   
                         Disponibilidade
 
 8. Garantir uma disponibilidade de 99.9% para a plataforma.
