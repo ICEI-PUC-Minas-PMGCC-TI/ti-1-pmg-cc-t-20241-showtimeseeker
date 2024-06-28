@@ -215,10 +215,10 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 </div>
                 <div class="GV_grafico">
                 <div class="chart">
-                <div class="bar" id="gosto-1" ></div>
-                <div class="bar" id="gosto-2" ></div>
-                <div class="bar" id="gosto-3" ></div>
-                <div class="bar" id="gosto-4" ></div>
+                <abbr title=""><div class="bar" id="gosto-1" ></div></abbr>
+                <abbr title=""><div class="bar" id="gosto-2" ></div></abbr>
+                <abbr title=""><div class="bar" id="gosto-3" ></div></abbr>
+                <abbr title=""><div class="bar" id="gosto-4" ></div></abbr>
                 </div>
                 </div>
                 <div class="GV_dadosfavvisu">
@@ -243,13 +243,15 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
             }
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
+            let GV_nomedosgostos = Object.keys(GV_arrayeventos[0].visualizacoes);
+            console.log(GV_nomedosgostos[0]);
             GV_todasareasdeedicao.forEach(function(area){
                 let GV_indexdoditoevento = GV_idindexevento(area.getAttribute("data-index"));
                 var ED_barra_1 = area.querySelector('#gosto-1');
                 var ED_barra_2 = area.querySelector('#gosto-2');
                 var ED_barra_3 = area.querySelector('#gosto-3');
                 var ED_barra_4 = area.querySelector('#gosto-4');
-                
+                let GV_legenda = area.querySelector('div.chart');
                 //pegar os valores par calculo de saber os 4 gostos com mais visualizações
                 let ED_Array_visu_gostos = new Array();
                 ED_Array_visu_gostos[0]= GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1;
@@ -269,11 +271,13 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 //calculo de saber os 4 gostos com mais visualizações
                 let ED_array_maiores_visu_gostos = new Array(0,0,0,0);
                 var ED_comparacao = 0;
+                let ED_array_id_gostos = new Array(0,0,0,0);
                 
                 for (let i = 0; i < 12; i++) {
                     if(ED_Array_visu_gostos[i] > ED_comparacao){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[0] = ED_comparacao;
+                        ED_array_id_gostos[0] = i+1;
                     }
                 }
                 
@@ -283,6 +287,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[0]){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[1] = ED_comparacao;
+                        ED_array_id_gostos[1] = i+1;
                     }
                 }
                 
@@ -292,6 +297,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[1]){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[2] = ED_comparacao;
+                        ED_array_id_gostos[2] = i+1;
                     }
                 }
                 
@@ -301,13 +307,14 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[2]){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[3] = ED_comparacao;
+                        ED_array_id_gostos[3] = i+1;
                     }
                 }
+
+
+
+
                 
-                
-                for (let i = 0; i < 4; i++) {
-                    console.log(ED_array_maiores_visu_gostos[i]);
-                }
                 
 
                 //calcular escala adaptavel
