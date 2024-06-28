@@ -168,12 +168,14 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
     let GV_stringcardgrande = '';
     let GV_primeiroevento = 0;
     let GV_iddoprimeiro = 0;
+
+
     
     for(let GV_imevento = 1; GV_imevento < GV_arrayeventos.length; GV_imevento = GV_imevento + 1)
         {
             let GV_objevento = GV_arrayeventos[GV_imevento];
             //if(GV_gastosmediofiltro == "NaN"){console.log('cv')}
-            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.includes(GV_dadosdabarradepesquisa))){
+            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.toLowerCase().includes(GV_dadosdabarradepesquisa))){
                 if(!GV_primeiroevento){
                     GV_stringcardgrande = `
                     <a href="evento.html?id=${GV_objevento.id}" class="nenhumadecoracao">
@@ -277,7 +279,7 @@ function GV_codigo(){
         GV_mostrareventos(GV_bd_STS.evento, GV_keysfiltro, GV_preco);
     })
     
-    GV_barradepesquisa.addEventListener('input', GV_mostrareventos(GV_bd_STS.evento, GV_keysfiltro, GV_preco))
+    GV_barradepesquisa.addEventListener('input', () =>{GV_mostrareventos(GV_bd_STS.evento, GV_keysfiltro, GV_preco)})
 }
 
 

@@ -1702,3 +1702,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function comentar() {
+    // Captura o valor do campo de comentário
+    var ED_comentario = document.getElementById('areaComentarios').value;
+
+    // Obtém o objeto de dados do evento
+    let ED_obj_coment = lerdadosevento();
+
+ 
+        ED_tam_coment = ED_obj_coment.evento[1].comentarios.length;
+
+        ED_obj_coment.evento[1].comentarios[ED_tam_coment] = ED_comentario; 
+
+        console.log(ED_obj_coment);
+
+        salvardadosevento(ED_obj_coment);
+
+        location.href = "evento.html";
+
+        console.log("Comentário adicionado com sucesso:", ED_obj_coment.evento.comentarios[0]);
+}
