@@ -207,40 +207,40 @@ Requisitos Funcionais
  
     Cadastro e Autenticação de Usuários
                
-RF01: Permitir o cadastro de produtores de eventos.
-RF02: Permitir o cadastro de consumidores de eventos.
-RF03: Implementar autenticação via e-mail e senha.
+1. Permitir o cadastro de produtores de eventos.
+2.  Permitir o cadastro de consumidores de eventos.
+3.  Implementar autenticação via e-mail e senha.
 
      Perfil do Usuário
 
-RF04: Permitir aos produtores criar e editar perfis de eventos.
-RF05: Permitir aos consumidores criar e editar perfis pessoais.
-RF06: Exibir histórico de eventos criados
+4. Permitir aos produtores criar e editar perfis de eventos.
+5: Permitir aos consumidores criar e editar perfis pessoais.
+6: Exibir histórico de eventos criados
 
          Gestão de Eventos
 
-RF07: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
-RF08: Permitir aos produtores editar e excluir eventos.
-RF09: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
-RF10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
+7: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
+8: Permitir aos produtores editar e excluir eventos.
+9: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
+10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
 
                    Descoberta de Eventos
 
-RF11: Permitir aos consumidores buscar eventos por categorias, datas e localizações.
-RF12: Exibir uma lista de eventos populares e recomendados.
-RF13: Implementar um sistema de filtros para refinar a busca de eventos.
+11. Permitir aos consumidores buscar eventos por categorias, datas e localizações.
+12. Exibir uma lista de eventos populares e recomendados.
+13. Implementar um sistema de filtros para refinar a busca de eventos.
 
             Detalhes e Avaliação de Eventos
 
-RF14: Permitir aos consumidores visualizar detalhes completos do evento.
-RF15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
-RF16: Exibir avaliações e comentários de outros consumidores.
+14: Permitir aos consumidores visualizar detalhes completos do evento.
+15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
+16. Exibir avaliações e comentários de outros consumidores.
 
                Notificações e Alertas
 
-RF17: Enviar notificações sobre novos eventos relacionados aos interesses dos consumidores.
-RF18: Enviar alertas sobre eventos próximos à data de realização.
-RF19: Notificar os produtores sobre novas avaliações e comentários em seus eventos.
+17. Enviar notificações sobre novos eventos relacionados aos interesses dos consumidores.
+18. Enviar alertas sobre eventos próximos à data de realização.
+19. Notificar os produtores sobre novas avaliações e comentários em seus eventos.
 
 Requisitos Não Funcionais 
 
