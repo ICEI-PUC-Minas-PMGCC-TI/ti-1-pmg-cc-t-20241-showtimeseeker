@@ -343,7 +343,7 @@ Gabriel Valedo:
  Responsável geral do Código e programação do Site
 -  Criar, editar e excluir os eventos
 - Filtragem de gostos
-Heitor Viana: 
+  Heitor Viana: 
 Responsável pela documentação do GitHub
 - Sistema de Favoritar/ Desfavoritar Eventos
 - Sistema de Visualização dos eventos 
