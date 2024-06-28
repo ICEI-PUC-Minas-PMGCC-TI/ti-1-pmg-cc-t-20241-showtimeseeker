@@ -37,9 +37,8 @@ function GV_modificardadosdousuarioatual(GV_usuarioatual){
     {
         GV_contadorusuario = GV_contadorusuario + 1;
         GV_acheiousuario = GV_objdadosusuario.listadeusuarios[GV_contadorusuario].ID == GV_usuarioatual.ID;
-        console.log("F");
     }
-    while(!GV_acheiousuario);
+    while(GV_contadorusuario < GV_objdadosusuario.listadeusuarios.length && !GV_acheiousuario);
     GV_objdadosusuario.usuario = GV_usuarioatual;
     GV_objdadosusuario.listadeusuarios[GV_contadorusuario] = GV_usuarioatual;
     salvardadosevento(GV_objdadosusuario);
