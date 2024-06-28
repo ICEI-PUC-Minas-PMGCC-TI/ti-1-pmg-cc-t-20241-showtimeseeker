@@ -186,7 +186,7 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                 else
                 {
                     GV_stringcards = GV_stringcards + `
-                    <div class="col" id="card-menor" data-index = "${GV_objevento.id}>
+                    <div class="col" id="card-menor" data-index = "${GV_objevento.id}">
                         <div class="card h-100">
                             <img src="${GV_objevento.fotos[0]}" class="card-img-top" alt="...">
                             <div class="card-body">

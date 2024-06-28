@@ -1629,76 +1629,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function comentar() {
+    // Captura o valor do campo de comentário
+    var ED_comentario = document.getElementById('areaComentarios').value;
 
+    // Obtém o objeto de dados do evento
+    let ED_obj_coment = lerdadosevento();
 
+ 
+        ED_tam_coment = ED_obj_coment.evento[1].comentarios.length;
 
+        ED_obj_coment.evento[1].comentarios[ED_tam_coment] = ED_comentario; 
 
+        console.log(ED_obj_coment);
 
+        salvardadosevento(ED_obj_coment);
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    
-    // Recuperar os dados do evento
-    let eventos = lerdadosevento().evento;
+        location.href = "evento.html";
 
-    // Elementos do DOM que serão preenchidos dinamicamente
-    let nomeEventoElem = document.getElementById('nomeEvento');
-    let localEventoElem = document.getElementById('localEvento');
-    let descricaoEventoElem = document.getElementById('descricaoEvento');
-    let favoritadosElem = document.getElementById('favoritados');
-    let visualizacoesTotaisElem = document.getElementById('visualizacoesTotais');
-    let carouselInner = document.getElementById('carouselInner');
-
-    // Função para preencher o carrossel com as fotos de um evento específico
-    function preencherCarrossel(evento) {
-        evento.fotos.forEach((foto, index) => {
-            let carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
-            if (index === 1) {
-                carouselItem.classList.add('active');
-            } else {
-                carouselItem.style.display = 'none'; // Oculta todas as outras imagens
-            }
-
-            let img = document.createElement('img');
-            img.src = foto;
-            img.classList.add('d-block', 'w-100');
-            img.alt = `Imagem ${index + 1}`;
-
-            carouselItem.appendChild(img);
-            carouselInner.appendChild(carouselItem);
-        });
-    }
-
-    // Preencher o carrossel com as fotos do primeiro evento ao carregar a página
-    preencherCarrossel(eventos[0]);
-
-    // Preencher as informações do primeiro evento
-    nomeEventoElem.textContent = eventos[1].nome_do_evento;
-    localEventoElem.textContent = eventos[1].local;
-    descricaoEventoElem.textContent = eventos[1].descricao;
-    favoritadosElem.textContent = eventos[1].favoritos;
-    visualizacoesTotaisElem.textContent = eventos[1].visualizacoes.total;
-
-    // Adicionar funcionalidades de favoritar e comentar (implementação básica)
-    let botaoFavoritar = document.getElementById('botaoFavoritar');
-    botaoFavoritar.addEventListener('click', function() {
-        eventos[1].favoritos++;
-        favoritadosElem.textContent = eventos[1].favoritos;
-        // Salvar de volta no localStorage se necessário
-        localStorage.setItem('bd_ShowTimeSeeker', JSON.stringify({ evento: eventos }));
-    });
-
-    let botaoComentar = document.getElementById('botaoComentar');
-    botaoComentar.addEventListener('click', function() {
-        let comentario = document.getElementById('areaComentarios').value.trim();
-        if (comentario !== '') {
-            eventos[1].comentarios.push(comentario);
-            // Limpar o campo de comentário
-            document.getElementById('areaComentarios').value = '';
-            // Salvar de volta no localStorage se necessário
-            localStorage.setItem('bd_ShowTimeSeeker', JSON.stringify({ evento: eventos }));
-            // Atualizar a exibição dos comentários (implementação opcional)
-        }
-    });
-});
+        console.log("Comentário adicionado com sucesso:", ED_obj_coment.evento.comentarios[0]);
+}
