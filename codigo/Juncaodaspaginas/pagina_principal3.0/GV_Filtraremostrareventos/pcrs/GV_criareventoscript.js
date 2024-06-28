@@ -186,7 +186,7 @@ function lerdadosevento()
                                         gosto7: 100,
                                         gosto8: 0,
                                         gosto9: 1,
-                                        gosto10: 200,
+                                        gosto10: 7,
                                         gosto11: 0,
                                         gosto12: 0,
                                     },
@@ -204,43 +204,42 @@ function lerdadosevento()
 
 function GV_mostrareventosparaedicao(GV_arrayeventos){
         const GV_areadoseventosparaedicao = document.getElementById('GV_visualizarmodificareventos');
-        var fatorEscala = 0.2;
         let GV_stringeventosparaedicao = '';
         for(let GV_imeventoedit = 1; GV_imeventoedit < GV_arrayeventos.length; GV_imeventoedit = GV_imeventoedit + 1)
             {
                 let GV_objevento = GV_arrayeventos[GV_imeventoedit];
                 GV_stringeventosparaedicao = GV_stringeventosparaedicao + `
-                        <div class="GV_exibicaodadosdoseventos" data-index = "${GV_objevento.id}">
-                                <div class="GV_titulodecadaevento">
-                                        <h3>${GV_objevento.nome_do_evento}</h3>
-                                </div>
-                                <div class="GV_grafico">
-                                    <div class="chart">
-                                        <div class="bar" id="gosto-1" ></div>
-                                        <div class="bar" id="gosto-2" ></div>
-                                        <div class="bar" id="gosto-3" ></div>
-                                        <div class="bar" id="gosto-4" ></div>
-                                    </div>
-                                </div>
-                                <div class="GV_dadosfavvisu">
-                                    <div class="GV_verfavoritos">
-                                        Quantidade de favoritos: 
-                                        <span class="material-symbols-outlined">
-                                            star
-                                        </span>${GV_objevento.favoritos}
-                                    </div>
-                                    <div class="GV_vervisualizacoes">
-                                        Quantidade de visualizacoes:
-                                        <span class="material-symbols-outlined">
-                                            visibility
-                                        </span>${GV_objevento.visualizacoes.total}
-                                    </div>
-                                </div>
-                                <div class="GV_botoesdealteracao">
-                                        <button type="button" class="GV_botaoparamodificaroevento">Modificar</button>
-                                        <button type="button" class="GV_botaoparaexcluiroevento">Excluir</button>
-                                </div>
-                        </div>`;
+                <div class="GV_exibicaodadosdoseventos" data-index = "${GV_objevento.id}">
+                <div class="GV_titulodecadaevento">
+                <h3>${GV_objevento.nome_do_evento}</h3>
+                </div>
+                <div class="GV_grafico">
+                <div class="chart">
+                <div class="bar" id="gosto-1" ></div>
+                <div class="bar" id="gosto-2" ></div>
+                <div class="bar" id="gosto-3" ></div>
+                <div class="bar" id="gosto-4" ></div>
+                </div>
+                </div>
+                <div class="GV_dadosfavvisu">
+                <div class="GV_verfavoritos">
+                Quantidade de favoritos: 
+                <span class="material-symbols-outlined">
+                star
+                </span>${GV_objevento.favoritos}
+                </div>
+                <div class="GV_vervisualizacoes">
+                Quantidade de visualizacoes:
+                <span class="material-symbols-outlined">
+                visibility
+                </span>${GV_objevento.visualizacoes.total}
+                </div>
+                </div>
+                <div class="GV_botoesdealteracao">
+                <button type="button" class="GV_botaoparamodificaroevento">Modificar</button>
+                <button type="button" class="GV_botaoparaexcluiroevento">Excluir</button>
+                </div>
+                </div>`;
             }
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
@@ -250,7 +249,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 var ED_barra_2 = area.querySelector('#gosto-2');
                 var ED_barra_3 = area.querySelector('#gosto-3');
                 var ED_barra_4 = area.querySelector('#gosto-4');
-
+                
                 //pegar os valores par calculo de saber os 4 gostos com mais visualizações
                 let ED_Array_visu_gostos = new Array();
                 ED_Array_visu_gostos[0]= GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1;
@@ -271,34 +270,33 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 let ED_array_maiores_visu_gostos = new Array(0,0,0,0);
                 var ED_comparacao = 0;
                 
-                
                 for (let i = 0; i < 12; i++) {
                     if(ED_Array_visu_gostos[i] > ED_comparacao){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[0] = ED_comparacao;
                     }
                 }
-
+                
                 ED_comparacao = 0;
-
+                
                 for (let i = 0; i < 12; i++) {
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[0]){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[1] = ED_comparacao;
                     }
                 }
-
+                
                 ED_comparacao = 0;
-
+                
                 for (let i = 0; i < 12; i++) {
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[1]){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[2] = ED_comparacao;
                     }
                 }
-
+                
                 ED_comparacao = 0;
-
+                
                 for (let i = 0; i < 12; i++) {
                     if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[2]){
                         ED_comparacao = ED_Array_visu_gostos[i];
@@ -306,30 +304,33 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                     }
                 }
                 
-
+                
                 for (let i = 0; i < 4; i++) {
                     console.log(ED_array_maiores_visu_gostos[i]);
                 }
+                
 
-            
+                //calcular escala adaptavel
+                var fatorEscala = 200 / ED_array_maiores_visu_gostos[0]; 
+                
                 // Calcula as novas alturas proporcionalmente ao valor recebido
                 var novaAltura1 = ED_array_maiores_visu_gostos[0] * fatorEscala;
                 var novaAltura2 = ED_array_maiores_visu_gostos[1] * fatorEscala;
                 var novaAltura3 = ED_array_maiores_visu_gostos[2] * fatorEscala;
                 var novaAltura4 = ED_array_maiores_visu_gostos[3] * fatorEscala;
                 
-            
+                
                 // Define as novas alturas das barras
                 ED_barra_1.style.height = novaAltura1 + 'px';
                 ED_barra_2.style.height = novaAltura2 + 'px';
                 ED_barra_3.style.height = novaAltura3 + 'px';
                 ED_barra_4.style.height = novaAltura4 + 'px';
-
-
+                
+                
             })
             
             
-}
+        }
 
 function GV_deletareventos(GV_indexdoevento){
         let GV_objetodadosSTS = lerdadosevento();
