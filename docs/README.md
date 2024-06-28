@@ -204,41 +204,47 @@ WANDERLEY
 Para desenvolver e implementar o "Show Time Seeker", é fundamental identificar e detalhar os requisitos funcionais e não funcionais que garantirão o sucesso da plataforma.
 
 Requisitos Funcionais
-               Cadastro e Autenticação de Usuários
+ 
+    Cadastro e Autenticação de Usuários
                
 RF01: Permitir o cadastro de produtores de eventos.
 RF02: Permitir o cadastro de consumidores de eventos.
 RF03: Implementar autenticação via e-mail e senha.
-                Perfil do Usuário
+
+     Perfil do Usuário
 
 RF04: Permitir aos produtores criar e editar perfis de eventos.
 RF05: Permitir aos consumidores criar e editar perfis pessoais.
 RF06: Exibir histórico de eventos criados
-                Gestão de Eventos
+
+         Gestão de Eventos
 
 RF07: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
 RF08: Permitir aos produtores editar e excluir eventos.
 RF09: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
 RF10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
-                Descoberta de Eventos
+
+                   Descoberta de Eventos
 
 RF11: Permitir aos consumidores buscar eventos por categorias, datas e localizações.
 RF12: Exibir uma lista de eventos populares e recomendados.
 RF13: Implementar um sistema de filtros para refinar a busca de eventos.
-                Detalhes e Avaliação de Eventos
+
+            Detalhes e Avaliação de Eventos
 
 RF14: Permitir aos consumidores visualizar detalhes completos do evento.
 RF15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
 RF16: Exibir avaliações e comentários de outros consumidores.
-.
+
                Notificações e Alertas
 
 RF17: Enviar notificações sobre novos eventos relacionados aos interesses dos consumidores.
 RF18: Enviar alertas sobre eventos próximos à data de realização.
 RF19: Notificar os produtores sobre novas avaliações e comentários em seus eventos.
 
-Requisitos Não Funcionais
-                       Desempenho
+Requisitos Não Funcionais 
+
+                         Desempenho
 
 RNF01: A plataforma deve carregar a página inicial em menos de 2 segundos.
 RNF02: As operações de busca devem retornar resultados em até 1 segundo.
