@@ -320,7 +320,55 @@ Testes Unitários: Implementação de testes unitários para garantir a funciona
 Testes de Integração: Verificação da interação entre diferentes módulos da aplicação.
 
 Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes condições de carga.
-  
+
+  ##Funcionalidades de Software
+**Cadastro e Autenticação de Usuários**
+
+Cadastro de Produtores de Eventos: Os produtores podem se registrar na plataforma, criando contas personalizadas que lhes permitem gerenciar seus eventos.
+
+Cadastro de Consumidores de Eventos: Consumidores também podem se registrar, criando perfis para acompanhar e participar de eventos.
+
+**Perfil do Usuário**
+
+Criação e Edição de Perfis de Eventos para Produtores: Produtores podem criar e editar perfis detalhados para seus eventos, incluindo informações relevantes que ajudam a atrair público.
+
+Criação e Edição de Perfis Pessoais para Consumidores: Consumidores podem personalizar seus perfis, mantendo um registro de eventos participados e interesses.
+
+Histórico de Eventos Criados: Produtores podem visualizar e gerenciar o histórico de eventos que criaram, facilitando a organização e planejamento futuros.
+
+**Gestão de Eventos**
+
+Criação de Novos Eventos: Produtores podem criar novos eventos com detalhes como nome, data, local, descrição e imagens, proporcionando uma visão completa do evento para os consumidores.
+
+Edição e Exclusão de Eventos: Produtores têm a capacidade de editar ou excluir eventos, mantendo suas listas de eventos sempre atualizadas.
+
+Sistema de Categorias para Eventos: Implementamos um sistema que permite categorizar eventos em diferentes tipos, como música, esportes e conferências, facilitando a busca para os consumidores.
+
+Informações sobre Ingressos: Produtores podem adicionar detalhes sobre ingressos, incluindo preços, disponibilidade e tipos. Porém ainda sem a capacidade de compra dos ingressos.
+
+**Descoberta de Eventos**
+
+Busca por Categorias, Datas e Localizações: Consumidores podem buscar eventos utilizando diversos critérios, encontrando facilmente eventos que atendam aos seus interesses.
+
+Lista de Eventos Populares e Recomendados: Exibimos uma lista de eventos populares e recomendados com base nas preferências e histórico de navegação dos consumidores.
+
+Sistema de Filtros: Implementamos filtros avançados que permitem refinar a busca de eventos, ajudando os consumidores a encontrar exatamente o que procuram.
+
+**Detalhes e Avaliação de Eventos**
+
+Visualização de Detalhes Completos do Evento: Consumidores podem acessar informações detalhadas sobre eventos, incluindo descrições, horários, locais e imagens.
+
+Avaliação e Comentários sobre Eventos: Após participar de um evento, consumidores podem deixar avaliações e comentários, compartilhando suas experiências e ajudando outros usuários na tomada de decisão.
+
+Exibição de Avaliações e Comentários: As avaliações e comentários de outros consumidores são exibidos, proporcionando uma visão geral da qualidade e experiência dos eventos.
+
+**Notificações e Alertas**
+
+Notificações sobre Novos Eventos: Enviamos notificações para os consumidores sobre novos eventos que correspondem aos seus interesses.
+
+Alertas sobre Eventos Próximos: Consumidores recebem alertas sobre eventos próximos à data de realização, garantindo que não percam eventos importantes.
+
+Notificações para Produtores: Produtores são notificados sobre novas avaliações e comentários, permitindo que acompanhem o feedback dos consumidores e façam ajustes quando necessário.
 
 ## User Flow
 
