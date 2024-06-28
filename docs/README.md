@@ -288,6 +288,38 @@ Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequ
 4. **Ferramentas de Desenvolvimento e DevOps**
 
    - **Controle de Versão**: Git será utilizado para controle de versão, com repositórios hospedados no GitHub para facilitar a colaboração entre os desenvolvedores.
+     ## Processo
+**Planejamento e Análise de Requisitos**
+
+Reunião Inicial: Realização de reuniões com entre os participantes do projeto para entender suas necessidades e expectativas.
+
+Definição de Requisitos: Coleta e documentação dos requisitos funcionais e não funcionais.
+
+Análise de Viabilidade: Avaliação da viabilidade técnica do projeto.
+
+**Design e Prototipagem**
+
+Wireframes : Criação de wireframes e utilizando ferramentas como Figma para visualizar o layout e a funcionalidade da aplicação.
+
+Prototipagem: Desenvolvimento do protótipo interativo para validação das funcionalidades principais com os professores do trabalho.
+
+**Desenvolvimento Ágil**
+
+Sprints: Utilização da metodologia ágil por meio do Canvas, dividindo o desenvolvimento em sprints de duas a três semanas em média.
+
+Weekly Stand-ups: Reuniões semanais para acompanhamento do progresso e resolução de impedimentos.
+
+Revisões de Sprint: Revisões ao final de cada sprint para apresentar ao grupo e coletar feedback.
+
+Retrospectivas:  Acreditamos que mesmo em meio a perda de um integrante mas com adição de outros dois, o grupo não só não perdeu qualidade,mas soube bem administrar como atribuir e organizar cada tarefa aos que chegaram. Observando dessa forma, acreditamos que o grupo teve bastante resiliência para poder, acima de tudo, se concentrar e atingir o objetivo principal: criar um aplicativo/site promissor e estável.
+
+**Testes e Garantia de Qualidade**
+
+Testes Unitários: Implementação de testes unitários para garantir a funcionalidade de cada componente isoladamente.
+
+Testes de Integração: Verificação da interação entre diferentes módulos da aplicação.
+
+Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes condições de carga.
   
 
 ## User Flow
@@ -302,17 +334,39 @@ Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequ
 
 [Perfil.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049616/Perfil.pdf)
 
-## Gestão de Projetos
+## Atribuições
+**Enzo Dayrell**
 
-Neste projeto, foram utilizadas duas plataformas: o Miro e o GitHub. Dentro da plataforma Miro, realizamos videochamadas para organizar as ideias, compilar entrevistas realizadas e planejar como o projeto iria se desenvolver. Já no GitHub, dividimos tarefas entre os participantes.
+Responsável geral do Código e programação do Site
+- Criação do gráfico e dados apresentados dos eventos
+- Criação, edição e exclusão de usuário
+  
+**Gabriel Valedo**
 
-Enzo Dayrel e Gabriel Valedo trabalharam juntos na documentação, orientações gerais, criação de personas e definição de requisitos.
+ Responsável geral do Código e programação do Site
+-  Criar, editar e excluir os eventos
+- Filtragem de gostos
+  
+**Heitor Viana**
+  
+Responsável pela documentação do GitHub
+- Sistema de Favoritar/ Desfavoritar Eventos
+- Sistema de Visualização dos eventos 
 
-João Marcelo ficou responsável pelas histórias de usuários e pela gestão de projetos.
+**Julio Biluca**
 
-Heitor Bastos cuidou da apresentação.
+- Barra de Pesquisar eventos
+- Botão de contato do cliente com o evento
+   
+**Mateus Neiva**
 
-Julio Biluca participou do miro.
+Entrou depois e ficou encarregado de realizar um sprint
+- Criação das Notificações dos eventos
+  
+**Luis Ferreira**
+
+Entrou depois e ficou encarregado de realizar um sprint
+- Criação da central de comentários e resenhas sobre o evento
 
 ## Referências Bibliograficas
 - [Conselho fedral de Medicina](https://portal.cfm.org.br/).
