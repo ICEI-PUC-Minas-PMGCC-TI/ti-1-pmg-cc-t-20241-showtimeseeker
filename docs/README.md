@@ -201,44 +201,64 @@ WANDERLEY
 3. Para que eu possa descontrair depois de uma semana dificil e conhecer pessoas novas.
 
 ## Requisitos
+Para desenvolver e implementar o "Show Time Seeker", é fundamental identificar e detalhar os requisitos funcionais e não funcionais que garantirão o sucesso da plataforma.
 
-**Requisitos funcionais** 
+Requisitos Funcionais
+               Cadastro e Autenticação de Usuários
+               
+RF01: Permitir o cadastro de produtores de eventos.
+RF02: Permitir o cadastro de consumidores de eventos.
+RF03: Implementar autenticação via e-mail e senha.
+                Perfil do Usuário
 
+RF04: Permitir aos produtores criar e editar perfis de eventos.
+RF05: Permitir aos consumidores criar e editar perfis pessoais.
+RF06: Exibir histórico de eventos criados
+                Gestão de Eventos
 
-Criar/deletar uma conta;
+RF07: Permitir aos produtores criar novos eventos com detalhes (nome, data, local, descrição, imagens).
+RF08: Permitir aos produtores editar e excluir eventos.
+RF09: Implementar um sistema de categorias para eventos (música, esportes, conferências, etc.).
+RF10: Permitir aos produtores adicionar informações sobre ingressos (preço, disponibilidade, tipos).
+                Descoberta de Eventos
 
-Sistema de avaliação dos eventos e mini fóruns;
+RF11: Permitir aos consumidores buscar eventos por categorias, datas e localizações.
+RF12: Exibir uma lista de eventos populares e recomendados.
+RF13: Implementar um sistema de filtros para refinar a busca de eventos.
+                Detalhes e Avaliação de Eventos
 
-Possibilidade de criar/deletar um evento com todas as suas informações;
+RF14: Permitir aos consumidores visualizar detalhes completos do evento.
+RF15: Permitir aos consumidores avaliar e comentar sobre eventos participados.
+RF16: Exibir avaliações e comentários de outros consumidores.
+.
+               Notificações e Alertas
 
-Possibilidade de filtrar as especificidades dos eventos;
+RF17: Enviar notificações sobre novos eventos relacionados aos interesses dos consumidores.
+RF18: Enviar alertas sobre eventos próximos à data de realização.
+RF19: Notificar os produtores sobre novas avaliações e comentários em seus eventos.
 
-Botões para o cliente contatar o evento;
+Requisitos Não Funcionais
+                       Desempenho
 
-Barra de pesquisas;
+RNF01: A plataforma deve carregar a página inicial em menos de 2 segundos.
+RNF02: As operações de busca devem retornar resultados em até 1 segundo.
 
-Botões de contato com o staff da plataforma;
+                        Usabilidade
 
-Sistema de notificação;
+RNF03: O design da interface deve ser intuitivo e fácil de usar.
+                        Escalabilidade
 
-Sistema de favoritar eventos;
+                      Compatibilidade
 
-Tabelas e gráficos que auxiliariam os donos de eventos a controlar os dados referentes as suas postagens. 
+RNF04: A plataforma deve ser compatível com os principais navegadores (Chrome, Firefox, Safari).
+RNF05: O aplicativo deve ser compatível com dispositivos móveis Android e iOS.
+                      Manutenibilidade
 
+RNF06: O código deve ser bem documentado e estruturado para facilitar a manutenção e futuras atualizações.
+RNF07: Implementar testes automatizados para garantir a integridade do sistema após atualizações.
+                        Disponibilidade
 
-
-**Requisitos não funcionais** 
-
-
-Uma aplicação rápida e intuitiva;
-
-Confiabilidade da plataforma na entrega de seus eventos;
-
-Uma aplicação otimizada e sem bugs;
-
-Um algoritmo que favoreça certos padrões;
-
-Utilizar a linguagem CSS, HTML, JavaScript e JSON (aplicação web). 
+RNF08: Garantir uma disponibilidade de 99.9% para a plataforma.
 
 ## User Flow
 
