@@ -32,9 +32,33 @@ header{
 }
 
 /*
-Botões entrar e criar - Inicio
+Barra de pesquisa - Início
 */
 
+input.GV_barradepesquisa{
+  background-color: white;
+  display: block;
+  border-radius: 10px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.342);
+  border: none;
+  width: 100%;
+}
+
+div.GV_caixabarradepesquisa{
+  width: calc(100% - 380px);
+}
+
+/*
+Barra de pesquisa - Fim
+*/
+
+/*
+Botões entrar e criar - Inicio
+*/
+div.entrarcriar{
+  width: 220px;
+}
 div.entrarcriar button {
     appearance: button;
     background-color: var(--cor6);

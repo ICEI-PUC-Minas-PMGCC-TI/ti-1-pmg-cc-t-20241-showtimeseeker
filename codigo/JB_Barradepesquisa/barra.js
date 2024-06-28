@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmSearch();
     });
 
-    // Evento de clique na barra de pesquisa
+    // Evento de clique na barra de pesquisa--------------------------------------------------------------------------------ao clicar na barra de pesquisa
     searchInput.addEventListener('click', function() {
         suggestionsWrapper.style.display = 'block';
         notFoundMessage.style.display = 'none';
         displaySuggestions();
     });
 
-    // Evento de entrada na barra de pesquisa
+    // Evento de entrada na barra de pesquisa--------------------------------------------------------------------------------cada dado inserido
     searchInput.addEventListener('input', function() {
         suggestionsWrapper.style.display = 'block';
 

@@ -162,16 +162,18 @@ function GV_verificargostos(GV_arraygostosevento = [], GV_arraygostosfiltro = []
 function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltro) {
     const GV_cardgrande = document.getElementById('card-container');
     const GV_cardsmenores = document.getElementById('GV_cardsmenorescontainer');
-
+    const GV_dadosdabarradepesquisa = document.getElementById('GV_barradepesquisa').value;
+    console.log(GV_dadosdabarradepesquisa == "")
     let GV_stringcards = '';
     let GV_stringcardgrande = '';
     let GV_primeiroevento = 0;
+    let GV_iddoprimeiro = 0;
     
     for(let GV_imevento = 1; GV_imevento < GV_arrayeventos.length; GV_imevento = GV_imevento + 1)
         {
             let GV_objevento = GV_arrayeventos[GV_imevento];
             //if(GV_gastosmediofiltro == "NaN"){console.log('cv')}
-            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros)){
+            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "")){
                 if(!GV_primeiroevento){
                     GV_stringcardgrande = `<img src="${GV_objevento.fotos[0]}" id="card-imagem" class="card-img" alt="foto">
                     <div class="card-img-overlay">
@@ -179,11 +181,12 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                     <p class="card-text GV_card-text">${GV_objevento.descricao.replaceAll('\n', '<br>')}</p>
                     </div>`;
                     GV_primeiroevento = 1;
+                    GV_iddoprimeiro = GV_objevento.id;
                 } 
                 else
                 {
                     GV_stringcards = GV_stringcards + `
-                    <div class="col" id="card-menor">
+                    <div class="col" id="card-menor" data-index = "${GV_objevento.id}>
                         <div class="card h-100">
                             <img src="${GV_objevento.fotos[0]}" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -198,6 +201,7 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
         }
         GV_cardsmenores.innerHTML = GV_stringcards;
         GV_cardgrande.innerHTML = GV_stringcardgrande;
+        GV_cardgrande.setAttribute("data-index", GV_iddoprimeiro);
 }
 
 function GV_conversaoparareal(GV_valoremoutramoeda, GV_tipodamoeda){
@@ -226,6 +230,8 @@ function GV_codigo(){
     const GV_gastomedio = document.getElementById('GV_preco');
     const GV_menufiltro = document.getElementById('GV_Menufiltro');
     const GV_filtroformulario = document.getElementById('GV_filtroformulario');
+    const GV_barradepesquisa = document.getElementById('GV_barradepesquisa');
+
     var GV_preco;
     var GV_keysfiltro;
     var GV_moedafiltro;
@@ -266,7 +272,10 @@ function GV_codigo(){
         GV_mostrareventos(GV_bd_STS.evento, GV_keysfiltro, GV_preco);
     })
     
+    GV_barradepesquisa.addEventListener('input', GV_mostrareventos(GV_bd_STS.evento, GV_keysfiltro, GV_preco))
 }
+
+
 
 function ir_para_perfil(){
     var ED_log = sessionStorage.getItem('logado');
