@@ -288,6 +288,38 @@ Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequ
 4. **Ferramentas de Desenvolvimento e DevOps**
 
    - **Controle de Versão**: Git será utilizado para controle de versão, com repositórios hospedados no GitHub para facilitar a colaboração entre os desenvolvedores.
+     ## Processo
+**Planejamento e Análise de Requisitos**
+
+Reunião Inicial: Realização de reuniões com entre os participantes do projeto para entender suas necessidades e expectativas.
+
+Definição de Requisitos: Coleta e documentação dos requisitos funcionais e não funcionais.
+
+Análise de Viabilidade: Avaliação da viabilidade técnica do projeto.
+
+**Design e Prototipagem**
+
+Wireframes : Criação de wireframes e utilizando ferramentas como Figma para visualizar o layout e a funcionalidade da aplicação.
+
+Prototipagem: Desenvolvimento do protótipo interativo para validação das funcionalidades principais com os professores do trabalho.
+
+**Desenvolvimento Ágil**
+
+Sprints: Utilização da metodologia ágil por meio do Canvas, dividindo o desenvolvimento em sprints de duas a três semanas em média.
+
+Weekly Stand-ups: Reuniões semanais para acompanhamento do progresso e resolução de impedimentos.
+
+Revisões de Sprint: Revisões ao final de cada sprint para apresentar ao grupo e coletar feedback.
+
+Retrospectivas:  Acreditamos que mesmo em meio a perda de um integrante mas com adição de outros dois, o grupo não perdeu qualidade mas soube bem administrar como atribuir e organizar cada tarefa aos que chegaram. Observando dessa forma, acreditamos que o grupo teve bastante resiliência para poder, acima de tudo, se concentrar e atingir o objetivo principal: criar um aplicativo/site promissor e estável.
+
+**Testes e Garantia de Qualidade**
+
+Testes Unitários: Implementação de testes unitários para garantir a funcionalidade de cada componente isoladamente.
+
+Testes de Integração: Verificação da interação entre diferentes módulos da aplicação.
+
+Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes condições de carga.
   
 
 ## User Flow
