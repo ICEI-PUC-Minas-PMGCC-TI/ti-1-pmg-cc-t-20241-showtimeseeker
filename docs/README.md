@@ -339,11 +339,14 @@ Enzo Dayrell
 Responsável geral do Código e programação do Site
 - Criação do gráfico e dados apresentados dos eventos
 - Criação, edição e exclusão de usuário
+  
 Gabriel Valedo
  Responsável geral do Código e programação do Site
 -  Criar, editar e excluir os eventos
 - Filtragem de gostos
+  
   Heitor Viana
+  
 Responsável pela documentação do GitHub
 - Sistema de Favoritar/ Desfavoritar Eventos
 - Sistema de Visualização dos eventos 
@@ -351,6 +354,7 @@ Responsável pela documentação do GitHub
 Julio Biluca
 - Barra de Pesquisar eventos
 - Botão de contato do cliente com o evento
+   
 Mateus Neiva 
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação das Notificações dos eventos
