@@ -203,7 +203,7 @@ WANDERLEY
 ## Requisitos
 Para desenvolver e implementar o "Show Time Seeker", é fundamental identificar e detalhar os requisitos funcionais e não funcionais que garantirão o sucesso da plataforma.
 
-Requisitos Funcionais
+**Requisitos Funcionais**
  
     Cadastro e Autenticação de Usuários
                
@@ -242,7 +242,7 @@ Requisitos Funcionais
 18. Enviar alertas sobre eventos próximos à data de realização.
 19. Notificar os produtores sobre novas avaliações e comentários em seus eventos.
 
-Requisitos Não Funcionais 
+**Requisitos Não Funcionais**
 
                          Desempenho
 
@@ -266,6 +266,29 @@ Requisitos Não Funcionais
                         Disponibilidade
 
 8. Garantir uma disponibilidade de 99.9% para a plataforma.
+## Tecnologias
+
+Para desenvolver o "Show Time Seeker", é essencial selecionar tecnologias adequadas que garantam a eficiência, segurança e escalabilidade da plataforma. A seguir, apresentamos as tecnologias recomendadas para cada componente do sistema:
+
+1. **Frontend**
+
+   - **Linguagens e Frameworks**: Utilizaremos js, conhecido como JavaScript  para construção de interfaces de usuário interativas e responsivas. JavaScript permite a criação de componentes reutilizáveis e facilita a manutenção e escalabilidade do código.
+   - **Design**: O design da interface será criado utilizando CSS, uma biblioteca de componentes de interface do usuário que segue os princípios do Material Design do HTML. Isso garantirá uma experiência de usuário moderna e intuitiva.
+   - **Responsividade**: Bootstrap será integrado para garantir que a aplicação seja responsiva e funcione bem em diferentes tamanhos de tela, incluindo dispositivos móveis.
+
+2. **Backend**
+
+   - **Banco de Dados**: Utilizaremos o local storage, em primeiro momento para conseguir apresentar o aplicativo, devido à sua flexibilidade e escalabilidade. O local storage irá armazenar dados de eventos, usuários e avaliações.
+   - **Serviços de Notificações**: Utilizaremos a própria tela para enviar notificações push aos usuários sobre novos eventos e atualizações relevantes.
+
+3. **Infraestrutura**
+
+   - **Servidores e Hospedagem**: A aplicação será hospedada na AWS (Amazon Web Services), utilizando serviços como EC2 para servidores virtuais, S3 para armazenamento de arquivos e RDS para banco de dados relacional (caso necessário).
+
+4. **Ferramentas de Desenvolvimento e DevOps**
+
+   - **Controle de Versão**: Git será utilizado para controle de versão, com repositórios hospedados no GitHub para facilitar a colaboração entre os desenvolvedores.
+  
 
 ## User Flow
 
