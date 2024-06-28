@@ -335,26 +335,26 @@ Testes de Desempenho: Avaliação do desempenho da aplicação sob diferentes co
 [Perfil.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049616/Perfil.pdf)
 
 ## Atribuições
-Enzo Dayrell: 
+Enzo Dayrell 
 Responsável geral do Código e programação do Site
 - Criação do gráfico e dados apresentados dos eventos
 - Criação, edição e exclusão de usuário
-Gabriel Valedo:
+Gabriel Valedo
  Responsável geral do Código e programação do Site
 -  Criar, editar e excluir os eventos
 - Filtragem de gostos
-  Heitor Viana: 
+  Heitor Viana
 Responsável pela documentação do GitHub
 - Sistema de Favoritar/ Desfavoritar Eventos
 - Sistema de Visualização dos eventos 
 
-Julio Biluca:
+Julio Biluca
 - Barra de Pesquisar eventos
 - Botão de contato do cliente com o evento
-Mateus Neiva: 
+Mateus Neiva 
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação das Notificações dos eventos
-Luis Ferreira:
+Luis Ferreira
 Entrou depois e ficou encarregado de realizar um sprint
 - Criação da central de comentários e resenhas sobre o evento
 
