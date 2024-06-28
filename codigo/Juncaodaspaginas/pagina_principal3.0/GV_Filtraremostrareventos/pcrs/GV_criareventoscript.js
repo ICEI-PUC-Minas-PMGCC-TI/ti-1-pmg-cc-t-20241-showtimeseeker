@@ -25,6 +25,23 @@ function GV_idindexevento(GV_id)
 function GV_salvardadosdousuarioatual(GV_usuarioatual){
     let GV_objdadosusuario = lerdadosevento();
     GV_objdadosusuario.usuario = GV_usuarioatual;
+    GV_objdadosusuario.listadeusuarios.push(GV_usuarioatual);
+    salvardadosevento(GV_objdadosusuario);
+}
+
+function GV_modificardadosdousuarioatual(GV_usuarioatual){
+    let GV_contadorusuario = -1;
+    let GV_acheiousuario = false; 
+    let GV_objdadosusuario = lerdadosevento();
+    do
+    {
+        GV_contadorusuario = GV_contadorusuario + 1;
+        GV_acheiousuario = GV_objdadosusuario.listadeusuarios[GV_contadorusuario].ID == GV_usuarioatual.ID;
+        console.log("F");
+    }
+    while(!GV_acheiousuario);
+    GV_objdadosusuario.usuario = GV_usuarioatual;
+    GV_objdadosusuario.listadeusuarios[GV_contadorusuario] = GV_usuarioatual;
     salvardadosevento(GV_objdadosusuario);
 }
 
@@ -244,13 +261,10 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
             let GV_nomedosgostos = Object.keys(GV_arrayeventos[0].visualizacoes);
-            console.log(GV_nomedosgostos[0]);
+            console.log(GV_nomedosgostos);
             GV_todasareasdeedicao.forEach(function(area){
                 let GV_indexdoditoevento = GV_idindexevento(area.getAttribute("data-index"));
-                var ED_barra_1 = area.querySelector('#gosto-1');
-                var ED_barra_2 = area.querySelector('#gosto-2');
-                var ED_barra_3 = area.querySelector('#gosto-3');
-                var ED_barra_4 = area.querySelector('#gosto-4');
+
                 let GV_legenda = area.querySelector('div.chart');
                 //pegar os valores par calculo de saber os 4 gostos com mais visualizações
                 let ED_Array_visu_gostos = new Array();
@@ -312,9 +326,16 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 }
 
 
+                GV_legenda.innerHTML =                 
+                `<abbr title="${GV_nomedosgostos[ED_array_id_gostos[0]]}"><div class="bar" id="gosto-1" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[1]]}"><div class="bar" id="gosto-2" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[2]]}"><div class="bar" id="gosto-3" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[3]]}"><div class="bar" id="gosto-4" ></div></abbr>`
 
-
-                
+                var ED_barra_1 = area.querySelector('#gosto-1');
+                var ED_barra_2 = area.querySelector('#gosto-2');
+                var ED_barra_3 = area.querySelector('#gosto-3');
+                var ED_barra_4 = area.querySelector('#gosto-4');
                 
 
                 //calcular escala adaptavel
@@ -905,8 +926,9 @@ function adicionarevento(dadosdonovoevento){
 // Author: Habib Mhamadi
 // Email: habibmhamadi@gmail.com
 
+function MultiSelectTag(e,t={shadow:!1,rounded:!0}){var n=null,l=null,a=null,d=null,s=null,o=null,i=null,r=null,c=null,u=null,v=null,p=null,h=t.tagColor||{};h.textColor="#0372B2",h.borderColor="#0372B2",h.bgColor="#C0E6FC";var m=new DOMParser;function g(e,t,n=!1){const l=document.createElement("li");l.innerHTML="<input type='checkbox' style='margin:0 0.5em 0 0' class='input_checkbox'>",l.innerHTML+=e.label,l.dataset.value=e.value;const a=l.firstChild;a.dataset.value=e.value,t&&e.label.toLowerCase().startsWith(t.toLowerCase())?p.appendChild(l):t||p.appendChild(l),n&&(l.style.backgroundColor=h.bgColor,a.checked=!0)}function f(e=null){for(var t of(p.innerHTML="",l))t.selected?(!b(t.value)&&C(t),g(t,e,!0)):g(t,e)}function C(e){const t=document.createElement("div");t.classList.add("item-container"),t.style.color=h.textColor||"#2c7a7b",t.style.borderColor=h.borderColor||"#81e6d9",t.style.background=h.bgColor||"#e6fffa";const n=document.createElement("div");n.classList.add("item-label"),n.style.color=h.textColor||"#2c7a7b",n.innerHTML=e.label,n.dataset.value=e.value;const a=m.parseFromString('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="item-close-svg">\n                <line x1="18" y1="6" x2="6" y2="18"></line>\n                <line x1="6" y1="6" x2="18" y2="18"></line>\n            </svg>',"image/svg+xml").documentElement;a.addEventListener("click",(t=>{l.find((t=>t.value==e.value)).selected=!1,w(e.value),f(),E()})),t.appendChild(n),t.appendChild(a),i.append(t)}function L(){for(var e of p.children)e.addEventListener("click",(e=>{!1===l.find((t=>t.value==e.target.dataset.value)).selected?(l.find((t=>t.value==e.target.dataset.value)).selected=!0,c.value=null,f(),E()):(l.find((t=>t.value==e.target.dataset.value)).selected=!1,c.value=null,f(),E(),w(e.target.dataset.value))}))}function b(e){for(var t of i.children)if(!t.classList.contains("input-body")&&t.firstChild.dataset.value==e)return!0;return!1}function w(e){for(var t of i.children)t.classList.contains("input-body")||t.firstChild.dataset.value!=e||i.removeChild(t)}function E(e=!0){selected_values=[];for(var a=0;a<l.length;a++)n.options[a].selected=l[a].selected,l[a].selected&&selected_values.push({label:l[a].label,value:l[a].value});e&&t.hasOwnProperty("onChange")&&t.onChange(selected_values)}n=document.getElementById(e),function(){l=[...n.options].map((e=>({value:e.value,label:e.label,selected:e.selected}))),n.classList.add("hidden"),(a=document.createElement("div")).classList.add("mult-select-tag"),(d=document.createElement("div")).classList.add("wrapper"),(o=document.createElement("div")).classList.add("body"),t.shadow&&o.classList.add("shadow"),t.rounded&&o.classList.add("rounded"),(i=document.createElement("div")).classList.add("input-container"),(c=document.createElement("input")).classList.add("input"),c.placeholder=`${t.placeholder||"Search..."}`,(r=document.createElement("inputBody")).classList.add("input-body"),r.append(c),o.append(i),(s=document.createElement("div")).classList.add("btn-container"),(u=document.createElement("button")).type="button",s.append(u);const e=m.parseFromString('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                <polyline points="18 15 12 21 6 15"></polyline>\n            </svg>',"image/svg+xml").documentElement;u.append(e),o.append(s),d.append(o),(v=document.createElement("div")).classList.add("drawer","hidden"),t.shadow&&v.classList.add("shadow"),t.rounded&&v.classList.add("rounded"),v.append(r),p=document.createElement("ul"),v.appendChild(p),a.appendChild(d),a.appendChild(v),n.nextSibling?n.parentNode.insertBefore(a,n.nextSibling):n.parentNode.appendChild(a)}(),f(),L(),E(!1),u.addEventListener("click",(()=>{v.classList.contains("hidden")?(f(),L(),v.classList.remove("hidden"),c.focus()):v.classList.add("hidden")})),c.addEventListener("keyup",(e=>{f(e.target.value),L()})),c.addEventListener("keydown",(e=>{if("Backspace"===e.key&&!e.target.value&&i.childElementCount>1){const e=o.children[i.childElementCount-2].firstChild;l.find((t=>t.value==e.dataset.value)).selected=!1,w(e.dataset.value),E()}})),window.addEventListener("click",(e=>{a.contains(e.target)||("LI"!==e.target.nodeName&&"input_checkbox"!==e.target.getAttribute("class")?v.classList.add("hidden"):L())}))}
 
-function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
+function MultiSelectTag2(el, customs = { shadow: false, rounded: true }) {
         // Initialize variables
         var element = null,
             options = null,
@@ -1281,7 +1303,7 @@ function cadastro(ED_estilos){
     var  ED_username = document.getElementById('username').value;
     var  ED_senha = document.getElementById('senha_criar').value;
     var  ED_email = document.getElementById('email').value;
-    var ED_iD_usuario = 1;
+    var ED_iD_usuario = Date.now();
     var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
     var gostosSelect = document.getElementById('gostos');
     var ED_gostos = ED_estilos;
@@ -1334,7 +1356,8 @@ function cadastro(ED_estilos){
         ID: ED_iD_usuario,
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
-        moeda: ED_moeda
+        moeda: ED_moeda,
+        favoritos: []
     };
 
         
@@ -1355,6 +1378,85 @@ function cadastro(ED_estilos){
     }
 
  
+}
+
+function editarperfilcad(ED_estilos){
+    let GV_objdadosusuario = lerdadosevento();
+    // Coletar valores dos inputs
+    var  ED_username = document.getElementById('username').value;
+    var  ED_senha = document.getElementById('senha_criar').value;
+    var  ED_email = document.getElementById('email').value;
+    var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
+    var gostosSelect = document.getElementById('gostos');
+    var ED_gostos = ED_estilos;
+    //var ED_gostos = Array.from(gostosSelect.selectedOptions).map(option => option.value);
+    var ED_moeda = document.querySelector('.form-select').value;
+    
+    //variavel para saber se esta logado
+    var ED_logado = false;
+    console.log("--------");
+    console.log(ED_gostos);
+
+
+    //variavel para validação
+    var ED_username_conf = false, ED_senha_conf = false, ED_preco_conf = false;
+
+    //validação do username
+    if(ED_username.length < 5){
+        alert('ERRO: username deve ter mais que 5 caracteres');
+    }
+    else{
+        ED_username_conf= true;
+    }
+    
+    //validação da senha
+    if(ED_senha.length < 5){
+        alert('ERRO: senha deve ter mais que 5 caracteres');
+    }
+    else{
+        ED_senha_conf = true;
+    }
+
+    //validação preco
+    if(ED_precoMedio < 10){
+        alert('ERRO: valor muito baixo');
+    }
+    else{
+        ED_preco_conf = true;
+    }
+
+ 
+
+
+
+    if(ED_username_conf && ED_senha_conf && ED_preco_conf){
+         // Criar objeto usuário
+     const usuario = {
+        username: ED_username,
+        senha: ED_senha,
+        email: ED_email,
+        ID: GV_objdadosusuario.usuario.ID,
+        precoMedio: ED_precoMedio,
+        gostos: ED_gostos,
+        moeda: ED_moeda,
+        favoritos: GV_objdadosusuario.usuario.favoritos
+    };
+
+        
+    // Armazenar objeto usuário no localStorage
+    GV_modificardadosdousuarioatual(usuario);
+    //localStorage.setItem('usuario', JSON.stringify(usuario));
+    ED_logado = true;
+    sessionStorage.setItem("logado", ED_logado);
+
+    location.href = "index.html";
+
+    // Exibir mensagem de sucesso 
+    alert('Usuário cadastrado com sucesso!');
+    }
+    else{
+        location.href = "cadastrar.html";
+    }
 }
 
 function logar (){
