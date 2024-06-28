@@ -38,7 +38,7 @@ function GV_modificardadosdousuarioatual(GV_usuarioatual){
         GV_contadorusuario = GV_contadorusuario + 1;
         GV_acheiousuario = GV_objdadosusuario.listadeusuarios[GV_contadorusuario].ID == GV_usuarioatual.ID;
     }
-    while(GV_contadorusuario < GV_objdadosusuario.listadeusuarios.length && !GV_acheiousuario);
+    while(GV_contadorusuario < GV_objdadosusuario.listadeusuarios.length -1 && !GV_acheiousuario);
     GV_objdadosusuario.usuario = GV_usuarioatual;
     GV_objdadosusuario.listadeusuarios[GV_contadorusuario] = GV_usuarioatual;
     salvardadosevento(GV_objdadosusuario);
@@ -1286,6 +1286,9 @@ const GV_teste = document.getElementById('GV_limparchecbox');
 
 function deslogar(){
     var logado = false;
+    let GV_objdadosusuario = lerdadosevento();
+    GV_objdadosusuario.usuario = {};
+    salvardadosevento(GV_objdadosusuario);
     location.href = "index.html";
     alert('deslogado com sucesso');
     sessionStorage.setItem("logado", logado);
@@ -1466,15 +1469,27 @@ function logar (){
     var objetoArmazenado = localStorage.getItem('bd_ShowTimeSeeker');
 
     // Converte o objeto de volta para um objeto 
-    var objetoJS = JSON.parse(objetoArmazenado).usuario;
+    let GV_objetoJS = JSON.parse(objetoArmazenado); 
+    
+    
+    let GV_contadorusuario = -1;
+    let GV_acheiousuario = false; 
+    do
+    {
+        GV_contadorusuario = GV_contadorusuario + 1;
+        GV_acheiousuario = GV_objetoJS.listadeusuarios[GV_contadorusuario].username == login;
+    }
+    while(GV_contadorusuario < GV_objetoJS.listadeusuarios.length - 1 && !GV_acheiousuario);
 
+    var objetoJS = GV_objetoJS.listadeusuarios[GV_contadorusuario];
     //armazenar os valores das classes em uma variavel
     var ED_senha_correta = objetoJS.senha;
     var ED_usuario_correto = objetoJS.username; 
     
-
     if(login == ED_usuario_correto && senha == ED_senha_correta){
         alert('bem vindo!');
+        GV_objetoJS.usuario = objetoJS;
+        salvardadosevento(GV_objetoJS);
         location.href = "index.html";
         ED_logado = true;
         sessionStorage.setItem("logado", ED_logado);
