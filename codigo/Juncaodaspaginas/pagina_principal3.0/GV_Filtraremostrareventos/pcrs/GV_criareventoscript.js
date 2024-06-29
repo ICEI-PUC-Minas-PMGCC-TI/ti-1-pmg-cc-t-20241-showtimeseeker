@@ -220,7 +220,7 @@ function lerdadosevento()
                                 precoMedio: "564",
                                 gostos: ["1", "2", "3"],
                                 moeda: "R$",
-                                favoritos: [],
+                                favoritos: [1718186424176, 1718186419035],
                                 visualizou: []
                             }
                         ],
@@ -228,6 +228,47 @@ function lerdadosevento()
                 };
         }
         return(objdados);
+}
+
+function GV_converterdata(data){
+    let convertida = data.split("-");
+    convertida = convertida.reverse();
+    convertida = convertida.join("/")
+    return convertida
+}
+
+function GV_mostrareventosfavoritos(){
+    const GV_areadosfavoritos = document.querySelector('div.GV_abameusfavoritos');
+    let GV_objtotaisfav = lerdadosevento();
+    let GV_strfav = '';
+    let GV_listatotaisfav = GV_objtotaisfav.evento;
+    for(let GV_favevento of GV_objtotaisfav.usuario.favoritos){
+        let GV_indexfavevento = GV_idindexevento(GV_favevento);
+
+        GV_strfav = GV_strfav + `
+        <div class="GV_exibicaodadosdoseventos">
+                <div class="GV_titulodecadaevento">
+                    <h3>${GV_listatotaisfav[GV_indexfavevento].nome_do_evento}</h3>
+                </div>
+                <div class="GV_imgfav">
+                    <img src="${GV_listatotaisfav[GV_indexfavevento].fotos[0]}" alt="">
+                </div>
+                <div class="GV_dadosfavvisu">
+                    <div class="GV_favdescriacao">
+                        ${GV_listatotaisfav[GV_indexfavevento].descricao}
+                    </div>
+                    <div class="GV_vervisualizacoes">
+                        <span class="GV_destaquedatalocal">Data:</span> ${GV_converterdata(GV_listatotaisfav[GV_indexfavevento].data)}<br>
+                        <span class="GV_destaquedatalocal">Local:</span> ${GV_listatotaisfav[GV_indexfavevento].local}
+                    </div>
+                </div>
+                <div class="GV_botoesdealteracao">
+                    <button class="GV_vermaisbtn" data-id="${GV_listatotaisfav[GV_indexfavevento].id}">Ver mais</button>
+                </div>
+        </div>`;
+        
+    }
+    GV_areadosfavoritos.innerHTML = GV_strfav;
 }
 
 function GV_mostrareventosparaedicao(GV_arrayeventos){
@@ -282,7 +323,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 let GV_legenda = area.querySelector('div.chart');
                 //pegar os valores par calculo de saber os 4 gostos com mais visualizações
                 let ED_Array_visu_gostos = new Array();
-                ED_Array_visu_gostos[0]= GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1;
+                ED_Array_visu_gostos[0] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto1;
                 ED_Array_visu_gostos[1] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto2;
                 ED_Array_visu_gostos[2] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto3;
                 ED_Array_visu_gostos[3] = GV_arrayeventos[GV_indexdoditoevento].visualizacoes.gosto4;
@@ -419,6 +460,11 @@ function ajustarAlturaDasBarras(ED_idevento, ED_indexevento, ED_arrayevento) {
 
 function codigo(estilosdoseventovalores){
 
+    const GV_abameuseventosedit = document.querySelector('div.GV_abameuseventos');
+    const GV_areadoseventosfavoritos = document.querySelector('div.GV_abameusfavoritos');
+    const GV_btnabadoseventosfav = document.querySelector('button.GV_favoritosabamenor');
+    const GV_btnabadoseventosmeusedit = document.querySelector('button.GV_meuseventosabamenor');
+    const GV_btnabadoseventosmeuseditid = document.getElementById('GV_btnmeuseventos');
     const GV_html = document.querySelector('html');
     const GV_containerformulario = document.getElementById('GV_containerdoform');
     const GV_fundoescuro = document.getElementById('GV_fundoescuro');
@@ -473,10 +519,30 @@ function codigo(estilosdoseventovalores){
 
     GV_mostrareventosparaedicao(lerdadosevento().evento)
     salvardadosevento(lerdadosevento());
-
+    GV_mostrareventosfavoritos();
     const GV_botaoexcluirevento = document.querySelector('.GV_botaoparaexcluiroevento');
 
+    GV_areadoseventosfavoritos.addEventListener('click',(favevent) => {
+        if(favevent.target.getAttribute('class') == 'GV_vermaisbtn'){
+            location.href = `evento.html?id=${favevent.target.getAttribute('data-id')}`
+        }
+        
+    })
 
+    GV_btnabadoseventosmeusedit.addEventListener('click', () => {
+        GV_areadoseventosfavoritos.classList.add('hidden')
+        GV_btnabadoseventosfav.classList.remove('GV_botaoerguido');
+        GV_btnabadoseventosmeusedit.classList.add('GV_botaoerguido');
+        GV_abameuseventosedit.classList.remove('hidden');
+        GV_btnabadoseventosmeuseditid.style.boxShadow = "none";
+    })
+
+    GV_btnabadoseventosfav.addEventListener('click', () => {
+        GV_areadoseventosfavoritos.classList.remove('hidden')
+        GV_btnabadoseventosfav.classList.add('GV_botaoerguido');
+        GV_btnabadoseventosmeusedit.classList.remove('GV_botaoerguido');
+        GV_abameuseventosedit.classList.add('hidden');
+    })
 
     //Limpar os dados do formulario
         function limparformulario(){

@@ -150,7 +150,7 @@ function GV_lerdadoseventodobancodedados()
                             precoMedio: "564",
                             gostos: ["1", "2", "3"],
                             moeda: "R$",
-                            favoritos: [1718186424176],
+                            favoritos: [1718186424176, 1718186419035],
                             visualizou: []
                         }
                     ],
@@ -158,6 +158,10 @@ function GV_lerdadoseventodobancodedados()
             };
         }
         return(objdados);
+}
+
+function salvardadosevento(dados){
+    localStorage.setItem('bd_ShowTimeSeeker', JSON.stringify(dados));
 }
 
 function GV_idindexevento(GV_id)
@@ -265,6 +269,8 @@ function GV_codigo(){
  
     GV_notificacaoevento();
     
+    salvardadosevento(GV_lerdadoseventodobancodedados());
+
     const GV_botaodofiltro = document.getElementById("GV_botaodofiltro");
     const GV_gastomedio = document.getElementById('GV_preco');
     const GV_menufiltro = document.getElementById('GV_Menufiltro');
