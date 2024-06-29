@@ -121,7 +121,7 @@ function lerdadosevento()
                                         valor: 50,
                                         moeda: "R$"
                                     },
-                                    data: "2024-08-06",
+                                    data: "2024-07-01",
                                     descricao: "Em Maio temos mais um encontro marcado no Rancho Bill para comemorarmos o Bday do Felipe Arruda.\nUm super line, numa junção de muita vibe que o Rancho já tem, com a vibe que BH inteira já conhece das nossas festas. \nVai ser mais um DOMINGO de muita vibe, alegria e uma comemoração inesquecível.",
                                     fotos: ["https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F451776649%2F1408553967403%2F1%2Foriginal.20230222-065803?w=600&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C238%2C1080%2C540&s=d44826119d6bec5f86d3faf2729717d7", "https://hips.hearstapps.com/hmg-prod/images/701/pool-party1-1499900484.jpg"],
                                     id: 1718186424176,
@@ -220,7 +220,7 @@ function lerdadosevento()
                                 precoMedio: "564",
                                 gostos: ["1", "2", "3"],
                                 moeda: "R$",
-                                favoritos: [],
+                                favoritos: [1718186424176],
                                 visualizou: []
                             }
                         ],
@@ -1531,120 +1531,7 @@ function logar (){
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    let GV_lognotif = sessionStorage.getItem('logado');
-    if(GV_lognotif == true){
-        let GV_objeventonot = lerdadosevento();
-        const favoritedEvents = GV_objeventonot.usuario.favoritos;
-        /*const favoriteButtons = document.querySelectorAll('.favorite-btn');
-        const notificationElement = document.getElementById('notification');
-        const favoritedEvents = JSON.parse(localStorage.getItem('favoritedEvents')) || [];
 
-        favoriteButtons.forEach(button => {
-            const eventElement = button.closest('.event');
-            const eventTitle = eventElement.querySelector('h3').textContent;
-            const eventDate = new Date(eventElement.getAttribute('data-event-date'));
-
-            // Check if the event is already favorited
-            if (favoritedEvents.some(event => event.title === eventTitle)) {
-                button.textContent = 'Remover Favorito';
-                button.classList.add('favorited');
-            }
-
-            button.addEventListener('click', () => {
-                if (button.classList.contains('favorited')) {
-                    // Remove from favorites
-                    button.textContent = 'Favoritar';
-                    button.classList.remove('favorited');
-                    const index = favoritedEvents.findIndex(event => event.title === eventTitle);
-                    if (index > -1) {
-                        favoritedEvents.splice(index, 1);
-                        localStorage.setItem('favoritedEvents', JSON.stringify(favoritedEvents));
-                    }
-                } else {
-                    // Add to favorites
-                    button.textContent = 'Remover Favorito';
-                    button.classList.add('favorited');
-                    favoritedEvents.push({ date: eventDate, title: eventTitle });
-                    localStorage.setItem('favoritedEvents', JSON.stringify(favoritedEvents));
-
-                    // Show favorited notification
-                    showNotification(`Você favoritou o evento: ${eventTitle}`);
-
-                    // Schedule notifications
-                    const now = new Date();
-                    const timeDifference48Hours = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
-
-                    setTimeout(() => {
-                        showNotification(`Lembrete: ${eventTitle} ocorrerá em 48 horas!`);
-                    }, eventDate - now - timeDifference48Hours);
-
-                    setTimeout(() => {
-                        showNotification(`Lembrete: ${eventTitle} é hoje!`);
-                    }, eventDate - now);
-                }
-            });
-        });*/
-
-
-        function isHoje(dataAlvo) {
-            // Obter a data atual
-            const hoje = new Date();
-        
-            // Converter a data alvo do formato 'aaaa-mm-dd' para um objeto Date
-            const [ano, mes, dia] = dataAlvo.split('-');
-            const dataAlvoDate = new Date(ano, mes - 1, dia); // Meses começam do 0 em JavaScript
-        
-            // Comparar os componentes da data (ano, mês, dia)
-            return hoje.getFullYear() === dataAlvoDate.getFullYear() &&
-                hoje.getMonth() === dataAlvoDate.getMonth() &&
-                hoje.getDate() === dataAlvoDate.getDate();
-        }
-
-        function faltamDoisDias(dataAlvo) {
-            // Obter a data atual
-            const hoje = new Date();
-            
-            // Converter a data alvo do formato 'aaaa-mm-dd' para um objeto Date
-            const [ano, mes, dia] = dataAlvo.split('-');
-            const dataAlvoDate = new Date(ano, mes - 1, dia); // Meses começam do 0 em JavaScript
-        
-            // Calcular a diferença em milissegundos
-            const diferencaMillis = dataAlvoDate - hoje;
-            
-            // Converter a diferença para dias
-            const diferencaDias = Math.ceil(diferencaMillis / (1000 * 60 * 60 * 24));
-        
-            // Verificar se a diferença é igual a 2
-            return diferencaDias === 2;
-        }
-
-        function showNotification(message) {
-            notificationElement.textContent = message;
-            notificationElement.classList.remove('hidden');
-            setTimeout(() => {
-                notificationElement.classList.add('hidden');
-            }, 5000); // Hide notification after 5 seconds
-        }
-
-        // Check for notifications on page load
-        favoritedEvents.forEach(event => {
-            for(let GV_event of GV_objeventonot.evento){    
-                if(GV_event.id = favoritedEvents)
-                {
-                    if (faltamDoisDias()) {
-                        console.log("Vai")
-                        showNotification(`Lembrete: ${event.title} ocorrerá em 48 horas!`);
-                    } else if (isHoje()) {
-                        console.log("Nao vai")
-                        showNotification(`Lembrete: ${event.title} é hoje!`);
-                    }
-                } 
-            }    
-        });
-    }
-});
 
 
 
