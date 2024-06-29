@@ -65,7 +65,7 @@
             <div class="comentarios">
                 <h3>Comentários</h3>
                 <textarea id="areaComentarios" class="form-control" rows="3" placeholder="Deixe seu comentário"></textarea>
-                <button id="botaoComentar" class="btn btn-primary mt-2" onclick="comentar(GV_idindexevento(GV_idurl))">Comentar</button>
+                <button id="botaoComentar" class="btn btn-primary mt-2" onclick="comentar(GV_indexurl)">Comentar</button>
             </div>
         </div>
     </main>
@@ -77,15 +77,16 @@
     <script src="./pcrs/GV_criareventoscript.js"></script>
     <!-- Seu script personalizado -->
     <script>
-    window.onload = function(){
         const urlparams = new URLSearchParams(window.location.search);
         const GV_idurl = parseInt(urlparams.get('id'));
-        
+        const GV_indexurl = GV_idindexevento(GV_idurl);
+        window.onload = function(){
 
-        paginadoevento(JSON.parse(localStorage.getItem('bd_ShowTimeSeeker')).evento, GV_idindexevento(GV_idurl))
+
+            paginadoevento(JSON.parse(localStorage.getItem('bd_ShowTimeSeeker')).evento, GV_indexurl)
 
 
-    }
+        }
     </script>
 </body>
 </html>

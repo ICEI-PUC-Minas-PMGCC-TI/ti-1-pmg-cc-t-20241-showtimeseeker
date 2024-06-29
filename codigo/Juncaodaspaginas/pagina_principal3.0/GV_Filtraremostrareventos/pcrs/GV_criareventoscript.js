@@ -1359,7 +1359,8 @@ function cadastro(ED_estilos){
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
         moeda: ED_moeda,
-        favoritos: []
+        favoritos: [],
+        visualizou: [],
     };
 
         
@@ -1441,7 +1442,8 @@ function editarperfilcad(ED_estilos){
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
         moeda: ED_moeda,
-        favoritos: GV_objdadosusuario.usuario.favoritos
+        favoritos: GV_objdadosusuario.usuario.favoritos,
+        visualizou: GV_objdadosusuario.usuario.visualizou,
     };
 
         
@@ -1634,7 +1636,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
     
     
@@ -1701,7 +1703,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Atualizar a exibição dos comentários (implementação opcional)
         }
     });
-});
+});*/
 
 function paginadoevento(eventos, indexdoevento){
 
@@ -1757,6 +1759,7 @@ function paginadoevento(eventos, indexdoevento){
 
 
 function comentar(ED_indexcoment) {
+    console.log(ED_indexcoment);
     // Captura o valor do campo de comentário
     var ED_comentario = document.getElementById('areaComentarios').value;
 
@@ -1772,7 +1775,7 @@ function comentar(ED_indexcoment) {
 
         salvardadosevento(ED_obj_coment);
 
-        location.href = "evento.html";
+        //location.href = "evento.html";
 
         console.log("Comentário adicionado com sucesso:", ED_obj_coment.evento.comentarios[0]);
 }
