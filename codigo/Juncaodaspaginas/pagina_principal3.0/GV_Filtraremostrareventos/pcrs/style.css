@@ -439,6 +439,7 @@ div.comentario{
   right: 1rem;
   border-radius: 5px;
 }
+  
 
 .GV_caixanotificacao{
   display: flex;
@@ -467,7 +468,14 @@ div.comentario{
   width: 100%;
   height: 1.6em;
 }
-  
+
+button.botao_de_contato{
+  margin-top: 20px;
+  background-color: var(--cor1);
+  height: 40px;
+  color: var(--cor4);
+}
+
 /*Multi select inicio*/
 /*
 .mult-select-tag {
