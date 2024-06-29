@@ -20,12 +20,20 @@
         .comentarios {
             margin-top: 20px;
         }
+
+        /* Estilos para tornar o botão de contato responsivo */
+        #botao_de_contato {
+            display: block;
+            width: 100%;
+            max-width: 200px; /* Define a largura máxima para o botão */
+            margin: 0 auto; /* Centraliza o botão */
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="container-logo">
+        <div class="container">
             <a href="index.html"><img id="logo" src="./img/Logo-preta-sem-fundo.png" alt="logo"></a>
         </div>
     </header>
@@ -46,9 +54,9 @@
                 </a>
             </div>
 
-    
-            <a id="botao_de_contato" href=""><button class="botao_de_contato id="botao_de_contato" class="btn btn-primary">Entrar em contato</button></a>
-
+            <a id="botao_de_contato" href="">
+                <button class="btn btn-primary">Entrar em contato</button>
+            </a>
 
             <div class="evento-info">
                 <h2 id="nomeEvento">Nome do Evento</h2>
@@ -72,7 +80,7 @@
                 <button id="botaoComentar" class="btn btn-primary mt-2">Comentar</button>
             </div>
             <div id="comentados">
-                <!--local onde as divs de comentarios ficarão-->
+                <!-- Local onde as divs de comentários ficarão -->
             </div>
         </div>
     </main>
@@ -88,13 +96,9 @@
         const GV_idurl = parseInt(urlparams.get('id'));
         const GV_indexurl = GV_idindexevento(GV_idurl);
         window.onload = function(){
-
-
-            paginadoevento(JSON.parse(localStorage.getItem('bd_ShowTimeSeeker')), GV_indexurl)
-
-
+            paginadoevento(JSON.parse(localStorage.getItem('bd_ShowTimeSeeker')), GV_indexurl);
         }
     </script>
 </body>
-</html>
 
+</html>

@@ -1673,7 +1673,7 @@ function favoritar(objeto_evento, indexdoevento) {
         return objeto_evento;
     }
 
-    let nomeDoEvento = objeto_evento.evento[indexdoevento].nome_do_evento;
+    let nomeDoEvento = objeto_evento.evento[indexdoevento].id;
     let listaFavoritosUsuario = objeto_evento.listadeusuarios[indexusuariofav].favoritos;
     let favoritousuario = objeto_evento.usuario.favoritos;
 
