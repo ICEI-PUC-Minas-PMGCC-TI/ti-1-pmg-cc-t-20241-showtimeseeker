@@ -163,7 +163,6 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
     const GV_cardgrande = document.getElementById('card-container');
     const GV_cardsmenores = document.getElementById('GV_cardsmenorescontainer');
     const GV_dadosdabarradepesquisa = document.getElementById('GV_barradepesquisa').value;
-    console.log(GV_dadosdabarradepesquisa == "")
     let GV_stringcards = '';
     let GV_stringcardgrande = '';
     let GV_primeiroevento = 0;
