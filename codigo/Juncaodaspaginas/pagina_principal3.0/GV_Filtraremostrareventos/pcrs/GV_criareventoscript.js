@@ -460,7 +460,25 @@ function codigo(estilosdoseventovalores){
     const segundaparte = document.getElementById('segundaparte');
     const terceiraparte = document.getElementById('terceiraparte');
 
+    var OBJ_mostrarNomer = lerdadosevento();
+    
+    var nome_usuario = document.getElementById('nome_no_perfil');
+    var foto_usuario = document.getElementById('foto_perfil_ED');
 
+
+
+    if (nome_usuario) {
+        // Altera o conteúdo do elemento
+        nome_usuario.textContent = OBJ_mostrarNomer.usuario.username; 
+    } else {
+        console.error('Elemento com id "nome_no_perfil" não encontrado.');
+    }
+    if (foto_usuario) {
+        // Altera o conteúdo do elemento
+        foto_usuario.src = OBJ_mostrarNomer.usuario.foto_perfil; 
+    } else {
+        console.error('Elemento com id "foto_perfil_ED" não encontrado.');
+    }
     
     
     var listaimagensevento = [];
@@ -1320,6 +1338,7 @@ function cadastro(ED_estilos){
     var  ED_username = document.getElementById('username').value;
     var  ED_senha = document.getElementById('senha_criar').value;
     var  ED_email = document.getElementById('email').value;
+    var  ED_foto_perfil = document.getElementById('foto_perfil').value;
     var ED_iD_usuario = Date.now();
     var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
     var gostosSelect = document.getElementById('gostos');
@@ -1329,8 +1348,6 @@ function cadastro(ED_estilos){
     
     //variavel para saber se esta logado
     var ED_logado = false;
-    console.log("--------");
-    console.log(ED_gostos);
 
 
     //variavel para validação
@@ -1370,6 +1387,7 @@ function cadastro(ED_estilos){
         username: ED_username,
         senha: ED_senha,
         email: ED_email,
+        foto_perfil: ED_foto_perfil,
         ID: ED_iD_usuario,
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
@@ -1404,6 +1422,7 @@ function editarperfilcad(ED_estilos){
     var  ED_username = document.getElementById('username').value;
     var  ED_senha = document.getElementById('senha_criar').value;
     var  ED_email = document.getElementById('email').value;
+    var  ED_foto_perfil = document.getElementById('foto_perfil2').value;
     var  ED_precoMedio = document.getElementById('preco-médio-usuario').value;
     var gostosSelect = document.getElementById('gostos');
     var ED_gostos = ED_estilos;
@@ -1412,8 +1431,6 @@ function editarperfilcad(ED_estilos){
     
     //variavel para saber se esta logado
     var ED_logado = false;
-    console.log("--------");
-    console.log(ED_gostos);
 
 
     //variavel para validação
@@ -1453,6 +1470,7 @@ function editarperfilcad(ED_estilos){
         username: ED_username,
         senha: ED_senha,
         email: ED_email,
+        foto_perfil: ED_foto_perfil,
         ID: GV_objdadosusuario.usuario.ID,
         precoMedio: ED_precoMedio,
         gostos: ED_gostos,
