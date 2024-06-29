@@ -1,3 +1,5 @@
+const GV_botaomostrarnotificacao = document.querySelector("button.GV_vernotificacao");
+
 function GV_lerdadoseventodobancodedados()
 {
         let strdados = localStorage.getItem('bd_ShowTimeSeeker');
@@ -260,7 +262,7 @@ function isUserLoggedIn() {
 }
 
 function GV_codigo(){
-
+ 
     GV_notificacaoevento();
     
     const GV_botaodofiltro = document.getElementById("GV_botaodofiltro");
@@ -268,6 +270,13 @@ function GV_codigo(){
     const GV_menufiltro = document.getElementById('GV_Menufiltro');
     const GV_filtroformulario = document.getElementById('GV_filtroformulario');
     const GV_barradepesquisa = document.getElementById('GV_barradepesquisa');
+    const GV_caixabarrapesq = document.querySelector('div.GV_caixabarradepesquisa')
+
+    if(isUserLoggedIn()){
+        GV_caixabarrapesq.style.width = 'calc(100%)';
+    }else{
+        GV_botaomostrarnotificacao.classList.add('hidden');
+    }
 
     var GV_preco;
     var GV_keysfiltro;
@@ -329,10 +338,13 @@ function GV_notificacaoevento(){
     
     let GV_lognotif = sessionStorage.getItem('logado');
     if(GV_lognotif == 'true'){
-        console.log('teste');
         let GV_objeventonot = GV_lerdadoseventodobancodedados();
         const favoritedEvents = GV_objeventonot.usuario.favoritos;
         const notificationElement = document.getElementById('notification');
+        const GV_caixadanotificacao = document.getElementById("GV_caixanotificacao");
+        const GV_caixadacaixanot = document.getElementById('GV_caixadacaixadanotificacao');
+        let GV_notstr = '';
+
         function isHoje(dataAlvo) {
             // Obter a data atual
             const hoje = new Date();
@@ -366,10 +378,10 @@ function GV_notificacaoevento(){
         }
 
         function showNotification(message) {
-            notificationElement.textContent = message;
-            notificationElement.classList.remove('hidden');
+            GV_caixadanotificacao.innerHTML = message;
+            GV_caixadacaixanot.classList.remove('hidden');
             setTimeout(() => {
-                notificationElement.classList.add('hidden');
+                GV_caixadacaixanot.classList.add('hidden');
             }, 5000); // Hide notification after 5 seconds
         }
 
@@ -379,14 +391,32 @@ function GV_notificacaoevento(){
             if(GV_event > 0 && GV_objeventonot.evento[GV_event].id == event)
             {
                 if (faltamDoisDias(GV_objeventonot.evento[GV_event].data)) {
-                    console.log("Vai")
-                    showNotification(`Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} ocorrerá em 48 horas!`);
+                    GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} ocorrerá em 48 horas!</div>`
+                    showNotification(GV_notstr);
                 } else if (isHoje(GV_objeventonot.evento[GV_event].data)) {
+                    GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} é hoje!</div>`
                     console.log("Nao vai")
-                    showNotification(`Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} é hoje!`);
+                    showNotification(GV_notstr);
                 }
             } 
                
         });
     }
 };
+
+const GV_botaofecharnot = document.querySelector('.GV_caixadacaixadanotificacao > button');
+GV_botaofecharnot.addEventListener('click', ()=>{
+    const GV_caixadacaixanot = document.getElementById
+    ('GV_caixadacaixadanotificacao');
+    GV_botaomostrarnotificacao.classList.remove('hidden');
+    GV_caixadacaixanot.classList.add('hidden');
+})
+
+
+GV_botaomostrarnotificacao.addEventListener('click', ()=>{
+    GV_botaomostrarnotificacao.classList.add('hidden');
+    const GV_caixadacaixanot = document.getElementById('GV_caixadacaixadanotificacao');
+    GV_caixadacaixanot.classList.remove('hidden');
+})
+
+
