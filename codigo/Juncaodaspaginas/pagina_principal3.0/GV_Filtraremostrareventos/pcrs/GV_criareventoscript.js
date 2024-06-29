@@ -220,7 +220,7 @@ function lerdadosevento()
                                 precoMedio: "564",
                                 gostos: ["1", "2", "3"],
                                 moeda: "R$",
-                                favoritos: [1718186424176],
+                                favoritos: [],
                                 visualizou: []
                             }
                         ],
@@ -1528,7 +1528,17 @@ function paginadoevento(objeto_evento, indexdoevento) {
     let visualizacoesTotaisElem = document.getElementById('visualizacoesTotais');
     let carouselInner = document.getElementById('carouselInner');
     let divcomentariosevento = document.getElementById('comentados');
-    let botaoDeContato = document.getElementById('botao_de_contato'); // Adicione o ID correto do botão de contato
+    let botaoDeContato = document.getElementById('botao_de_contato'); 
+    let botaoDefav = document.getElementById('botaoFavoritar');
+    
+    //botão para favoritar
+    botaoDefav.addEventListener('click', function() {
+        objeto_evento = favoritar(objeto_evento, indexdoevento);
+        salvardadosevento(objeto_evento);
+        location.reload();
+    });
+    
+    objeto_evento = ED_vusualizacao(objeto_evento, indexdoevento);
 
     // Função para criar elementos de comentário
     function criarElementoComentario(comentarioObj) {
@@ -1574,7 +1584,7 @@ function paginadoevento(objeto_evento, indexdoevento) {
 
     // Limpar a div de comentários antes de adicionar novamente
     divcomentariosevento.innerHTML = '';
-
+    
     // Adicionar divs para cada comentário
     objeto_evento.evento[indexdoevento].comentarios.forEach(comentario => {
         let divComentario = criarElementoComentario(comentario);
@@ -1604,11 +1614,93 @@ function paginadoevento(objeto_evento, indexdoevento) {
                 divcomentariosevento.appendChild(divComentario);
             });
         }
-    });
-
-
-    
+    }); 
+    //botão para ir para o contato do evento
     botaoDeContato.addEventListener('click', function() {
         botaoDeContato.href = objeto_evento.evento[indexdoevento].linkcontato;
     });
+
+}
+
+
+function ED_vusualizacao(objeto_evento, indexdoevento) {
+    let indexusuariovizu = indexdousuario(objeto_evento.usuario.ID, objeto_evento);
+    console.log(indexusuariovizu);
+    let nomeDoEvento = objeto_evento.evento[indexdoevento].nome_do_evento;
+    let visualizacoesUsuario = objeto_evento.usuario.visualizou;
+    let listaletvisualizacoesUsuario = objeto_evento.listadeusuarios[indexusuariovizu].visualizou;
+    
+    // Verificar se o evento já foi visualizado pelo usuário
+    if (!listaletvisualizacoesUsuario.includes(nomeDoEvento)) {
+        visualizacoesUsuario.push(nomeDoEvento); // Registrar que o evento foi visualizado
+        listaletvisualizacoesUsuario.push(nomeDoEvento);
+
+        // Verificar se objeto_evento.evento existe
+        if (objeto_evento.evento[indexdoevento]) {
+            // Verificar se objeto_evento.evento.visualizacoes existe e tem a propriedade total
+            if (objeto_evento.evento[indexdoevento].visualizacoes && objeto_evento.evento[indexdoevento].visualizacoes.total !== undefined) {
+                objeto_evento.evento[indexdoevento].visualizacoes.total++; // Incrementar o contador de visualizações totais
+            } else {
+                console.error(`Propriedade 'visualizacoes' ou 'total' não está definida em objeto_evento.evento[${indexdoevento}]`);
+            }
+        } else {
+            console.error(`Evento com índice ${indexdoevento} não está definido em objeto_evento.evento`);
+        }
+    }
+    salvardadosevento(objeto_evento);
+    
+    return objeto_evento;
+}
+//salvar na lista de usuarios
+
+
+function indexdousuario(ID_usuario, objeto_evento){
+   let tamanholista = objeto_evento.listadeusuarios.length;
+   let i = 0;
+   while(i<tamanholista){
+    if( objeto_evento.listadeusuarios[i].ID === ID_usuario){
+        return i;
+    }
+    i++;
+   }
+}
+function favoritar(objeto_evento, indexdoevento) {
+    // Encontrar o índice do usuário com base no ID
+    let indexusuariofav = indexdousuario(objeto_evento.usuario.ID, objeto_evento);
+
+    if (indexusuariofav === -1) {
+        console.error(`Usuário com ID ${objeto_evento.usuario.ID} não encontrado na lista de usuários`);
+        return objeto_evento;
+    }
+
+    let nomeDoEvento = objeto_evento.evento[indexdoevento].nome_do_evento;
+    let listaFavoritosUsuario = objeto_evento.listadeusuarios[indexusuariofav].favoritos;
+    let favoritousuario = objeto_evento.usuario.favoritos;
+
+    // Verificar se o evento já está nos favoritos do usuário
+    if (!listaFavoritosUsuario.includes(nomeDoEvento)) {
+        listaFavoritosUsuario.push(nomeDoEvento); 
+        favoritousuario.push(nomeDoEvento);
+
+        // Verificar se objeto_evento.evento existe
+        if (objeto_evento.evento[indexdoevento]) {
+            // Incrementar o contador de favoritos se a propriedade existir
+            if (objeto_evento.evento[indexdoevento].favoritos !== undefined) {
+                objeto_evento.evento[indexdoevento].favoritos++;
+            } else {
+                // Se 'favoritos' não estiver definido, inicializá-lo com 1
+                objeto_evento.evento[indexdoevento].favoritos = 1;
+            }
+        } else {
+            console.error(`Evento com índice ${indexdoevento} não está definido em objeto_evento.evento`);
+        }
+
+        // Salvar as alterações no Local Storage ou no servidor
+        salvardadosevento(objeto_evento);
+        console.log(`Evento '${nomeDoEvento}' adicionado aos favoritos do usuário`);
+    } else {
+        console.log(`Evento '${nomeDoEvento}' já está nos favoritos do usuário`);
+    }
+
+    return objeto_evento;
 }
