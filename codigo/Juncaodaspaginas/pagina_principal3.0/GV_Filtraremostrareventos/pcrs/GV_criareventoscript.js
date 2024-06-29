@@ -176,7 +176,7 @@ function lerdadosevento()
                                     },
                                     favoritos: 0,
                                     comentarios: [],
-                                    donodoevento: "",
+                                    donodoevento: 1719666789117,
                                 },
                                 {
                                     nome_do_evento: "KPOP BRASIL FEST",
@@ -211,8 +211,20 @@ function lerdadosevento()
                                     donodoevento: "",
                                 },
                         ],
-                        listadeusuarios:[],
-                        usuario:[]
+                        listadeusuarios:[
+                            {
+                                username: "Eduardo",
+                                senha: "12345",
+                                email: "fffffff@gmail.com",
+                                ID: 1719666789117,
+                                precoMedio: "564",
+                                gostos: ["1", "2", "3"],
+                                moeda: "R$",
+                                favoritos: [],
+                                visualizou: []
+                            }
+                        ],
+                        usuario:{}
                 };
         }
         return(objdados);
@@ -224,38 +236,41 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
         for(let GV_imeventoedit = 1; GV_imeventoedit < GV_arrayeventos.length; GV_imeventoedit = GV_imeventoedit + 1)
             {
                 let GV_objevento = GV_arrayeventos[GV_imeventoedit];
-                GV_stringeventosparaedicao = GV_stringeventosparaedicao + `
-                <div class="GV_exibicaodadosdoseventos" data-index = "${GV_objevento.id}">
-                <div class="GV_titulodecadaevento">
-                <h3>${GV_objevento.nome_do_evento}</h3>
-                </div>
-                <div class="GV_grafico">
-                <div class="chart">
-                <abbr title=""><div class="bar" id="gosto-1" ></div></abbr>
-                <abbr title=""><div class="bar" id="gosto-2" ></div></abbr>
-                <abbr title=""><div class="bar" id="gosto-3" ></div></abbr>
-                <abbr title=""><div class="bar" id="gosto-4" ></div></abbr>
-                </div>
-                </div>
-                <div class="GV_dadosfavvisu">
-                <div class="GV_verfavoritos">
-                Quantidade de favoritos: 
-                <span class="material-symbols-outlined">
-                star
-                </span>${GV_objevento.favoritos}
-                </div>
-                <div class="GV_vervisualizacoes">
-                Quantidade de visualizacoes:
-                <span class="material-symbols-outlined">
-                visibility
-                </span>${GV_objevento.visualizacoes.total}
-                </div>
-                </div>
-                <div class="GV_botoesdealteracao">
-                <button type="button" class="GV_botaoparamodificaroevento">Modificar</button>
-                <button type="button" class="GV_botaoparaexcluiroevento">Excluir</button>
-                </div>
-                </div>`;
+                if(GV_objevento.donodoevento == lerdadosevento().usuario.ID)
+                {
+                    GV_stringeventosparaedicao = GV_stringeventosparaedicao + `
+                    <div class="GV_exibicaodadosdoseventos" data-index = "${GV_objevento.id}">
+                    <div class="GV_titulodecadaevento">
+                    <h3>${GV_objevento.nome_do_evento}</h3>
+                    </div>
+                    <div class="GV_grafico">
+                    <div class="chart">
+                    <abbr title=""><div class="bar" id="gosto-1" ></div></abbr>
+                    <abbr title=""><div class="bar" id="gosto-2" ></div></abbr>
+                    <abbr title=""><div class="bar" id="gosto-3" ></div></abbr>
+                    <abbr title=""><div class="bar" id="gosto-4" ></div></abbr>
+                    </div>
+                    </div>
+                    <div class="GV_dadosfavvisu">
+                    <div class="GV_verfavoritos">
+                    Quantidade de favoritos: 
+                    <span class="material-symbols-outlined">
+                    star
+                    </span>${GV_objevento.favoritos}
+                    </div>
+                    <div class="GV_vervisualizacoes">
+                    Quantidade de visualizacoes:
+                    <span class="material-symbols-outlined">
+                    visibility
+                    </span>${GV_objevento.visualizacoes.total}
+                    </div>
+                    </div>
+                    <div class="GV_botoesdealteracao">
+                    <button type="button" class="GV_botaoparamodificaroevento">Modificar</button>
+                    <button type="button" class="GV_botaoparaexcluiroevento">Excluir</button>
+                    </div>
+                    </div>`;
+                }
             }
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
@@ -841,7 +856,7 @@ function codigo(estilosdoseventovalores){
             dadosdosformularios.visualizacoes = 0;
             dadosdosformularios.favoritos = 0;
             dadosdosformularios.comentarios = [];
-            dadosdosformularios.donodoevento = '';
+            dadosdosformularios.donodoevento = lerdadosevento().usuario.ID;
 //Mostrar na tela
         adicionarevento(dadosdosformularios);
         }
