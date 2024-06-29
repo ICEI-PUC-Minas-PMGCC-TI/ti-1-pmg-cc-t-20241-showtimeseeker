@@ -389,6 +389,20 @@ input.GV_precomedio{
 ul.GV_dropdown-menu{
   padding: 5px;
 }
+
+.hidden {
+  display: none
+}
+
+#notification {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 5px;
+}
   
 /*Multi select inicio*/
 /*
@@ -532,9 +546,7 @@ ul.GV_dropdown-menu{
   display: block
 }
 
-.hidden {
-  display: none
-}
+
 
 .mult-select-tag .shadow {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
