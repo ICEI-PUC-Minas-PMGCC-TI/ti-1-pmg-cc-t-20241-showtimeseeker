@@ -425,6 +425,24 @@ div.comentario{
 }
 
 
+button.GV_vernotificacao{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 5em;
+  height: 5em;
+  background-color: transparent;
+  border: none;
+}
+
+button.GV_vernotificacao > span.material-symbols-outlined {
+  font-size: 5em;
+  color: var(--cor1);
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
 
 .hidden {
   display: none

@@ -1,3 +1,5 @@
+const GV_botaomostrarnotificacao = document.querySelector("button.GV_vernotificacao");
+
 function GV_lerdadoseventodobancodedados()
 {
         let strdados = localStorage.getItem('bd_ShowTimeSeeker');
@@ -272,6 +274,8 @@ function GV_codigo(){
 
     if(isUserLoggedIn()){
         GV_caixabarrapesq.style.width = 'calc(100%)';
+    }else{
+        GV_botaomostrarnotificacao.classList.add('hidden');
     }
 
     var GV_preco;
@@ -402,8 +406,17 @@ function GV_notificacaoevento(){
 
 const GV_botaofecharnot = document.querySelector('.GV_caixadacaixadanotificacao > button');
 GV_botaofecharnot.addEventListener('click', ()=>{
-    const GV_caixadacaixanot = document.getElementById('GV_caixadacaixadanotificacao');
+    const GV_caixadacaixanot = document.getElementById
+    ('GV_caixadacaixadanotificacao');
+    GV_botaomostrarnotificacao.classList.remove('hidden');
     GV_caixadacaixanot.classList.add('hidden');
+})
+
+
+GV_botaomostrarnotificacao.addEventListener('click', ()=>{
+    GV_botaomostrarnotificacao.classList.add('hidden');
+    const GV_caixadacaixanot = document.getElementById('GV_caixadacaixadanotificacao');
+    GV_caixadacaixanot.classList.remove('hidden');
 })
 
 
