@@ -437,6 +437,13 @@ div.comentario{
   right: 1rem;
   border-radius: 5px;
 }
+
+button.botao_de_contato{
+  margin-top: 20px;
+  background-color: var(--cor1);
+  height: 40px;
+  color: var(--cor4);
+}
   
 /*Multi select inicio*/
 /*
