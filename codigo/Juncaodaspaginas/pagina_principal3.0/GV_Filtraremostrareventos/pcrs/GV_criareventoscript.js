@@ -1607,8 +1607,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });*/
 
-function paginadoevento(objeto_evento, indexdoevento){
-
+function paginadoevento(objeto_evento, indexdoevento) {
     // Elementos do DOM que serão preenchidos dinamicamente
     let nomeEventoElem = document.getElementById('nomeEvento');
     let localEventoElem = document.getElementById('localEvento');
@@ -1616,8 +1615,9 @@ function paginadoevento(objeto_evento, indexdoevento){
     let favoritadosElem = document.getElementById('favoritados');
     let visualizacoesTotaisElem = document.getElementById('visualizacoesTotais');
     let carouselInner = document.getElementById('carouselInner');
+    let divcomentariosevento = document.getElementById('comentados');
 
-    // Preencher o carrossel com as fotos do primeiro evento (eventos[0])
+    // Preencher o carrossel com as fotos do evento
     objeto_evento.evento[indexdoevento].fotos.forEach((foto, index) => {
         let carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
@@ -1634,15 +1634,25 @@ function paginadoevento(objeto_evento, indexdoevento){
         carouselInner.appendChild(carouselItem);
     });
 
-    // Preencher as informações do primeiro evento
+    // Preencher as informações do evento
     nomeEventoElem.textContent = objeto_evento.evento[indexdoevento].nome_do_evento;
     localEventoElem.textContent = objeto_evento.evento[indexdoevento].local;
     descricaoEventoElem.textContent = objeto_evento.evento[indexdoevento].descricao;
     favoritadosElem.textContent = objeto_evento.evento[indexdoevento].favoritos;
     visualizacoesTotaisElem.textContent = objeto_evento.evento[indexdoevento].visualizacoes.total;
 
+    // Limpar a div de comentários antes de adicionar novamente
+    divcomentariosevento.innerHTML = '';
 
+    // Adicionar divs para cada comentário
+    objeto_evento.evento[indexdoevento].comentarios.forEach(comentario => {
+        let divComentario = document.createElement('div');
+        divComentario.classList.add('comentario');
+        divComentario.textContent = comentario;
+        divcomentariosevento.appendChild(divComentario);
+    });
 
+    // Adicionar evento para o botão de comentar
     let botaoComentar = document.getElementById('botaoComentar');
     botaoComentar.addEventListener('click', function() {
         let comentario = document.getElementById('areaComentarios').value.trim();
@@ -1651,8 +1661,15 @@ function paginadoevento(objeto_evento, indexdoevento){
             // Limpar o campo de comentário
             document.getElementById('areaComentarios').value = '';
             // Salvar de volta no localStorage se necessário
-            salvardadosevento(objeto_evento);
-            // Atualizar a exibição dos comentários (implementação opcional)
+            // salvardadosevento(objeto_evento); // Não implementado aqui
+            // Atualizar a exibição dos comentários
+            divcomentariosevento.innerHTML = ''; // Limpar div de comentários
+            objeto_evento.evento[indexdoevento].comentarios.forEach(comentario => {
+                let divComentario = document.createElement('div');
+                divComentario.classList.add('comentario');
+                divComentario.textContent = comentario;
+                divcomentariosevento.appendChild(divComentario);
+            });
         }
     });
 }
