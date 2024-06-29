@@ -389,10 +389,6 @@ input.GV_precomedio{
 ul.GV_dropdown-menu{
   padding: 5px;
 }
-
-<<<<<<< HEAD
-
-
 /*eventos pagina*/
 h2#nomeEvento{
   color: var(--cor3);
@@ -425,11 +421,13 @@ div.comentario{
   margin: 30px;
   height: 120px;
   border: 4px solid var(--cor8);
-=======
+}
+
+
+
 .hidden {
   display: none
 }
-
 #notification {
   background-color: #007bff;
   color: white;
@@ -438,7 +436,6 @@ div.comentario{
   bottom: 1rem;
   right: 1rem;
   border-radius: 5px;
->>>>>>> d4173839b0b6f50229343abe0d8e2d3a6fea712c
 }
   
 /*Multi select inicio*/

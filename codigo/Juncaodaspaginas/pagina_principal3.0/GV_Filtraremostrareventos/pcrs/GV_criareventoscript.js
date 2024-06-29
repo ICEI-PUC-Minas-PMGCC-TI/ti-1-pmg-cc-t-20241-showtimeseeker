@@ -1693,28 +1693,3 @@ function paginadoevento(objeto_evento, indexdoevento) {
         }
     });
 }
-
-// Exemplo de chamada da função (supondo que você já tem objeto_evento e indexdoevento definidos)
-// paginadoevento(objeto_evento, indexdoevento);
-
-
-
-function comentar(ED_indexcoment) {
-    console.log(ED_indexcoment);
-    // Captura o valor do campo de comentário
-    var ED_comentario = document.getElementById('areaComentarios').value;
-
-    // Obtém o objeto de dados do evento
-    let ED_obj_coment = lerdadosevento();
-
-    let ED_nome_usuario_coment = ED_obj_coment.usuario.username;
-
-    let comentarios = {
-            texto: ED_comentario,
-            usuario: ED_nome_usuario_coment
-    };
-
-        ED_obj_coment.evento.comentarios.push(comentarios);
-
-        salvardadosevento(ED_obj_coment);
-}
