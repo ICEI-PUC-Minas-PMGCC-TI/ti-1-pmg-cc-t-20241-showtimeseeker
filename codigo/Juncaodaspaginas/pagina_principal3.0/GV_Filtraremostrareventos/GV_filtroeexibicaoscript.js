@@ -328,7 +328,7 @@ function ir_para_perfil(){
 function GV_notificacaoevento(){
     
     let GV_lognotif = sessionStorage.getItem('logado');
-    if(true){
+    if(GV_lognotif == 'true'){
         console.log('teste');
         let GV_objeventonot = GV_lerdadoseventodobancodedados();
         const favoritedEvents = GV_objeventonot.usuario.favoritos;
