@@ -1705,9 +1705,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });*/
 
-function paginadoevento(eventos, indexdoevento){
-
-    // Recuperar os dados do evento
+function paginadoevento(objeto_evento, indexdoevento){
 
     // Elementos do DOM que serão preenchidos dinamicamente
     let nomeEventoElem = document.getElementById('nomeEvento');
@@ -1718,7 +1716,7 @@ function paginadoevento(eventos, indexdoevento){
     let carouselInner = document.getElementById('carouselInner');
 
     // Preencher o carrossel com as fotos do primeiro evento (eventos[0])
-    eventos[indexdoevento].fotos.forEach((foto, index) => {
+    objeto_evento.evento[indexdoevento].fotos.forEach((foto, index) => {
         let carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
         if (index === 0) {
@@ -1735,11 +1733,11 @@ function paginadoevento(eventos, indexdoevento){
     });
 
     // Preencher as informações do primeiro evento
-    nomeEventoElem.textContent = eventos[indexdoevento].nome_do_evento;
-    localEventoElem.textContent = eventos[indexdoevento].local;
-    descricaoEventoElem.textContent = eventos[indexdoevento].descricao;
-    favoritadosElem.textContent = eventos[indexdoevento].favoritos;
-    visualizacoesTotaisElem.textContent = eventos[indexdoevento].visualizacoes.total;
+    nomeEventoElem.textContent = objeto_evento.evento[indexdoevento].nome_do_evento;
+    localEventoElem.textContent = objeto_evento.evento[indexdoevento].local;
+    descricaoEventoElem.textContent = objeto_evento.evento[indexdoevento].descricao;
+    favoritadosElem.textContent = objeto_evento.evento[indexdoevento].favoritos;
+    visualizacoesTotaisElem.textContent = objeto_evento.evento[indexdoevento].visualizacoes.total;
 
 
 
@@ -1747,11 +1745,11 @@ function paginadoevento(eventos, indexdoevento){
     botaoComentar.addEventListener('click', function() {
         let comentario = document.getElementById('areaComentarios').value.trim();
         if (comentario !== '') {
-            eventos[1].comentarios.push(comentario);
+            objeto_evento.evento[indexdoevento].comentarios.push(comentario);
             // Limpar o campo de comentário
             document.getElementById('areaComentarios').value = '';
             // Salvar de volta no localStorage se necessário
-            localStorage.setItem('bd_ShowTimeSeeker', JSON.stringify({ evento: eventos }));
+            salvardadosevento(objeto_evento);
             // Atualizar a exibição dos comentários (implementação opcional)
         }
     });
@@ -1767,15 +1765,13 @@ function comentar(ED_indexcoment) {
     let ED_obj_coment = lerdadosevento();
 
  
-        ED_tam_coment = ED_obj_coment.evento[1].comentarios.length;
+        ED_tam_coment = ED_obj_coment.evento[ED_indexcoment].comentarios.length;
 
-        ED_obj_coment.evento[1].comentarios[ED_tam_coment] = ED_comentario; 
+        ED_obj_coment.evento[ED_indexcoment].comentarios[ED_tam_coment] = ED_comentario; 
 
         console.log(ED_obj_coment);
 
         salvardadosevento(ED_obj_coment);
 
         //location.href = "evento.html";
-
-        console.log("Comentário adicionado com sucesso:", ED_obj_coment.evento.comentarios[0]);
 }
