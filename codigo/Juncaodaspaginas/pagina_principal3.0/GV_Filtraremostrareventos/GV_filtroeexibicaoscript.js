@@ -191,12 +191,8 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                 else
                 {
                     GV_stringcards = GV_stringcards + `
-<<<<<<< HEAD
-                    <div class="col" id="card-menor" data-index = "${GV_objevento.id}">
-=======
                     <div class="col" id="card-menor">
                         <a href="evento.html?id=${GV_objevento.id}" class="col GV_card_menor nenhumadecoracao">
->>>>>>> 159155a411a886ec1d7b0fb69f6bcb41a93a393a
                         <div class="card h-100">
                             <img src="${GV_objevento.fotos[0]}" class="card-img-top" alt="...">
                             <div class="card-body">

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evento - Show Time Seeker</title>
     <link rel="stylesheet" href="./pcrs/style.css">
-    <script src="./pcrs/evento.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Estilos adicionais podem ser adicionados aqui */
@@ -66,7 +65,7 @@
             <div class="comentarios">
                 <h3>Comentários</h3>
                 <textarea id="areaComentarios" class="form-control" rows="3" placeholder="Deixe seu comentário"></textarea>
-                <button id="botaoComentar" class="btn btn-primary mt-2" onclick="comentar()">Comentar</button>
+                <button id="botaoComentar" class="btn btn-primary mt-2" onclick="comentar(GV_idindexevento(GV_idurl))">Comentar</button>
             </div>
         </div>
     </main>
@@ -77,7 +76,17 @@
     <!-- Bootstrap JS para funcionalidades de carrossel -->
     <script src="./pcrs/GV_criareventoscript.js"></script>
     <!-- Seu script personalizado -->
+    <script>
+    window.onload = function(){
+        const urlparams = new URLSearchParams(window.location.search);
+        const GV_idurl = parseInt(urlparams.get('id'));
+        
 
+        paginadoevento(JSON.parse(localStorage.getItem('bd_ShowTimeSeeker')).evento, GV_idindexevento(GV_idurl))
+
+
+    }
+    </script>
 </body>
 </html>
 
