@@ -1730,6 +1730,24 @@ function paginadoevento(objeto_evento, indexdoevento) {
     let carouselInner = document.getElementById('carouselInner');
     let divcomentariosevento = document.getElementById('comentados');
 
+    // Função para criar elementos de comentário
+    function criarElementoComentario(comentarioObj) {
+        let divComentario = document.createElement('div');
+        divComentario.classList.add('comentario');
+
+        let nomeUsuario = document.createElement('span');
+        nomeUsuario.classList.add('usuario-comentario');
+        nomeUsuario.textContent = comentarioObj.usuario.username + ': '; // Nome do usuário que comentou
+
+        let textoComentario = document.createElement('span');
+        textoComentario.textContent = comentarioObj.texto; // Texto do comentário
+
+        divComentario.appendChild(nomeUsuario);
+        divComentario.appendChild(textoComentario);
+
+        return divComentario;
+    }
+
     // Preencher o carrossel com as fotos do evento
     objeto_evento.evento[indexdoevento].fotos.forEach((foto, index) => {
         let carouselItem = document.createElement('div');
@@ -1759,33 +1777,39 @@ function paginadoevento(objeto_evento, indexdoevento) {
 
     // Adicionar divs para cada comentário
     objeto_evento.evento[indexdoevento].comentarios.forEach(comentario => {
-        let divComentario = document.createElement('div');
-        divComentario.classList.add('comentario');
-        divComentario.textContent = comentario;
+        let divComentario = criarElementoComentario(comentario);
         divcomentariosevento.appendChild(divComentario);
     });
 
     // Adicionar evento para o botão de comentar
     let botaoComentar = document.getElementById('botaoComentar');
     botaoComentar.addEventListener('click', function() {
-        let comentario = document.getElementById('areaComentarios').value.trim();
-        if (comentario !== '') {
-            objeto_evento.evento[indexdoevento].comentarios.push(comentario);
+        let comentarioTexto = document.getElementById('areaComentarios').value.trim();
+        if (comentarioTexto !== '') {
+            let novoComentario = {
+                texto: comentarioTexto,
+                usuario: {
+                    username: objeto_evento.usuario.username // Nome de usuário que está comentando
+                }
+            };
+            objeto_evento.evento[indexdoevento].comentarios.push(novoComentario);
             // Limpar o campo de comentário
             document.getElementById('areaComentarios').value = '';
-            // Salvar de volta no localStorage se necessário
-            // salvardadosevento(objeto_evento); // Não implementado aqui
+            // Salvar de volta no Local Storage
+            salvardadosevento(objeto_evento);
             // Atualizar a exibição dos comentários
-            divcomentariosevento.innerHTML = ''; // Limpar div de comentários
+            divcomentariosevento.innerHTML = '';
             objeto_evento.evento[indexdoevento].comentarios.forEach(comentario => {
-                let divComentario = document.createElement('div');
-                divComentario.classList.add('comentario');
-                divComentario.textContent = comentario;
+                let divComentario = criarElementoComentario(comentario);
                 divcomentariosevento.appendChild(divComentario);
             });
         }
     });
 }
+
+// Exemplo de chamada da função (supondo que você já tem objeto_evento e indexdoevento definidos)
+// paginadoevento(objeto_evento, indexdoevento);
+
 
 
 function comentar(ED_indexcoment) {
@@ -1796,14 +1820,14 @@ function comentar(ED_indexcoment) {
     // Obtém o objeto de dados do evento
     let ED_obj_coment = lerdadosevento();
 
- 
-        ED_tam_coment = ED_obj_coment.evento[ED_indexcoment].comentarios.length;
+    let ED_nome_usuario_coment = ED_obj_coment.usuario.username;
 
-        ED_obj_coment.evento[ED_indexcoment].comentarios[ED_tam_coment] = ED_comentario; 
+    let comentarios = {
+            texto: ED_comentario,
+            usuario: ED_nome_usuario_coment
+    };
 
-        console.log(ED_obj_coment);
+        ED_obj_coment.evento.comentarios.push(comentarios);
 
         salvardadosevento(ED_obj_coment);
-
-        //location.href = "evento.html";
 }
