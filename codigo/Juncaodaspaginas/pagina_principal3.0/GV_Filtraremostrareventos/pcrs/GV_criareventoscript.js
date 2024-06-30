@@ -244,7 +244,7 @@ function GV_mostrareventosfavoritos(){
     let GV_listatotaisfav = GV_objtotaisfav.evento;
     for(let GV_favevento of GV_objtotaisfav.usuario.favoritos){
         let GV_indexfavevento = GV_idindexevento(GV_favevento);
-
+        if(GV_indexfavevento > 0){
         GV_strfav = GV_strfav + `
         <div class="GV_exibicaodadosdoseventos">
                 <div class="GV_titulodecadaevento">
@@ -255,7 +255,7 @@ function GV_mostrareventosfavoritos(){
                 </div>
                 <div class="GV_dadosfavvisu">
                     <div class="GV_favdescriacao">
-                        ${GV_listatotaisfav[GV_indexfavevento].descricao}
+                        ${GV_listatotaisfav[GV_indexfavevento].descricao.replaceAll('\n', '<br>')}
                     </div>
                     <div class="GV_vervisualizacoes">
                         <span class="GV_destaquedatalocal">Data:</span> ${GV_converterdata(GV_listatotaisfav[GV_indexfavevento].data)}<br>
@@ -266,7 +266,7 @@ function GV_mostrareventosfavoritos(){
                     <button class="GV_vermaisbtn" data-id="${GV_listatotaisfav[GV_indexfavevento].id}">Ver mais</button>
                 </div>
         </div>`;
-        
+        }
     }
     GV_areadosfavoritos.innerHTML = GV_strfav;
 }
@@ -937,7 +937,21 @@ function codigo(estilosdoseventovalores){
             GV_modificardeterminadoevento(dadosdosformularios, GV_verificacaodemodificacao);
         }else{
             dadosdosformularios.id = Date.now();
-            dadosdosformularios.visualizacoes = 0;
+            dadosdosformularios.visualizacoes = {
+                total: 0,
+                gosto1: 0,
+                gosto2: 0,
+                gosto3: 0,
+                gosto4: 0,
+                gosto5: 0,
+                gosto6: 0,
+                gosto7: 0,
+                gosto8: 0,
+                gosto9: 0,
+                gosto10: 0,
+                gosto11: 0,
+                gosto12: 0,
+            };
             dadosdosformularios.favoritos = 0;
             dadosdosformularios.comentarios = [];
             dadosdosformularios.donodoevento = lerdadosevento().usuario.ID;
@@ -1588,7 +1602,7 @@ function logar (){
     var ED_usuario_correto = objetoJS.username; 
     
     if(login == ED_usuario_correto && senha == ED_senha_correta){
-        alert('bem vindo!');
+        alert('Bem vindo!');
         GV_objetoJS.usuario = objetoJS;
         salvardadosevento(GV_objetoJS);
         location.href = "index.html";

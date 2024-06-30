@@ -171,6 +171,7 @@ div.GV_imgfav > img{
 div.GV_favdescriacao{
     overflow-y: scroll;
     max-height: 50%;
+    word-break: break-word;
 }
 
 div.GV_exibicaodadosdoseventosfav{

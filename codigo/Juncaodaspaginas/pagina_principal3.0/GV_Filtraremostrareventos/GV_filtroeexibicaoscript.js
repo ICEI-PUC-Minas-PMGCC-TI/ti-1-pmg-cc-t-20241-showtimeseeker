@@ -139,7 +139,7 @@ function GV_lerdadoseventodobancodedados()
                                 favoritos: 0,
                                 comentarios: [],
                                 donodoevento: "",
-                            },
+                            }
                     ],
                     listadeusuarios:[
                         {
@@ -202,21 +202,28 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
     let GV_stringcardgrande = '';
     let GV_primeiroevento = 0;
     let GV_iddoprimeiro = 0;
+    let GV_strlink = ''
 
 
     
     for(let GV_imevento = 1; GV_imevento < GV_arrayeventos.length; GV_imevento = GV_imevento + 1)
         {
             let GV_objevento = GV_arrayeventos[GV_imevento];
+            if(isUserLoggedIn()){
+                GV_strlink = `evento.html?id=${GV_objevento.id}`;
+            }else{
+                GV_strlink = 'cadastrar.html';
+            }
             //if(GV_gastosmediofiltro == "NaN"){console.log('cv')}
             if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.toLowerCase().includes(GV_dadosdabarradepesquisa))){
                 if(!GV_primeiroevento){
                     GV_stringcardgrande = `
-                    <a href="evento.html?id=${GV_objevento.id}" class="nenhumadecoracao">
+                    <a href="${GV_strlink}" class="nenhumadecoracao">
                     <img src="${GV_objevento.fotos[0]}" id="card-imagem" class="card-img" alt="foto">
                     <div class="card-img-overlay">
                     <h5 class="card-title GV_titulocardgrande">${GV_objevento.nome_do_evento}</h5>
                     <p class="card-text GV_card-text">${GV_objevento.descricao.replaceAll('\n', '<br>')}</p>
+                    <p class="card-text"><small>Data: ${GV_objevento.data.split('-').reverse().join('/')}</small></p>
                     </div>
                     </a>`;
                     GV_primeiroevento = 1;
@@ -226,12 +233,13 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                 {
                     GV_stringcards = GV_stringcards + `
                     <div class="col" id="card-menor">
-                        <a href="evento.html?id=${GV_objevento.id}" class="col GV_card_menor nenhumadecoracao">
-                        <div class="card h-100">
+                        <a href="${GV_strlink}" class="col GV_card_menor nenhumadecoracao">
+                        <div class="card h-100 GV_corpocard text-bg-dark">
                             <img src="${GV_objevento.fotos[0]}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${GV_objevento.nome_do_evento}</h5>
                                 <p class="card-text">${GV_objevento.descricao.replaceAll('\n', '<br>')}</p>
+                                <p class="card-text"><small>Data: ${GV_objevento.data.split('-').reverse().join('/')}</small></p>
                             </div>
                         </div>
                         </a>
@@ -380,7 +388,7 @@ function GV_notificacaoevento(){
             const diferencaDias = Math.ceil(diferencaMillis / (1000 * 60 * 60 * 24));
         
             // Verificar se a diferença é igual a 2
-            return diferencaDias === 2;
+            return diferencaDias <= 2;
         }
 
         function showNotification(message) {
@@ -396,12 +404,15 @@ function GV_notificacaoevento(){
             let GV_event = GV_idindexevento(event)   
             if(GV_event > 0 && GV_objeventonot.evento[GV_event].id == event)
             {
+                console.log(event);
                 if (faltamDoisDias(GV_objeventonot.evento[GV_event].data)) {
+                    console.log("teste")
                     GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} ocorrerá em 48 horas!</div>`
                     showNotification(GV_notstr);
                 } else if (isHoje(GV_objeventonot.evento[GV_event].data)) {
+                    console.log("teste")
                     GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} é hoje!</div>`
-                    console.log("Nao vai")
+                    
                     showNotification(GV_notstr);
                 }
             } 

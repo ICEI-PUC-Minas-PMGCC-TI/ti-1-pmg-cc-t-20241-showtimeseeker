@@ -1,16 +1,46 @@
+:root{
+    --cor1: #0554F2;
+    --cor2: #076DF2;
+    --cor3: #3889F2;
+    --cor4: #F2F2F2;
+    --cor5: #0D0D0D;
+    --cor6: #fff;
+    --cor7: #000;
+    --cor8: #05025F;
+    --cor9: #f23838;
+}
+
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     width: 100%;
     height: 100%;
+    background-color: rgb(200, 200, 200);
 }
 
 form {
-    width: 300px;
-    margin: 200px auto;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
     text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+a.GV_redirecionar{
+    font-size: small;
+    text-decoration: none;
+}
+
+a.GV_redirecionar:hover{
+    text-decoration: underline;
 }
 
 input {
