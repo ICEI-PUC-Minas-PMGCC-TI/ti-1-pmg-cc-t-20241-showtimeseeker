@@ -1765,8 +1765,10 @@ function paginadoevento(objeto_evento, indexdoevento) {
 function ED_vusualizacao(objeto_evento, indexdoevento) {
     let indexusuariovizu = indexdousuario(objeto_evento.usuario.ID, objeto_evento);
     console.log(indexusuariovizu);
-    let nomeDoEvento = objeto_evento.evento[indexdoevento].nome_do_evento;
+    let nomeDoEvento = objeto_evento.evento[indexdoevento].id;
     let visualizacoesUsuario = objeto_evento.usuario.visualizou;
+    let ED_gostosusuario = objeto_evento.usuario.gostos;
+    let ED_gostosusuarioTam = objeto_evento.usuario.gostos.length;
     let listaletvisualizacoesUsuario = objeto_evento.listadeusuarios[indexusuariovizu].visualizou;
     
     // Verificar se o evento já foi visualizado pelo usuário
@@ -1779,6 +1781,44 @@ function ED_vusualizacao(objeto_evento, indexdoevento) {
             // Verificar se objeto_evento.evento.visualizacoes existe e tem a propriedade total
             if (objeto_evento.evento[indexdoevento].visualizacoes && objeto_evento.evento[indexdoevento].visualizacoes.total !== undefined) {
                 objeto_evento.evento[indexdoevento].visualizacoes.total++; // Incrementar o contador de visualizações totais
+                for(let i = 0; i<ED_gostosusuarioTam; i++){
+                    if(ED_gostosusuario[i] == 1){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto1++;
+                    }
+                    if(ED_gostosusuario[i] == 2){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto2++;
+                    }
+                    if(ED_gostosusuario[i] == 3){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto3++;
+                    }
+                    if(ED_gostosusuario[i] == 4){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto4++;
+                    }
+                    if(ED_gostosusuario[i] == 5){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto5++;
+                    }
+                    if(ED_gostosusuario[i] == 6){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto6++;
+                    }
+                    if(ED_gostosusuario[i] == 7){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto7++;
+                    }
+                    if(ED_gostosusuario[i] == 8){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto8++;
+                    }
+                    if(ED_gostosusuario[i] == 9){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto9++;
+                    }
+                    if(ED_gostosusuario[i] == 10){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto10++;
+                    }
+                    if(ED_gostosusuario[i] == 11){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto11++;
+                    }
+                    if(ED_gostosusuario[i] == 12){
+                        objeto_evento.evento[indexdoevento].visualizacoes.gosto12++;
+                    }
+                }
             } else {
                 console.error(`Propriedade 'visualizacoes' ou 'total' não está definida em objeto_evento.evento[${indexdoevento}]`);
             }
