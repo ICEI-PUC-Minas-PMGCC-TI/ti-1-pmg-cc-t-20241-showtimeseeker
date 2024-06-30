@@ -142,7 +142,7 @@ function lerdadosevento()
                                         gosto11: 89,
                                         gosto12: 15,
                                     },
-                                    favoritos: 0,
+                                    favoritos: 1,
                                     comentarios: [],
                                     donodoevento: "",
                                 },
@@ -206,7 +206,7 @@ function lerdadosevento()
                                         gosto11: 0,
                                         gosto12: 0,
                                     },
-                                    favoritos: 0,
+                                    favoritos: 1,
                                     comentarios: [],
                                     donodoevento: "",
                                 },
@@ -221,7 +221,8 @@ function lerdadosevento()
                                 gostos: ["1", "2", "3"],
                                 moeda: "R$",
                                 favoritos: [1718186424176, 1718186419035],
-                                visualizou: []
+                                visualizou: [],
+                                foto_perfil: "https://fernandapessoa.com.br/wp-content/uploads/2021/11/jovem-na-escada-curso-fernanda-pessoa-um-novo-tempo-1536x1024.jpg"
                             }
                         ],
                         usuario:{}
@@ -264,6 +265,7 @@ function GV_mostrareventosfavoritos(){
                 </div>
                 <div class="GV_botoesdealteracao">
                     <button class="GV_vermaisbtn" data-id="${GV_listatotaisfav[GV_indexfavevento].id}">Ver mais</button>
+                    <button class="GV_excluirbtn" data-id="${GV_listatotaisfav[GV_indexfavevento].id}">Excluir</button>
                 </div>
         </div>`;
         }
@@ -543,6 +545,43 @@ function codigo(estilosdoseventovalores){
     GV_areadoseventosfavoritos.addEventListener('click',(favevent) => {
         if(favevent.target.getAttribute('class') == 'GV_vermaisbtn'){
             location.href = `evento.html?id=${favevent.target.getAttribute('data-id')}`
+        }else if(favevent.target.getAttribute('class') == 'GV_excluirbtn'){
+            let GV_objetodadosfav = lerdadosevento();
+            let GV_iddoeventofav = favevent.target.getAttribute('data-id');
+            let GV_indexdoeventofav = -1;
+            let GV_contfav= 0
+            let GV_indexusuario = -1;
+            let GV_contusuario = 0;
+            let GV_indexevento = GV_idindexevento(GV_iddoeventofav)
+            do
+            {
+                if(GV_objetodadosfav.listadeusuarios[GV_contusuario].ID == GV_objetodadosfav.usuario.ID)
+                {
+                    GV_indexusuario = GV_contusuario;
+                }
+                GV_contusuario = GV_contusuario + 1;
+            }
+            while(GV_contusuario < GV_objetodadosfav.listadeusuarios.length && GV_indexusuario == -1);
+            do
+            {
+                if(GV_objetodadosfav.usuario.favoritos[GV_contfav] == GV_iddoeventofav)
+                {
+                    GV_indexdoeventofav = GV_contfav;
+                }
+                GV_contfav = GV_contfav + 1;
+            }
+            while(GV_contfav < GV_objetodadosfav.usuario.favoritos.length && GV_indexdoeventofav == -1);
+            console.log(GV_indexusuario);
+            if(GV_indexdoeventofav >= 0 && GV_indexusuario >= 0)
+            {
+                if(GV_indexevento > 0){
+                    GV_objetodadosfav.evento[GV_indexevento].favoritos = GV_objetodadosfav.evento[GV_indexevento].favoritos - 1;
+                }
+                GV_objetodadosfav.usuario.favoritos.splice(GV_indexdoeventofav, 1);
+                GV_objetodadosfav.listadeusuarios[GV_indexusuario].favoritos.splice(GV_indexdoeventofav, 1);
+                salvardadosevento(GV_objetodadosfav);
+                GV_mostrareventosfavoritos();
+            }
         }
         
     })
@@ -1621,6 +1660,7 @@ function paginadoevento(objeto_evento, indexdoevento) {
     // Elementos do DOM que serão preenchidos dinamicamente
     let nomeEventoElem = document.getElementById('nomeEvento');
     let localEventoElem = document.getElementById('localEvento');
+    let dataEventoElem = document.getElementById('dataEvento');
     let descricaoEventoElem = document.getElementById('descricaoEvento');
     let favoritadosElem = document.getElementById('favoritados');
     let visualizacoesTotaisElem = document.getElementById('visualizacoesTotais');
@@ -1676,7 +1716,8 @@ function paginadoevento(objeto_evento, indexdoevento) {
     // Preencher as informações do evento
     nomeEventoElem.textContent = objeto_evento.evento[indexdoevento].nome_do_evento;
     localEventoElem.textContent = objeto_evento.evento[indexdoevento].local;
-    descricaoEventoElem.textContent = objeto_evento.evento[indexdoevento].descricao;
+    dataEventoElem.textContent = objeto_evento.evento[indexdoevento].data.split('-').reverse().join('/');
+    descricaoEventoElem.innerHTML = objeto_evento.evento[indexdoevento].descricao.replace('\n', '</br>');
     favoritadosElem.textContent = objeto_evento.evento[indexdoevento].favoritos;
     visualizacoesTotaisElem.textContent = objeto_evento.evento[indexdoevento].visualizacoes.total;
 

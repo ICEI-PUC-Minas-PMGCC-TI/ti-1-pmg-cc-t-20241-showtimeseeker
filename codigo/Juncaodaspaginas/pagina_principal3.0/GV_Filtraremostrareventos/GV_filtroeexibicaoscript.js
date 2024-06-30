@@ -72,7 +72,7 @@ function GV_lerdadoseventodobancodedados()
                                     gosto11: 89,
                                     gosto12: 15,
                                 },
-                                favoritos: 0,
+                                favoritos: 1,
                                 comentarios: [],
                                 donodoevento: "",
                             },
@@ -83,7 +83,7 @@ function GV_lerdadoseventodobancodedados()
                                     valor: 0,
                                     moeda: "R$"
                                 },
-                                data: "2024-08-19",
+                                data: "2024-06-30",
                                 descricao: "Venha se juntar a nós para celebrar a tradição e a alegria da Festa Junina do Rotary Club de Belo Horizonte - Barro Preto! No dia 8 de junho de 2024, a partir das 14h, o Colégio São Paulo, localizado na Rua Olímpio de Assis 190, Cidade Jardim, Belo Horizonte/MG, será o palco para essa festa cheia de diversão e cultura.",
                                 fotos: ["https://fashionistando.uai.com.br/wp-content/uploads/sites/11/2018/06/festa-junina-camarim.jpg", "https://soubh.uai.com.br/uploads/post/image/14267/festas_juninas_em_bh_ingressos_onde_ir.jpg"],
                                 id: 1718186421301,
@@ -136,7 +136,7 @@ function GV_lerdadoseventodobancodedados()
                                     gosto11: 0,
                                     gosto12: 0,
                                 },
-                                favoritos: 0,
+                                favoritos: 1,
                                 comentarios: [],
                                 donodoevento: "",
                             }
@@ -151,7 +151,8 @@ function GV_lerdadoseventodobancodedados()
                             gostos: ["1", "2", "3"],
                             moeda: "R$",
                             favoritos: [1718186424176, 1718186419035],
-                            visualizou: []
+                            visualizou: [],
+                            foto_perfil: "https://fernandapessoa.com.br/wp-content/uploads/2021/11/jovem-na-escada-curso-fernanda-pessoa-um-novo-tempo-1536x1024.jpg"
                         }
                     ],
                     usuario:{}
@@ -198,13 +199,14 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
     const GV_cardgrande = document.getElementById('card-container');
     const GV_cardsmenores = document.getElementById('GV_cardsmenorescontainer');
     const GV_dadosdabarradepesquisa = document.getElementById('GV_barradepesquisa').value;
+    const GV_datafiltro = document.getElementById('GV_data');
     let GV_stringcards = '';
     let GV_stringcardgrande = '';
     let GV_primeiroevento = 0;
     let GV_iddoprimeiro = 0;
     let GV_strlink = ''
 
-
+    //console.log(GV_datafiltro.value == "" )
     
     for(let GV_imevento = 1; GV_imevento < GV_arrayeventos.length; GV_imevento = GV_imevento + 1)
         {
@@ -215,7 +217,7 @@ function GV_mostrareventos(GV_arrayeventos, GV_arrayfiltros, GV_gastosmediofiltr
                 GV_strlink = 'cadastrar.html';
             }
             //if(GV_gastosmediofiltro == "NaN"){console.log('cv')}
-            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.toLowerCase().includes(GV_dadosdabarradepesquisa))){
+            if((GV_gastosmediofiltro == undefined || GV_gastosmediofiltro == "NaN" || GV_conversaoparareal(GV_objevento.preco.valor, GV_objevento.preco.moeda) <= GV_gastosmediofiltro) && GV_verificargostos(GV_objevento.estilodoevento, GV_arrayfiltros) && (GV_dadosdabarradepesquisa == "" || GV_objevento.nome_do_evento.toLowerCase().includes(GV_dadosdabarradepesquisa)) && (GV_datafiltro.value == "" || GV_datafiltro.value == GV_objevento.data)){
                 if(!GV_primeiroevento){
                     GV_stringcardgrande = `
                     <a href="${GV_strlink}" class="nenhumadecoracao">
@@ -275,9 +277,10 @@ function isUserLoggedIn() {
 
 function GV_codigo(){
  
-    GV_notificacaoevento();
+    
     
     salvardadosevento(GV_lerdadoseventodobancodedados());
+    GV_notificacaoevento();
 
     const GV_botaodofiltro = document.getElementById("GV_botaodofiltro");
     const GV_gastomedio = document.getElementById('GV_preco');
@@ -326,6 +329,7 @@ function GV_codigo(){
         GV_keysfiltro = Object.keys(GV_dadosdosformulariosfil);
         GV_moedafiltro = GV_valoresdedadosfil.pop();
         GV_preco = GV_valoresdedadosfil.pop();
+        GV_keysfiltro.pop();
         GV_keysfiltro.pop();
         GV_keysfiltro.pop();
         GV_preco = GV_conversaoparareal(parseFloat(GV_preco), GV_moedafiltro).toFixed(2);
@@ -404,13 +408,10 @@ function GV_notificacaoevento(){
             let GV_event = GV_idindexevento(event)   
             if(GV_event > 0 && GV_objeventonot.evento[GV_event].id == event)
             {
-                console.log(event);
                 if (faltamDoisDias(GV_objeventonot.evento[GV_event].data)) {
-                    console.log("teste")
                     GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} ocorrerá em 48 horas!</div>`
                     showNotification(GV_notstr);
                 } else if (isHoje(GV_objeventonot.evento[GV_event].data)) {
-                    console.log("teste")
                     GV_notstr = GV_notstr + `<div id="notification" class="">Lembrete: ${GV_objeventonot.evento[GV_event].nome_do_evento} é hoje!</div>`
                     
                     showNotification(GV_notstr);
