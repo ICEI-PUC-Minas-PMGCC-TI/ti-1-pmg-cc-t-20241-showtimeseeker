@@ -129,22 +129,22 @@ function lerdadosevento()
                                     estilodoevento: ["2", "3"],
                                     visualizacoes: {
                                         total: 0,
-                                        gosto1: 5,
-                                        gosto2: 90,
-                                        gosto3: 50000,
-                                        gosto4: 50,
-                                        gosto5: 1,
-                                        gosto6: 60,
-                                        gosto7: 600,
-                                        gosto8: 44,
-                                        gosto9: 9,
-                                        gosto10: 4,
-                                        gosto11: 89,
-                                        gosto12: 15,
+                                        gosto1: 0,
+                                        gosto2: 0,
+                                        gosto3: 0,
+                                        gosto4: 0,
+                                        gosto5: 0,
+                                        gosto6: 0,
+                                        gosto7: 0,
+                                        gosto8: 0,
+                                        gosto9: 0,
+                                        gosto10: 0,
+                                        gosto11: 0,
+                                        gosto12: 0,
                                     },
-                                    favoritos: 1,
+                                    favoritos: 0,
                                     comentarios: [],
-                                    donodoevento: "",
+                                    donodoevento: 1719666789117,
                                 },
                                 {
                                     nome_do_evento: "Festa Junina",
@@ -161,11 +161,11 @@ function lerdadosevento()
                                     estilodoevento: ["1", "3"],
                                     visualizacoes: {
                                         total: 0,
-                                        gosto1: 3,
-                                        gosto2: 10,
-                                        gosto3: 50,
-                                        gosto4: 1,
-                                        gosto5: 100,
+                                        gosto1: 0,
+                                        gosto2: 0,
+                                        gosto3: 0,
+                                        gosto4: 0,
+                                        gosto5: 0,
                                         gosto6: 0,
                                         gosto7: 0,
                                         gosto8: 0,
@@ -193,22 +193,22 @@ function lerdadosevento()
                                     estilodoevento: ["1", "4"],
                                     visualizacoes: {
                                         total: 0,
-                                        gosto1: 5,
+                                        gosto1: 0,
                                         gosto2: 0,
-                                        gosto3: 2,
+                                        gosto3: 0,
                                         gosto4: 0,
                                         gosto5: 0,
                                         gosto6: 0,
-                                        gosto7: 100,
+                                        gosto7: 0,
                                         gosto8: 0,
-                                        gosto9: 1,
-                                        gosto10: 7,
+                                        gosto9: 0,
+                                        gosto10: 0,
                                         gosto11: 0,
                                         gosto12: 0,
                                     },
-                                    favoritos: 1,
+                                    favoritos: 0,
                                     comentarios: [],
-                                    donodoevento: "",
+                                    donodoevento: 1719666789117,
                                 },
                         ],
                         listadeusuarios:[
@@ -220,7 +220,7 @@ function lerdadosevento()
                                 precoMedio: "564",
                                 gostos: ["1", "2", "3"],
                                 moeda: "R$",
-                                favoritos: [1718186424176, 1718186419035],
+                                favoritos: [],
                                 visualizou: [],
                                 foto_perfil: "https://fernandapessoa.com.br/wp-content/uploads/2021/11/jovem-na-escada-curso-fernanda-pessoa-um-novo-tempo-1536x1024.jpg"
                             }
@@ -318,10 +318,12 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
             GV_areadoseventosparaedicao.innerHTML = GV_stringeventosparaedicao;
             const GV_todasareasdeedicao = document.querySelectorAll('.GV_exibicaodadosdoseventos');
             let GV_nomedosgostos = Object.keys(GV_arrayeventos[0].visualizacoes);
-            console.log(GV_nomedosgostos);
+            
+            
             GV_todasareasdeedicao.forEach(function(area){
                 let GV_indexdoditoevento = GV_idindexevento(area.getAttribute("data-index"));
-
+                let GV_valoresdosgostos = Object.values(GV_arrayeventos[GV_indexdoditoevento].visualizacoes);
+                console.log(GV_valoresdosgostos);
                 let GV_legenda = area.querySelector('div.chart');
                 //pegar os valores par calculo de saber os 4 gostos com mais visualizações
                 let ED_Array_visu_gostos = new Array();
@@ -384,10 +386,10 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
 
 
                 GV_legenda.innerHTML =                 
-                `<abbr title="${GV_nomedosgostos[ED_array_id_gostos[0]]}"><div class="bar" id="gosto-1" ></div></abbr>
-                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[1]]}"><div class="bar" id="gosto-2" ></div></abbr>
-                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[2]]}"><div class="bar" id="gosto-3" ></div></abbr>
-                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[3]]}"><div class="bar" id="gosto-4" ></div></abbr>`
+                `<abbr title="${GV_nomedosgostos[ED_array_id_gostos[0]]}: ${GV_valoresdosgostos[ED_array_id_gostos[0]]}"><div class="bar" id="gosto-1" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[1]]}: ${GV_valoresdosgostos[ED_array_id_gostos[1]]}"><div class="bar" id="gosto-2" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[2]]}: ${GV_valoresdosgostos[ED_array_id_gostos[2]]}"><div class="bar" id="gosto-3" ></div></abbr>
+                <abbr title="${GV_nomedosgostos[ED_array_id_gostos[3]]}: ${GV_valoresdosgostos[ED_array_id_gostos[3]]}"><div class="bar" id="gosto-4" ></div></abbr>`
 
                 var ED_barra_1 = area.querySelector('#gosto-1');
                 var ED_barra_2 = area.querySelector('#gosto-2');
