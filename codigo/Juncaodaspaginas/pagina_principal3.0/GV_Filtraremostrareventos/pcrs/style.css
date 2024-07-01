@@ -279,7 +279,7 @@ Botões entrar e criar - Fim
   }
   div.landing-page{
     height: 100vh;
-    background: url(../img/fundo-landing-page.png);
+    /*background: url(../img/fundo-landing-page.png);*/
   }
 
 
