@@ -414,7 +414,7 @@ Implementamos testes automatizados para garantir a integridade do sistema após 
 
 ## Wireframes
 
-[Pagina_inicial.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049572/Pagina_inicial.pdf)
+[Pagina_inicial.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20Inicial.png)
 
 [Login.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049609/Login.pdf)
 
