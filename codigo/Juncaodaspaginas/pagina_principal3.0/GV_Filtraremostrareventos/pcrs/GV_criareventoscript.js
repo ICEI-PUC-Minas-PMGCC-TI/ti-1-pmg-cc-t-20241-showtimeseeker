@@ -584,6 +584,7 @@ function codigo(estilosdoseventovalores){
                 salvardadosevento(GV_objetodadosfav);
                 GV_mostrareventosfavoritos();
             }
+            GV_mostrareventosparaedicao(GV_objetodadosfav.evento);
         }
         
     })
