@@ -414,11 +414,15 @@ Implementamos testes automatizados para garantir a integridade do sistema após 
 
 ## Wireframes
 
-[Pagina_inicial.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20Inicial.png)
+[Pagina_inicial.png](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20Inicial.png)
 
-[Login.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049609/Login.pdf)
+[Tela barra de pesquisa.png](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Barra%20de%20Pesquisa.png)
 
-[Perfil.pdf](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/files/15049616/Perfil.pdf)
+[Tela exemplo Pool Party.png](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20Evento%20Pool%20Party.png)
+
+[Tela comentário e favoritar](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Comentario%20e%20Favoritar.png)
+
+[Tela notificação](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20Notifica%C3%A7%C3%A3o.png)
 
 ## Ferramentas
 **Gerenciamento de Projetos**
