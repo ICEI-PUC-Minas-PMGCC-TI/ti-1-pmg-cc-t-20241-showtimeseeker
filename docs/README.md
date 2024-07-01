@@ -426,7 +426,9 @@ Implementamos testes automatizados para garantir a integridade do sistema após 
 
 [Tela Meu perfil](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20meu%20perfil.png)
 
-[Tela Cadastro](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20Tela%20meu%20perfil.png)
+[Tela Cadastro](https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-t-20241-showtimeseeker/blob/master/img/STS%20-%20%20Criar%20Conta.png)
+
+
 
 ## Ferramentas
 **Gerenciamento de Projetos**
