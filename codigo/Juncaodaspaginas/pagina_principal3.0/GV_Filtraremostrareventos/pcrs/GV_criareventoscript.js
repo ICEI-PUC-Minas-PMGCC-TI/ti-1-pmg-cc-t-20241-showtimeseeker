@@ -357,7 +357,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 ED_comparacao = 0;
                 
                 for (let i = 0; i < 12; i++) {
-                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[0]){
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_array_id_gostos[0]-1 != i){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[1] = ED_comparacao;
                         ED_array_id_gostos[1] = i+1;
@@ -367,7 +367,7 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 ED_comparacao = 0;
                 
                 for (let i = 0; i < 12; i++) {
-                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[1]){
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_array_id_gostos[1]-1 != i && ED_array_id_gostos[0]-1 != i){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[2] = ED_comparacao;
                         ED_array_id_gostos[2] = i+1;
@@ -377,13 +377,13 @@ function GV_mostrareventosparaedicao(GV_arrayeventos){
                 ED_comparacao = 0;
                 
                 for (let i = 0; i < 12; i++) {
-                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_Array_visu_gostos[i] < ED_array_maiores_visu_gostos[2]){
+                    if(ED_Array_visu_gostos[i] > ED_comparacao && ED_array_id_gostos[2]-1 != i && ED_array_id_gostos[0]-1 != i && ED_array_id_gostos[1]-1 != i){
                         ED_comparacao = ED_Array_visu_gostos[i];
                         ED_array_maiores_visu_gostos[3] = ED_comparacao;
                         ED_array_id_gostos[3] = i+1;
                     }
                 }
-
+                console.log(ED_array_id_gostos)
 
                 GV_legenda.innerHTML =                 
                 `<abbr title="${GV_nomedosgostos[ED_array_id_gostos[0]]}: ${GV_valoresdosgostos[ED_array_id_gostos[0]]}"><div class="bar" id="gosto-1" ></div></abbr>
